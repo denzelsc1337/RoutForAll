@@ -1,6 +1,11 @@
 <?php 
 //include_once('config/Connection.php');
 include_once 'config/connection.php';
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+echo "<br>";
 ?>
 <!DOCTYPE html>
 <html>
