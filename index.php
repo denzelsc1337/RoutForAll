@@ -16,8 +16,13 @@ echo "testing";
      <title>Test</title>
  </head>
  <body>
-    <br>
-    <strong>agregar nav bar here</strong>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Test</a>
+        <a href="View/AddRoute.php">Routes</a>
+        <a href="#">Unnamed</a>
+        <a></a> 
+    </div>
     <div id="googleMap" style="height:100%;"></div>
  </body>
 </html>
