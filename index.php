@@ -19,6 +19,7 @@ echo "testing";
     <div>
         <a href="#">Home</a>
         <a href="#">Test</a>
+        <a href="config/connection.php">conx</a>
         <a href="View/AddRoute.php">Routes</a>
         <a href="#">Unnamed</a>
         <a></a> 

@@ -4,30 +4,41 @@ class User
 {
 	private $db;
 	private $dbname;
-	
+
 	private $conn;
 	
 	public function __construct()
 	{
 		$conn = new Conexion();
-		$this->dbname = $this->conn->db;
+		//$this->dbname = $this->conn->db; //nombre de la bd
 		$this->db = $conn->getConexion();
 	}
 
-	function agregarRutas($distrito,$direccion,$usuario){
+	function agregarRutas($idenvio,$idvehiculo,$idconductor,$horaSalida,$horaLlegada){
 /*		include_once '../config/connection.php';
 		$cnx = new Conexion();
 		$cn = $cnx->abrirConexion();*/
 		try {
-			$sql = "INSERT INTO rutas (distrito, direccion, usuario) VALUES (:distrito, :direccion, :usuario);";
+			$sql = "INSERT INTO rutas (IDruta,idenvio, idvehiculo, idconductor, horaSalida,horaLlegada) VALUES (null,:idenvio,:idvehiculo, :idconductor, :horaSalida,:horaLlegada);";
 			$stmt = $this->db->prepare($sql);
-			$stmt->bindParam(':distrito', $distrito);
-			$stmt->bindParam(':direccion', $direccion);
-			$stmt->bindParam(':usuario', $usuario);
-			$stmt->execute([':distrito' => $distrito, ':direccion' => $direccion,':usuario' => $usuario ]);
+			$stmt->bindParam(':idenvio', $idenvio);
+			$stmt->bindParam(':idvehiculo', $idvehiculo);
+			$stmt->bindParam(':idconductor', $idconductor);
+			$stmt->bindParam(':horaSalida', $horaSalida);
+			$stmt->bindParam(':horaLlegada', $horaLlegada);
+
+			$stmt->execute([':idenvio' => $idenvio, 
+							':idvehiculo' => $idvehiculo,
+							':idconductor' => $idconductor,
+							':horaSalida' => $horaSalida,
+							':horaLlegada' => $horaLlegada,
+							 ]);
+?>
+		<META http-equiv="Refresh" content = "0.3 ; URL =../View/AddRoute.php">
+<?php 
 		} catch (PDOException $e) {
 			die($e->getMessage());
-			return "error";
+			return "error al insertar data";
 		}
 		//$cnx->cerrarConexion($cn);
 	}
