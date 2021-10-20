@@ -1,5 +1,6 @@
 <?php 
-include ('../config/connection.php');
+//include ('../config/connection.php');
+$listPedidos;
 class User
 {
 	private $db;
@@ -9,6 +10,7 @@ class User
 	
 	public function __construct()
 	{
+		$this->listPedidos = array();
 		$conn = new Conexion();
 		//$this->dbname = $this->conn->db; //nombre de la bd
 		$this->db = $conn->getConexion();
@@ -41,6 +43,24 @@ class User
 			return "error al insertar data";
 		}
 		//$cnx->cerrarConexion($cn);
+	}
+
+	function listarPedidos(){
+		try {
+		$sql = "SELECT producto, cantidad FROM envios";
+		$stmt = $this->db->prepare($sql);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+
+		while ($row = $stmt->fetch()) {
+			/*echo "Producto: " .$row->producto ."<br>";
+			echo "Cantidad: " .$row->cantidad ."<br>";*/
+			$this->listPedidos[] = $row;
+		}
+			return $this->listPedidos;	
+		} catch (PDOException $e) {
+			die($e->getMessage());
+		}
 	}
 }
 

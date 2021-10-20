@@ -42,7 +42,8 @@ direccionEnvio varchar(200) not null
 );
 
 insert into envios values(null,'casa','microondas','1',5,'KG','luis david', 'trinidad perez','45127889','luistrinidad@hotmail.com','4512452','963852741','Av.Guardia civil 987');
-select * from envios;
+insert into envios values(null,'casa','lavadero','1',21,'KG','luis david', 'trinidad perez','45127889','luistrinidad@hotmail.com','4512452','963852741','Av.Guardia civil 987');
+select producto, cantidad from envios;
 
 
 

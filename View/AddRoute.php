@@ -50,6 +50,29 @@ echo "cheking for bd: " . $cnx->db;
     <p>
           <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
     </p>
+    <strong>tabla de envios aqui</strong>
+    <table>
+        <?php 
+        require_once('../Controller/controllerList.php');
+         ?>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            foreach ($listPedido as $listaPedidos) {
+             ?>
+             <tr>
+                 <td><?php echo $listaPedidos["producto"]; ?></td>
+                 <td><?php echo $listaPedidos["cantidad"]; ?></td>
+             </tr>
+        </tbody>
+    <?php } ?>
+    </table>
+    
 </fieldset>
 </form>
 <hr>
