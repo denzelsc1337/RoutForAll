@@ -51,7 +51,7 @@ echo "cheking for bd: " . $cnx->db;
           <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
     </p>
     <strong>tabla de envios aqui</strong>
-    <table>
+    <table border="1px">
         <?php 
         require_once('../Controller/controllerList.php');
          ?>
@@ -59,6 +59,16 @@ echo "cheking for bd: " . $cnx->db;
             <tr>
                 <th>Producto</th>
                 <th>Cantidad</th>
+                <th>Asignar</th>
+                <th>Producto</th>
+                <th>Producto</th>
+                <th>Producto</th>
+                <th>Producto</th>
+                <th>Producto</th>
+                <th>Producto</th>
+                <th>Producto</th>
+                <th>Producto</th>
+                <th>Producto</th>
             </tr>
         </thead>
         <tbody>
@@ -66,8 +76,23 @@ echo "cheking for bd: " . $cnx->db;
             foreach ($listPedido as $listaPedidos) {
              ?>
              <tr>
-                 <td><?php echo $listaPedidos["producto"]; ?></td>
-                 <td><?php echo $listaPedidos["cantidad"]; ?></td>
+                <td><?php echo $listaPedidos["tipoProducto"]; ?></td>
+                <td><?php echo $listaPedidos["producto"]; ?></td>
+                <td><?php echo $listaPedidos["cantidad"]; ?></td>
+                <td><?php echo $listaPedidos["peso"]; ?></td>
+                <td><?php echo $listaPedidos["unidadMedida"]; ?></td>
+                <td><?php echo $listaPedidos["nombreCliente"]; ?></td>
+                <td><?php echo $listaPedidos["apellidoCliente"]; ?></td>
+                <td><?php echo $listaPedidos["docCliente"]; ?></td>
+                <td><?php echo $listaPedidos["correoCliente"]; ?></td>
+                <td><?php echo $listaPedidos["telefCliente"]; ?></td>
+                <td><?php echo $listaPedidos["celularCliente"]; ?></td>
+                <a ></a>
+                <!--agregar google maps here-->
+                <td><a href="https://www.google.com/maps/<?php echo $listaPedidos["direccionEnvio"]?>"><?php echo $listaPedidos["direccionEnvio"]?></a></td>
+                 <td>
+                     <button>Asignar</button>
+                 </td>
              </tr>
         </tbody>
     <?php } ?>
