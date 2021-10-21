@@ -13,18 +13,6 @@ echo "cheking for bd: " . $cnx->db;
     <title>Testeo</title>
 
 </head>
-<!-- <body>
-    <form method="POST" action="../Controller/AddRoutes.php">
-        <label>Distrito</label>
-        <input type="text" name="distrito">
-        <label>direccion</label>
-        <input type="text" name="direccion">
-        <label>usuario</label>
-        <input type="text" name="usuario">
-        <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
-    </form>
-</body>-->
-
 <body bgcolor="#999999">
     <form name="login-form" id="login-form" method="post" action="../Controller/AddRoutes.php">
         <fieldset>
@@ -43,11 +31,11 @@ echo "cheking for bd: " . $cnx->db;
             </dl>
             <dl>
                 <dt><label title="text">Hora Salida </label></dt>
-                <dd><input tabindex="2" accesskey="p" name="horaSalida" step="2" type="time" maxlength="20" id="horaSalida" /></dd>
+                <dd><input tabindex="2" accesskey="p" name="horaSalida"  type="time" maxlength="20" id="horaSalida" /></dd>
             </dl>
             <dl>
                 <dt><label title="text">Hora llegada </label></dt>
-                <dd><input tabindex="2" accesskey="p" name="horaLlegada" step="2" type="time" maxlength="20" id="horaLlegada" /></dd>
+                <dd><input tabindex="2" accesskey="p" name="horaLlegada" type="time" maxlength="20" id="horaLlegada" /></dd>
             </dl>
             <p>
                 <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
@@ -92,15 +80,16 @@ echo "cheking for bd: " . $cnx->db;
                             <a></a>
                             <!--agregar google maps here-->
                             <td id="container">
-                                <a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">
-                                    <a href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=angamos';return false;"><?php echo $listaPedidos["direccionEnvio"] ?></a>
+                                <!--<a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">-->
+                                <a href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=<?php echo urlencode($listaPedidos["direccionEnvio"]) ?>';return false;"><?php echo $listaPedidos["direccionEnvio"] ?></a>
+                                    <!--https://developers.google.com/maps/documentation/javascript/localization-->
                                     <!--
                             <a href="https://www.google.com/maps/search/?api=1&query=<? php // echo urlencode($listaPedidos["direccionEnvio"]) 
                                                                                         ?>"><?php //echo $listaPedidos["direccionEnvio"] 
                                                                                                                                                     ?></a>-->
                                     <script type="text/javascript">
-                                        latitude = "san juan";
-                                        longitude = 0;
+                                        var latitude = "san juan";
+                                        var longitude = 0;
 
                                         function getCurrentLocation() {
                                             var options = {
@@ -114,8 +103,8 @@ echo "cheking for bd: " . $cnx->db;
                                                 _crdL = pos.coords;
                                                 _kcrdL = pos.coords;
 
-                                                latitude = crdL.latitude;
-                                                longitude = _crdL.longitude;
+                                                var latitude = crdL.latitude;
+                                                var longitude = _crdL.longitude;
 
                                                 console.log('your position is:');
                                                 console.log('Latitude : ' + crdL.latitude);
@@ -125,30 +114,21 @@ echo "cheking for bd: " . $cnx->db;
                                                 document.getElementById("long").innerHTML = _crdL.longitude;
                                                 console.log('More or less ' + _kcrdL.accuracy + ' meters.');
                                             };
-
                                             function error(err) {
                                                 console.warn('ERROR(' + err.code + '): ' + err.message);
                                             };
-
                                             navigator.geolocation.getCurrentPosition(getPos, error, options);
-
                                         }
                                         getCurrentLocation();
-                                        $(document).ready(function() {
-                                            let template = '';
-                                            //$('#aea').html('<a href= >aaaaa</a>');
-                                            template += `<a href = ` + latitude + `` + longitude + `><?php echo $listaPedidos["direccionEnvio"] ?></a>`;
-                                            $('#aea').html(template);
-                                        });
                                     </script>
-                                    <a href="https://www.google.com/maps/dir/?api=1&origin=angamos&destination=<?php echo urlencode($listaPedidos["direccionEnvio"]) ?>">testing</a>
-                                    <input type="button" onclick="getCurrentLocation();">
+                                   <!-- <a href="https://www.google.com/maps/dir/?api=1&origin=angamos&destination=<?//php echo urlencode($listaPedidos["direccionEnvio"]) ?>">testing</a>-->
+                                    <!--<input type="button" onclick="getCurrentLocation();">-->
                             </td>
-                            <td>
+                            <!--<td>
                                 <a id="latid" href="">latitud</a>
                                 <a id="long" href="">long</a>
 
-                            </td>
+                            </td>-->
                             <td>
                                 <button>Asignar</button>
                             </td>
