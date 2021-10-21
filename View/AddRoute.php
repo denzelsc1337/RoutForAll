@@ -9,44 +9,9 @@ echo "cheking for bd: " . $cnx->db;
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <title>Testeo</title>
-    <script type="text/javascript">
-        latitude = 0;
-        longitude = 0;
-        function getCurrentLocation() {
-        var options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
-        };
 
-        function getPos(pos) {
-            crdL = pos.coords;
-            _crdL = pos.coords;
-            _kcrdL = pos.coords;
-
-            latitude = crdL.latitude;
-            longitude = _crdL.longitude;
-
-            console.log('your position is:');
-            console.log('Latitude : ' + crdL.latitude);
-            document.getElementById("latid").innerHTML = crdL.latitude;
-
-            console.log('Longitude: ' + _crdL.longitude);
-            document.getElementById("long").innerHTML = _crdL.longitude;
-            console.log('More or less ' + _kcrdL.accuracy + ' meters.');
-        };
-
-        function error(err) {
-            console.warn('ERROR(' + err.code + '): ' + err.message);
-        };
-
-        navigator.geolocation.getCurrentPosition(getPos, error, options);
-
-    }
-        getCurrentLocation();
-
-    </script>
 </head>
 <!-- <body>
     <form method="POST" action="../Controller/AddRoutes.php">
@@ -126,17 +91,64 @@ echo "cheking for bd: " . $cnx->db;
                             <td><?php echo $listaPedidos["celularCliente"]; ?></td>
                             <a></a>
                             <!--agregar google maps here-->
-                            <td>
-                                <a href="https://www.google.com/maps/dir/current+location/<?php echo urlencode($listaPedidos["direccionEnvio"]) ?>">test</a>
-                                <a href="https://www.google.com/maps/search/?api=1&query=<?php echo urlencode($listaPedidos["direccionEnvio"]) ?>"><?php echo $listaPedidos["direccionEnvio"] ?></a>
-                                <a href="https://www.google.com/maps/dir/?api=1&origin=angamos&destination=<?php echo urlencode($listaPedidos["direccionEnvio"]) ?>">testing</a>
-                                <input type="button" onclick="getCurrentLocation();">
+                            <td id="container">
+                                <a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">
+                                    <a href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude;return false;"><?php echo $listaPedidos["direccionEnvio"] ?></a>
+                                    <!--
+                            <a href="https://www.google.com/maps/search/?api=1&query=<? php // echo urlencode($listaPedidos["direccionEnvio"]) 
+                                                                                        ?>"><?php //echo $listaPedidos["direccionEnvio"] 
+                                                                                                                                                    ?></a>-->
+                                    <script type="text/javascript">
+                                        latitude = "san juan";
+                                        longitude = 0;
+
+                                        function getCurrentLocation() {
+                                            var options = {
+                                                enableHighAccuracy: true,
+                                                timeout: 5000,
+                                                maximumAge: 0
+                                            };
+
+                                            function getPos(pos) {
+                                                crdL = pos.coords;
+                                                _crdL = pos.coords;
+                                                _kcrdL = pos.coords;
+
+                                                latitude = crdL.latitude;
+                                                longitude = _crdL.longitude;
+
+                                                console.log('your position is:');
+                                                console.log('Latitude : ' + crdL.latitude);
+                                                document.getElementById("latid").innerHTML = crdL.latitude;
+
+                                                console.log('Longitude: ' + _crdL.longitude);
+                                                document.getElementById("long").innerHTML = _crdL.longitude;
+                                                console.log('More or less ' + _kcrdL.accuracy + ' meters.');
+                                            };
+
+                                            function error(err) {
+                                                console.warn('ERROR(' + err.code + '): ' + err.message);
+                                            };
+
+                                            navigator.geolocation.getCurrentPosition(getPos, error, options);
+
+                                        }
+                                        getCurrentLocation();
+                                        $(document).ready(function() {
+                                            let template = '';
+                                            //$('#aea').html('<a href= >aaaaa</a>');
+                                            template += `<a href = ` + latitude + `` + longitude + `><?php echo $listaPedidos["direccionEnvio"] ?></a>`;
+                                            $('#aea').html(template);
+                                        });
+                                    </script>
+                                    <a href="https://www.google.com/maps/dir/?api=1&origin=angamos&destination=<?php echo urlencode($listaPedidos["direccionEnvio"]) ?>">testing</a>
+                                    <input type="button" onclick="getCurrentLocation();">
                             </td>
                             <td>
                                 <a id="latid" href="">latitud</a>
                                 <a id="long" href="">long</a>
-                            </td>
 
+                            </td>
                             <td>
                                 <button>Asignar</button>
                             </td>
