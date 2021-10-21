@@ -93,7 +93,7 @@ echo "cheking for bd: " . $cnx->db;
                             <!--agregar google maps here-->
                             <td id="container">
                                 <a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">
-                                    <a href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude;return false;"><?php echo $listaPedidos["direccionEnvio"] ?></a>
+                                    <a href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=angamos';return false;"><?php echo $listaPedidos["direccionEnvio"] ?></a>
                                     <!--
                             <a href="https://www.google.com/maps/search/?api=1&query=<? php // echo urlencode($listaPedidos["direccionEnvio"]) 
                                                                                         ?>"><?php //echo $listaPedidos["direccionEnvio"] 
