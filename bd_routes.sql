@@ -13,6 +13,8 @@ correo varchar(100) not null
 );
 
 insert into conductor values(null,'denzel stefano', 'sotomayor correa', 'dni', '75481104',981374706, 'denzelsotomayor@gmail.com');
+insert into conductor values(null,'victor cevastian', 'arroyo loayza', 'dni', '45124578',951753486, 'cevitas123@gmail.com');
+insert into conductor values(null,'Alejandro', 'izarra', 'dni', '56231245',923154753, 'ayowa123@gmail.com');
 select * from conductor;
 
 create table vehiculos(
@@ -63,13 +65,15 @@ create table rutas(
 insert into rutas values(null, 1,1,1,"14:25:00","14:50:00");
 select * from rutas;
 
--- MOSTRAR EN POPOUP --
+-- MOSTRAR EN POPOUP CONDUCTOR--
 select env.nombreCliente, apellidoCliente, direccionEnvio, celularCliente 
 from envios env
 inner join rutas rut
 on env.IDenvio = rut.idenvio
 where rut.IDruta = 1 ;
--- MOSTRAR EN POPOUP --
+-- MOSTRAR EN POPOUP CONDUCTOR --
+
+
 
 
 
