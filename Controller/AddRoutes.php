@@ -1,6 +1,6 @@
 <?php 
 
-$codenvio = $_POST['codenvio'];
+$codenvio = $_POST['codigoEnvio'];
 $idvehiculo = $_POST['idvehiculo'];
 $idconductor = $_POST['idconductor'];
 $horaSalida = $_POST['horaSalida'];

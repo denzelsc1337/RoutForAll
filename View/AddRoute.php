@@ -11,11 +11,12 @@ echo "cheking for bd: " . $cnx->db;
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styleCards.css">
     <title>Testeo</title>
 
 </head>
 <body bgcolor="#999999">
-    <form name="login-form" id="login-form" method="post" action="../Controller/AddRoutes.php">
+    <!--<form name="login-form" id="login-form" method="post" action="../Controller/AddRoutes.php">
         <fieldset>
             <legend>Guardar ruta</legend>
             <dl>
@@ -41,25 +42,27 @@ echo "cheking for bd: " . $cnx->db;
             <p>
                 <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
             </p>
+    </form>-->
             <strong>tabla de envios aqui</strong>
-            <table border="1px">
+            <table border="1px" class="table">
                 <?php
                 require_once('../Controller/controllerList.php');
                 ?>
                 <thead>
                     <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Asignar</th>
-                        <th>Producto</th>
-                        <th>Producto</th>
-                        <th>Producto</th>
-                        <th>Producto</th>
-                        <th>Producto</th>
-                        <th>Producto</th>
-                        <th>Producto</th>
-                        <th>Producto</th>
-                        <th>Producto</th>
+                        <th>id envio</th>
+                        <th>tipoProducto</th>
+                        <th>producto</th>
+                        <th>cantidad</th>
+                        <th>peso</th>
+                        <th>unidadMedida</th>
+                        <th>nombreCliente</th>
+                        <th>apellidoCliente</th>
+                        <th>docCliente</th>
+                        <th>correoCliente</th>
+                        <th>telefCliente</th>
+                        <th>celularCliente</th>
+                        <th>direccionEnvio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,6 +70,7 @@ echo "cheking for bd: " . $cnx->db;
                     foreach ($listPedido as $listaPedidos) {
                     ?>
                         <tr>
+                            <td><?php echo $listaPedidos["IDenvio"]; ?></td>
                             <td><?php echo $listaPedidos["tipoProducto"]; ?></td>
                             <td><?php echo $listaPedidos["producto"]; ?></td>
                             <td><?php echo $listaPedidos["cantidad"]; ?></td>
@@ -131,44 +135,82 @@ echo "cheking for bd: " . $cnx->db;
 
                             </td>-->
                             <td>
-                                <button type="button" class="btn btn-success editDesp" data-toggle="modal" data-target="#exampleModal">Asignar</button>
+                                <button type="button" class="btn btn-success btnAsign" data-toggle="modal" data-target="exampleModal">Asignar</button>
+                                
                             </td>
                         </tr>
                 </tbody>
             <?php } ?>
             </table>
         </fieldset>
-    </form>
+
                 <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editRoute" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Asignar Rutas a:</h5>
+                    <h5 class="modal-title">Asignar Rutas a:</h5>
+                    
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form method="post" action="#">
-                        <?php
-                        require_once('../Controller/controllerList.php');
-
-                        ?>
-                        <?php
-                        foreach ($listDriver as $listDrivers) {
-                        ?>
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text">
-                              <input type="checkbox" name="fooby[1][]" value="<?php echo $listDrivers["IDconduct"] ?>">
+                    <h4>Seleccion de conductor:</h4>
+                    <form method="post" action="../Controller/AddRoutes.php">
+                        <input type="text" name="codigoEnvio" id="codigoEnvio" hidden="">
+                         ##scroll a la derecha aqui##
+                        <section class="cards_">
+                            <?php
+                            require_once('../Controller/controllerList.php');
+                            ?>
+                            <?php
+                            foreach ($listDriver as $listDrivers) {
+                            ?>
+                            <div class="card w-50">
+                              <div class="card-body">
+                                <h5 class="card-title"><?php echo $listDrivers["nombres"] ."  ".$listDrivers["apellidos"] ?></h5>
+                                <p class="card-text"><?php echo $listDrivers["tipoDoc"].": ".  $listDrivers["numDoc"]?></p>
+                                <input type="checkbox" name="idconductor" value="<?php echo $listDrivers["IDconduct"] ?>">
+                                <!--<a href="#" class="btn btn-primary">Button</a>-->
+                              </div>
                             </div>
-                          </div>
-                          <label title="text"><?php echo $listDrivers["nombres"] ?></label>
-                        </div>
-                        <?php
-                        }
-                        ?>
+                            <?php
+                            }
+                            ?>
+                        </section>
+                        <h4>Seleccion de Vehiculo:</h4>
+                        ##scroll a la derecha aqui##
+                        <section class="cards_">
+                            <?php
+                            require_once('../Controller/controllerList.php');
+                            ?>
+                            <?php
+                            foreach ($listCar as $listCars) {
+                            ?>
+                            <div class="card w-50">
+                              <div class="card-body">
+                                <h5 class="card-title"><?php echo $listCars["tipoVehiculo"] ?></h5>
+                                <p class="card-text"><?php echo $listCars["marcaVehiculo"]." - ".$listCars["placaVehicular"] ?></p>
+                                <input type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
+                                <!--<a href="#" class="btn btn-primary">Button</a>-->
+                              </div>
+                            </div>
+                            <?php
+                            }
+                            ?>
+                        </section>
+                        <dl>
+                            <dt><label title="text">Hora Salida </label></dt>
+                            <dd><input tabindex="2" accesskey="p" name="horaSalida"  type="time" maxlength="20" id="horaSalida" /></dd>
+                        </dl>
+                        <dl>
+                            <dt><label title="text">Hora llegada </label></dt>
+                            <dd><input tabindex="2" accesskey="p" name="horaLlegada" type="time" maxlength="20" id="horaLlegada" /></dd>
+                        </dl>
+            <p>
+                <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+            </p>
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -179,9 +221,27 @@ echo "cheking for bd: " . $cnx->db;
               </div>
             </div>
     <hr>
+<script>
+     $(document).ready(function() {
+        $('.btnAsign').on('click', function() {
+        $('#editRoute').modal('show');
+
+        $tr = $(this).closest('tr');
+        var data = $tr.children('td').map(function() {
+            return $(this).text();
+        }).get();
+            console.log(data);
+            console.log(data[4]);
+            $('#codigoEnvio').val(data[0]);
+        });
+    });
+
+</script>
+
+
 
 <script type="text/javascript">
-$("input:checkbox").on('click', function() {
+/*$("input:checkbox").on('click', function() {
   var $box = $(this);
   if ($box.is(":checked")) {
     var group = "input:checkbox[name='" + $box.attr("name") + "']";
@@ -190,12 +250,12 @@ $("input:checkbox").on('click', function() {
   } else {
     $box.prop("checked", false);
   }
-});
+});*/
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
 
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
