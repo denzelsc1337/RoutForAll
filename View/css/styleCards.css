@@ -1,4 +1,125 @@
-.cards_{
-    height:300px;
+.cards_ {
+    max-height: 100%;
+    display: flex;
     overflow-x: auto;
 }
+
+html::-webkit-scrollbar,
+.cards_::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+html::-webkit-scrollbar-thumb,
+.cards_::-webkit-scrollbar-thumb {
+    background: #888888;
+    border-radius: 5px;
+}
+
+html::-webkit-scrollbar-corner,
+.cards_::-webkit-scrollbar-corner {
+    background: black;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+.cards_::-webkit-scrollbar-thumb:hover {
+    background: #3e3e3e;
+}
+
+.cards_ .cards_container {
+    min-width: 50%;
+    margin-right: 5px;
+}
+
+.cards_ .cards_container:last-child {
+    margin-right: 0px;
+}
+
+.cards_ .cards_body {
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding-left: 10px;
+    background: #bdbdbd;
+}
+
+.cards_ .cards_body .cards_title {
+    text-transform: capitalize;
+    font-weight: 900;
+    height: 45px;
+    margin-top: 3px;
+}
+
+.cards_ .cards_body .cards_text {
+    text-transform: uppercase;
+}
+
+.cards_ .cards_body .cards_text span {
+    font-weight: 500;
+}
+
+.cards_ .cards_body .cards_check {
+    margin-bottom: 10px;
+}
+
+
+/*
+.cards_ .cards_body .cards_check_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: #bdbdbd;
+    flex-shrink: 0;
+}
+
+.cards_ .cards_body .cards_check_box::after {
+    content: '\2714';
+    color: aqua;
+    font-size: 7px;
+}
+
+.cards_ .cards_body .cards_check+.cards_ .cards_body .cards_check_box {
+    background: blue;
+    border-color: blue;
+}
+
+*/
+
+.fa-user-check:before {
+    content: "\f4fc";
+}
+
+section {
+    display: flex;
+}
+
+section dt {
+    padding: 20px 0 10px 0;
+}
+
+section dl {
+    width: 50%;
+}
+
+section dl dd input {
+    width: 200px;
+}
+
+.right {
+    float: right;
+}
+
+
+/* TABLE */
+
+.table_ {
+    text-align: center;
+}
+
+
+/* END TABLE */

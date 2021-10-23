@@ -14,17 +14,25 @@ echo "testing";
  <head>
      <meta charset="utf-8">
      <title>Test</title>
+
+     <link rel="stylesheet" href="View/css/main.css">
  </head>
  <body>
-    <div>
-        <a href="#">Home</a>
-        <a href="#">Test</a>
-        <a href="config/connection.php">conx</a>
-        <a href="View/AddRoute.php">Routes</a>
-        <a href="#">Unnamed</a>
-        <a></a> 
+
+    <div class="header">
+        <nav class="nav">
+            <a class="inner-shadow active" href="#">Home</a>
+            <a class="outer-shadow hover-in-shadow" href="#">Test</a>
+            <a class="outer-shadow hover-in-shadow" href="config/connection.php">conx</a>
+            <a class="outer-shadow hover-in-shadow" href="View/AddRoute.php">Routes</a>
+            <a class="outer-shadow hover-in-shadow" href="#">Unnamed</a>
+            <a></a> 
+        </nav>
     </div>
+    <section>
     <div id="googleMap" style="height:100%;"></div>
+
+    </section>
  </body>
 </html>
  <script>

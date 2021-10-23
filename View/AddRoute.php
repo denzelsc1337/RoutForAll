@@ -12,10 +12,11 @@ echo "cheking for bd: " . $cnx->db;
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styleCards.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <title>Testeo</title>
 
 </head>
-<body bgcolor="#999999">
+<body>
     <!--<form name="login-form" id="login-form" method="post" action="../Controller/AddRoutes.php">
         <fieldset>
             <legend>Guardar ruta</legend>
@@ -44,7 +45,7 @@ echo "cheking for bd: " . $cnx->db;
             </p>
     </form>-->
             <strong>tabla de envios aqui</strong>
-            <table border="1px" class="table">
+            <table border="1px" class="table_">
                 <?php
                 require_once('../Controller/controllerList.php');
                 ?>
@@ -167,11 +168,17 @@ echo "cheking for bd: " . $cnx->db;
                             <?php
                             foreach ($listDriver as $listDrivers) {
                             ?>
-                            <div class="card w-50">
-                              <div class="card-body">
-                                <h5 class="card-title"><?php echo $listDrivers["nombres"] ."  ".$listDrivers["apellidos"] ?></h5>
-                                <p class="card-text"><?php echo $listDrivers["tipoDoc"].": ".  $listDrivers["numDoc"]?></p>
-                                <input type="checkbox" name="idconductor" value="<?php echo $listDrivers["IDconduct"] ?>">
+                            <div class="cards_container">
+                              <div class="cards_body">
+                                 
+                                <h5 class="cards_title"><?php echo $listDrivers["nombres"] ."  ".$listDrivers["apellidos"] ?></h5>
+                                <p class="cards_text"><span><?php echo $listDrivers["tipoDoc"]?>: </span>  <?php echo $listDrivers["numDoc"]?></p>
+
+                                
+                                <input class="cards_check" type="checkbox" name="idconductor" id="idconductor"  value="<?php echo $listDrivers["IDconduct"] ?>">
+                                
+                                <!-- <div class="cards_check_box"></div> -->
+                                
                                 <!--<a href="#" class="btn btn-primary">Button</a>-->
                               </div>
                             </div>
@@ -188,11 +195,11 @@ echo "cheking for bd: " . $cnx->db;
                             <?php
                             foreach ($listCar as $listCars) {
                             ?>
-                            <div class="card w-50">
-                              <div class="card-body">
-                                <h5 class="card-title"><?php echo $listCars["tipoVehiculo"] ?></h5>
-                                <p class="card-text"><?php echo $listCars["marcaVehiculo"]." - ".$listCars["placaVehicular"] ?></p>
-                                <input type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
+                            <div class="cards_container">
+                              <div class="cards_body">
+                                <h5 class="cards_title"><?php echo $listCars["tipoVehiculo"] ?></h5>
+                                <p class="cards_text"><?php echo $listCars["marcaVehiculo"]." - ".$listCars["placaVehicular"] ?></p>
+                                <input class="cards_check" type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
                                 <!--<a href="#" class="btn btn-primary">Button</a>-->
                               </div>
                             </div>
@@ -200,6 +207,7 @@ echo "cheking for bd: " . $cnx->db;
                             }
                             ?>
                         </section>
+                        <section>
                         <dl>
                             <dt><label title="text">Hora Salida </label></dt>
                             <dd><input tabindex="2" accesskey="p" name="horaSalida"  type="time" maxlength="20" id="horaSalida" /></dd>
@@ -208,8 +216,10 @@ echo "cheking for bd: " . $cnx->db;
                             <dt><label title="text">Hora llegada </label></dt>
                             <dd><input tabindex="2" accesskey="p" name="horaLlegada" type="time" maxlength="20" id="horaLlegada" /></dd>
                         </dl>
+                        </section>
+                        
             <p>
-                <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+                <button type="submit" class="btn btn-raised btn-info btn-sm right"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
             </p>
                     </form>
                   </div>

@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    /* display: flex; */
+    text-align: center;
+    justify-content: center;
+    /* font-size: 7em; */
+    /* color: cornsilk; */
+    /* font-weight: bolder; */
+    /* padding-bottom: 70px; */
+    /* text-transform: uppercase */
+    margin-top: 1rem;
+}
+
+
+/*  */
+
+.inner-shadow {
+    box-shadow: var(--inner-shadow);
+}
+
+.outer-shadow {
+    box-shadow: var(--outer-shadow);
+}
+
+.hover-in-shadow {
+    position: relative;
+    z-index: 1;
+}
+
+.hover-in-shadow:hover {
+    box-shadow: var(--outer-shadow-0);
+}
+
+.hover-in-shadow:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.hover-in-shadow:hover::after {
+    box-shadow: var(--inner-shadow);
+}
+
+
+/*  */
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--bk-color);
+    padding: 2rem;
+    text-align: center;
+    z-index: 1000;
+}
+
+.header .nav a {
+    padding: 10px 32px;
+    margin: 10px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+
+.header .nav a.active,
+.header .nav a:hover {
+    color: var(--color);
+}

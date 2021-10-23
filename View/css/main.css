@@ -1,0 +1,17 @@
+@import "../css/style.css";
+
+/*  */
+
+ :root {
+    /* COLORS */
+    --bk-color: #1c1c1c;
+    --color: #ffb400;
+    /* COLORS SHADOWS */
+    --shadow-1-1: #141414;
+    --shadow-1-2: #282828;
+    /* SHADOWS */
+    --outer-shadow: 3px 3px 3px var(--shadow-1-1), -3px -3px 3px var(--shadow-1-2);
+    --outer-shadow-0: 0 0 0 var(--shadow-1-1), 0 0 0 var(--shadow-1-2);
+    --inner-shadow: inset 3px 3px 3px var(--shadow-1-1), inset -3px -3px 3px var(--shadow-1-2);
+    --inner-shadow-0: inset 0 0 0 var(--shadow-1-1), inset 0 0 0 var(--shadow-1-2);
+}
