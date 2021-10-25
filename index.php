@@ -23,9 +23,9 @@ echo "testing";
         <nav class="nav">
             <a class="inner-shadow active" href="#">Home</a>
             <a class="outer-shadow hover-in-shadow" href="#">Test</a>
-            <a class="outer-shadow hover-in-shadow" href="config/connection.php">conx</a>
-            <a class="outer-shadow hover-in-shadow" href="View/AddRoute.php">Routes</a>
-            <a class="outer-shadow hover-in-shadow" href="#">Unnamed</a>
+            <a class="outer-shadow hover-in-shadow" href="View/Cliente/AddClientes.php">Add Clientes</a>
+            <a class="outer-shadow hover-in-shadow" href="View/AddRoute.php">Asignar Routes</a>
+            <a class="outer-shadow hover-in-shadow" href="View/Carga/AddCargas.php">Add Cargas</a>
             <a></a> 
         </nav>
     </div>

@@ -47,7 +47,7 @@ class User
 
 	function listarPedidos(){
 		try {
-		$sql = "SELECT *  FROM envios";
+		$sql = "SELECT *  FROM cargas";
 		$stmt = $this->db->prepare($sql);
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		$stmt->execute();
