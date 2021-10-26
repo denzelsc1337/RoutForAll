@@ -3,6 +3,7 @@
  <!DOCTYPE html>
  <html>
  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  	<meta charset="utf-8">
  	<title>Agregar Cargas</title>
  </head>
@@ -12,7 +13,9 @@
             <legend>Guardar</legend>
             <dl>
                 <dt><label title="codenvio">RUC</label></dt>
-                <dd><input tabindex="1" accesskey="u" name="numruc" type="text" maxlength="30" id="numruc" /></dd>
+                <dd>
+                    <input class="ruc" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc" onkeyup="getDetail(this.value)" maxlength="11" />
+                </dd>
             </dl>
             <dl>
                 <div class="form-group">
@@ -38,7 +41,7 @@
             </dl>
             <dl>
                 <dt><label title="razon">Razon Social</label></dt>
-                <dd><input tabindex="2" accesskey="p" name="razon" type="text" maxlength="20" id="razon" /></dd>
+                <dd><input class="another" tabindex="2" accesskey="p" name="razon" type="text" maxlength="20" id="razon" /></dd>
             </dl>
             <dl>
                 <dt><label title="text">Direccion</label></dt>
@@ -60,6 +63,29 @@
                 <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
             </p>
     </form>
- 
+ <script type="text/javascript">
+function getDetail(str){
+    $(".ruc").bind("input",function(){
+        if (this.value.length == this.maxLength) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var myObj = JSON.parse(this.response);
+                    document.getElementById("razon").value = myObj[0];
+                    console.log("testing ruc");
+                    document.getElementById("numruc").disabled =true;
+                    //$(this).next('.another').focus();
+                    //document.getElementById("numruc").value = myObj[1];
+                }else{
+                    //console.log("no data");
+                }
+            };
+            xmlhttp.open("GET", "getData.php?numruc="+str,true);
+            xmlhttp.send();
+
+        }
+    })
+};
+ </script>
  </body>
  </html>

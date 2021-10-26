@@ -48,6 +48,8 @@ celular char (9) not null
 
 select * from clientes;
 
+SELECT razonSocial FROM clientes WHERE RUC_cliente=20457845124;
+
 insert into clientes values (20457845124, "juridica", "arroyos sac","jr.junin 15","arroyoscontact@hotmail.com", 4512457, 963852741);
 insert into clientes values (10754811043, "natural-negocio","denzels sac","jr.junin 15","denzelcontact@hotmail.com", 4512457, 963852741);
 
