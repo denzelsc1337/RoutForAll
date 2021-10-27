@@ -12,7 +12,9 @@ if ($numruc !== "") {
   
     $row = mysqli_fetch_array($query);
   
-    $razonSocial = $row["razonSocial"];
+    if(isset($row['razonSocial'])){
+         $razonSocial = $row["razonSocial"];
+    }
 }
 // Store it in a array
 //$result = array("$first_name", "$last_name");
