@@ -130,16 +130,12 @@ section dl dd input {
     width: 200px;
 }
 
-.right {
-    float: right;
-}
-
 
 /* TABLE */
 
 .table_ {
     text-align: center;
-    font-size: 13px;
+    /* font-size: 13px; */
     margin: auto;
 }
 
