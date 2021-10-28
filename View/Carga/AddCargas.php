@@ -36,7 +36,8 @@
                             <label title="codenvio">RUC cliente</label>
                         </div>
                         <div class="input">
-                            <input class="ruc" autocomplete="off" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc" onkeyup="getDetail(this.value)" maxlength="11" />
+                            <!--onkeyup="getDetail(this.value)"-->
+                            <input class="ruc" autocomplete="off" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc"  maxlength="11" />
                         </div>
                     </div>
 
@@ -72,6 +73,7 @@
                     <dt>
                         <label>Direccion de Envio</label>
                     <dd>
+                        <label>Indique su direccion:</label>
                         <input tabindex="2" accesskey="p" name="direccionE" id="direccionE" type="text" maxlength="20" />
                     </dd>
                     </dt>
@@ -102,6 +104,42 @@
             })
         };
     </script>
-</body>
 
+    <script type="text/javascript">
+    $(".ruc").keyup("click blur keyup paste", function() {
+        var numruc = $("#numruc").val();
+            if (this.value.length == this.maxLength) {
+                $.ajax({
+                    type: "GET",
+                    url: "getData.php",
+                    cache: false,
+                    data: {
+                        numruc:numruc
+                    },
+                success: function(response){
+                    var result = JSON.parse(response);
+                    console.log(result);
+                    //document.getElementById("razon").value = result;
+                    //document.getElementById("numruc").readOnly = true;
+/*                    if (response==true) {
+                        var result = JSON.parse(response);
+                        console.log(result);
+                        document.getElementById("razon").value = result;
+                        document.getElementById("numruc").readOnly = true;
+                    }*/
+                    var r = confirm("La razon social es: '"+result+"'?");
+                        if (r == true) {
+                          document.getElementById("razon").value = result;
+                          document.getElementById("numruc").readOnly = true;
+                        } else {
+                          document.getElementById("numruc").readOnly = false;
+                        }
+                    return response;
+                }
+            });
+        }
+    });
+
+    </script>
+</body>
 </html>

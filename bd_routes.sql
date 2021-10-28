@@ -70,6 +70,11 @@ insert into cargas values (null,10754811043, "domestico", "lejias", 250, 400, "K
 
 select * from cargas;
 
+update cargas
+set rucCliente = 10754811043 
+where IDcargas = 3;
+
+
 create table rutas(
     IDruta INT auto_increment PRIMARY KEY NOT NULL,
     idenvio int not null,

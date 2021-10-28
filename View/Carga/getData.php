@@ -1,7 +1,7 @@
 <?php
   
 // Get the user id 
-$numruc = $_REQUEST['numruc'];
+$numruc = $_GET['numruc'];
   
 // Database connection
 $con = mysqli_connect("127.0.0.1", "root", "", "routforall");
@@ -18,7 +18,7 @@ if ($numruc !== "") {
 }
 // Store it in a array
 //$result = array("$first_name", "$last_name");
-$result = array("$razonSocial");
+$result = array($razonSocial);
 
 // Send in JSON encoded form
 $myJSON = json_encode($result);
