@@ -49,10 +49,11 @@ include_once('../config/connection.php');
     <div class="header">
         <nav class="navigation">
             <a class="inner-shadow active" href="../index.php">Home</a>
-            <a class="outer-shadow hover-in-shadow" href="#">Test</a>
-            <a class="outer-shadow hover-in-shadow" href="Cliente/AddClientes.php">Add Clientes</a>
+            
             <a class="outer-shadow hover-in-shadow" href="AddRoute.php">Asignar Routes</a>
+            <a class="outer-shadow hover-in-shadow" href="Cliente/AddClientes.php">Add Clientes</a>
             <a class="outer-shadow hover-in-shadow" href="Carga/AddCargas.php">Add Cargas</a>
+            <a class="outer-shadow hover-in-shadow" href="Vehiculo/AddVehiculos.php">Add Vehiculo</a>
             <a></a>
         </nav>
     </div>
