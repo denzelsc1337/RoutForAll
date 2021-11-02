@@ -25,10 +25,10 @@ include_once 'config/connection.php';
     <div class="header">
         <nav class="navigation">
             <a class="inner-shadow active" href="#">Home</a>
-            <a class="outer-shadow hover-in-shadow" href="View/AddRoute.php">Asignar Routes</a>
-            <a class="outer-shadow hover-in-shadow" href="View/Cliente/AddClientes.php">Add Clientes</a>
-            <a class="outer-shadow hover-in-shadow" href="View/Carga/AddCargas.php">Add Cargas</a>
-            <a class="outer-shadow hover-in-shadow" href="View/Vehiculo/AddVehiculos.php">Add Vehiculo</a>
+            <a class="outer-shadow hover-in-shadow" href="View/AddRoute.php">Asignar Rutas</a>
+            <a class="outer-shadow hover-in-shadow" href="View/Cliente/AddClientes.php">Agregar Clientes</a>
+            <a class="outer-shadow hover-in-shadow" href="View/Carga/AddCargas.php">Agregar Cargas</a>
+            <a class="outer-shadow hover-in-shadow" href="View/Vehiculo/AddVehiculos.php">Agregar Vehiculo</a>
         </nav>
     </div>
     <section class="sec_container">

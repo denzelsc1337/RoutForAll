@@ -29,12 +29,11 @@ class User
 			$stmt->bindParam(':horaSalida', $horaSalida);
 			$stmt->bindParam(':horaLlegada', $horaLlegada);
 
-			$stmt->execute([':idenvio' => $idenvio, 
+			$stmt->execute(array(':idenvio' => $idenvio, 
 							':idvehiculo' => $idvehiculo,
 							':idconductor' => $idconductor,
 							':horaSalida' => $horaSalida,
-							':horaLlegada' => $horaLlegada,
-							 ]);
+							':horaLlegada' => $horaLlegada));
 ?>
 		<META http-equiv="Refresh" content = "0.3 ; URL =../View/AddRoute.php">
 <?php 

@@ -3,6 +3,7 @@ include_once('../config/connection.php');
 // $cnx = new Conexion();
 // $cadena = $cnx->getConexion();
 // echo "cheking for bd: " . $cnx->db;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,9 +52,9 @@ include_once('../config/connection.php');
             <a class="inner-shadow active" href="../index.php">Home</a>
             
             <a class="outer-shadow hover-in-shadow" href="AddRoute.php">Asignar Routes</a>
-            <a class="outer-shadow hover-in-shadow" href="Cliente/AddClientes.php">Add Clientes</a>
-            <a class="outer-shadow hover-in-shadow" href="Carga/AddCargas.php">Add Cargas</a>
-            <a class="outer-shadow hover-in-shadow" href="Vehiculo/AddVehiculos.php">Add Vehiculo</a>
+            <a class="outer-shadow hover-in-shadow" href="Cliente/AddClientes.php">Agregar Clientes</a>
+            <a class="outer-shadow hover-in-shadow" href="Carga/AddCargas.php">Agregar Cargas</a>
+            <a class="outer-shadow hover-in-shadow" href="Vehiculo/AddVehiculos.php">Agregar Vehiculo</a>
             <a></a>
         </nav>
     </div>
@@ -61,6 +62,10 @@ include_once('../config/connection.php');
 
     <section class="sec_container">
         <strong>tabla de envios aqui</strong>
+        <br>
+        <?php  
+        echo 'Versión actual de PHP: ' . phpversion();
+        ?>
         <table border="1px" class="table_">
             <?php
             require_once('../Controller/controllerList.php');
@@ -180,7 +185,7 @@ include_once('../config/connection.php');
                     <h4>Seleccion de conductor:</h4>
                     <form method="post" action="../Controller/AddRoutes.php">
                         <input type="text" name="codigoEnvio" id="codigoEnvio" hidden="">
-                        ##scroll a la derecha aqui##
+                        
                         <section class="cards_">
                             <?php
                             require_once('../Controller/controllerList.php');
@@ -207,7 +212,6 @@ include_once('../config/connection.php');
                             ?>
                         </section>
                         <h4>Seleccion de Vehiculo:</h4>
-                        ##scroll a la derecha aqui##
                         <section class="cards_">
                             <?php
                             require_once('../Controller/controllerList.php');
