@@ -136,13 +136,25 @@ section dl dd input {
 .table_ {
     text-align: center;
     /* font-size: 13px; */
-    margin: auto;
+    margin: 30px auto;
 }
 
 .table_ th {
     background: black;
     color: #fff;
+    padding: 5px 10px;
     text-transform: capitalize;
+}
+
+.table_ td {
+    text-transform: capitalize;
+    padding: 0 10px;
+}
+
+.table_ td:nth-child(1),
+.table_ td:nth-child(6),
+.table_ td:nth-child(7) {
+    font-weight: 600;
 }
 
 
