@@ -20,7 +20,6 @@
 
         </nav>
     </div>
-<<<<<<< HEAD
     <section class="sec_container">
         <form name="login-form" id="login-form" method="post" action="../../Controller/AddVehicles.php">
 
@@ -141,6 +140,3 @@
 </body>
 
 </html>
-    <section class="sec_container">
-    </section>
-</body>

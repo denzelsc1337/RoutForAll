@@ -1,0 +1,71 @@
+form {
+    width: 100%;
+}
+
+.fieldset dt {
+    padding: 20px 0 10px 0;
+}
+
+
+/*  */
+
+.sec_ {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.sec_:nth-child(4) .sec_1 .input input {
+    width: 500px;
+}
+
+.sec_:nth-child(3) {
+    padding: 0 0 0 20px;
+}
+
+
+/*  */
+
+.sec_ .sec_1 {
+    width: 50%;
+    height: 70px;
+}
+
+.sec_ .sec_1 .label {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.sec_ .sec_1 .input {
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.sec_ .sec_1 .input input {
+    width: 350px;
+    height: 25px;
+    padding-left: 5px;
+}
+
+
+/*  */
+
+
+/*  */
+
+.sec_ .form-group {
+    padding: 0 20px;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.sec_ .form-group .radio {
+    margin-bottom: 7px;
+}
+
+.sec_ .form-group .radio:last-child {
+    margin-bottom: 0px;
+}
+
+
+/*  */

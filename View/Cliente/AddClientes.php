@@ -8,13 +8,7 @@
     <title>Agregar Clientes</title>
 
     <link rel="stylesheet" href="../css/main.css">
-
-    <style>
-        .sec_:nth-child(3) {
-            padding: 0 0 0 20px;
-        }
-    </style>
-
+    
 </head>
 
 <body>
