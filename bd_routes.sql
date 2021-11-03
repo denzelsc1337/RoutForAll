@@ -23,13 +23,13 @@ create table vehiculos(
 IDvehiculo int auto_increment primary key not null,
 tipoVehiculo varchar(150) not null,
 marcaVehiculo varchar(150) not null,
-año varchar(50) not null,
+anio varchar(50) not null,
 placaVehicular char(7) not null,
 kilometraje varchar(100) not null,
-capacidadCarga bigint (20) not null,
-largo bigint (20) not null,
-ancho bigint (20) not null,
-alto bigint (20) not null
+capacidadCarga bigint (150) not null,
+largo varchar (150) not null,
+ancho varchar (150) not null,
+alto varchar (150) not null
 );
 
 

@@ -44,6 +44,50 @@
                     </div>
                 </section>
                 <section class="sec_">
+                <label title="razon">capacidad de carga</label>
+                    <div class="form-group">
+                        <script>
+                            function displayRadioValue(tipo) {
+                                //document.getElementById('text').value = tipo; - mandar a un txt
+                                console.log(tipo);
+                            }
+                        </script>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="500kg - 2,5T" onclick="displayRadioValue(this.value)" checked="checked" required>
+                                <i class=" far fa-check-circle fa-fw"></i> &nbsp; Ligeros
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="2,5T - 3,5T"  onclick="displayRadioValue(this.value)" required>
+                                <i class=" far fa-times-circle fa-fw"></i> &nbsp;  Livianos
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="3,5T - 4,5T"  onclick="displayRadioValue(this.value)" require>
+                                <i class="far fa-times-cicle fa-fw" ></i>&nbsp; Semilivianos
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="4,5T - 5,5T"  onclick="displayRadioValue(this.value)" require>
+                                <i class="far fa-times-cicle fa-fw" ></i>&nbsp; Medianos
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="7,5T - 9T"  onclick="displayRadioValue(this.value)" require>
+                                <i class="far fa-times-cicle fa-fw" ></i>&nbsp; Pesados
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="sec_">
                     <div class="sec_1">
 
                         <div class="label">
@@ -60,22 +104,31 @@
                             <label title="text">Kilometraje</label>
                         </div>
                         <script>
-                            function updateTextInput(val) {
-                                document.getElementById('textInput').value=val; 
+                            function getkilometraje(val) {
+                                var txt = document.getElementById('KM').value=val; 
+                                console.log(txt.value);
                             }
+                            function getLargo(val) {
+                                document.getElementById('largo').value=val; 
+                            }
+                            function getAncho(val) {
+                                document.getElementById('ancho').value=val; 
+                            }
+                            function getAlto(val) {
+                                document.getElementById('alto').value=val; 
+                            }
+                            function addGuion(txt) {
+                                let ele = document.getElementById(txt.id);
+                                ele = ele.value.split('-').join('');
+
+                                let finalVal = ele.match(/.{1,3}/g).join('-');
+                                document.getElementById(txt.id).value = finalVal;
+                            }
+
                         </script>
                         <div class="input">
-                            <input  name="Kilometraje" id="Kilometraje" type="range" list="tickmarks" min="0" max="100"  onchange="updateTextInput(this.value+' KM');" />
-                            <input type="text" id="textInput" value="">
-                        </div>
-                    </div>
-
-                    <div class="sec_1">
-                        <div class="label">
-                            <label title="text">Capacidad de carga</label>
-                        </div>
-                        <div class="input">
-                            <input  name="capacidadCarga" id="capacidadCarga" type="range"  />
+                            <input  type="range" list="tickmarks" min="0" max="100"  onchange="getkilometraje(this.value+' KM');" />
+                            <input type="text" placeholder="deslice la barra" name="KM" id="KM">
                         </div>
                     </div>
                     <div class="sec_1">
@@ -83,17 +136,20 @@
                             <label title="text">Largo</label>
                         </div>
                         <div class="input">
-                            <input  name="capacidadCarga" id="largo" type="range"  />
+                            <input type="range" list="tickmarks" min="10" max="100"  onchange="getLargo(this.value+' M');"  />
+                            <input type="text" placeholder="deslice la barra" name="largo" id="largo">
                         </div>
                     </div>
                 </section>
                 <section  class="sec_">
-                <div class="sec_1">
+                    <div class="sec_1">
                         <div class="label">
                             <label title="text">Ancho</label>
                         </div>
                         <div class="input">
-                            <input  name="capacidadCarga" id="ancho" type="range"  />
+                            <input type="range" list="tickmarks" min="10" max="100"  onchange="getAncho(this.value+' M');"  />
+                            <br>
+                            <input type="text" placeholder="deslice la barra" name="ancho" id="ancho">
                         </div>
                     </div>
                     <div class="sec_1">
@@ -101,7 +157,9 @@
                             <label title="text">Alto</label>
                         </div>
                         <div class="input">
-                            <input  name="capacidadCarga" id="alto" type="range"  />
+                            <input type="range" list="tickmarks" min="10" max="100"  onchange="getAlto(this.value+' M');"  />
+                            <br>
+                            <input type="text" placeholder="deslice la barra" name="alto" id="alto">
                         </div>
                     </div>
                 </section>
@@ -111,24 +169,21 @@
                             <label title="text">Año</label>
                         </div>
                         <div class="input">
-                            <input name="año" type="date" id="año" />
-                        </div>
-                        <div class="label">
-                            <label title="text">Placa Vehicular</label>
-                        </div>
-                        <div class="input">
-                            <input name="placaVehicular" id="placaVehicular" type="text"  />
-                        </div>
-                    </div>
-                    <div class="sec_1">
-                        <div class="label">
-                            <label title="text">Kilometraje</label>
-                        </div>
-                        <div class="input">
-                            <input tabindex="2" accesskey="p" name="celular" type="text" maxlength="20" id="celular" />
+                            <input name="anio" type="date" id="anio" />
                         </div>
                     </div>
                 </section>
+                <section class="sec_">
+                    <div class="sec_1">
+                        <div class="label">
+                                <label title="text">Placa Vehicular</label>
+                        </div>
+                        <div class="input">
+                            <input name="placaVehicular" id="placaVehicular" type="text" maxlength="7" style="text-transform:uppercase;"  onkeyup="addGuion(this)"  />
+                        </div>
+                    </div>
+                </section>
+             
 
                 <button type="submit" class="btn btn-success"><i class="far fa-save"></i>GUARDAR</button>
 
