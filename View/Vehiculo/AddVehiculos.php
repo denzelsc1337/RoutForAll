@@ -44,7 +44,19 @@
                     </div>
                 </section>
                 <section class="sec_">
-                <label title="razon">capacidad de carga</label>
+                    <div class="sec_1">
+
+                        <div class="label">
+                            <label title="text">Capacidad Carga</label>
+                        </div>
+                        <div class="input">
+                            <input  name="capacidadCarga" type="text" maxlength="20" id="capacidadCarga" />
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="sec_">
+                <label title="razon">Unidad Medida</label>
                     <div class="form-group">
                         <script>
                             function displayRadioValue(tipo) {
@@ -55,32 +67,14 @@
 
                         <div class="radio">
                             <label>
-                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="500kg - 2,5T" onclick="displayRadioValue(this.value)" checked="checked" required>
-                                <i class=" far fa-check-circle fa-fw"></i> &nbsp; Ligeros
+                                <input type="radio" id="unidadMedidaCarga" name="unidadMedidaCarga" value="KG" onclick="displayRadioValue(this.value)" checked="checked" required>
+                                <i class=" far fa-check-circle fa-fw"></i> &nbsp; KG
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="2,5T - 3,5T"  onclick="displayRadioValue(this.value)" required>
-                                <i class=" far fa-times-circle fa-fw"></i> &nbsp;  Livianos
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="3,5T - 4,5T"  onclick="displayRadioValue(this.value)" require>
-                                <i class="far fa-times-cicle fa-fw" ></i>&nbsp; Semilivianos
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="4,5T - 5,5T"  onclick="displayRadioValue(this.value)" require>
-                                <i class="far fa-times-cicle fa-fw" ></i>&nbsp; Medianos
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" id="capacidadCarga" name="capacidadCarga" value="7,5T - 9T"  onclick="displayRadioValue(this.value)" require>
-                                <i class="far fa-times-cicle fa-fw" ></i>&nbsp; Pesados
+                                <input type="radio" id="unidadMedidaCarga" name="unidadMedidaCarga" value="TL"  onclick="displayRadioValue(this.value)" required>
+                                <i class=" far fa-times-circle fa-fw"></i> &nbsp;  Tonelada
                             </label>
                         </div>
                     </div>

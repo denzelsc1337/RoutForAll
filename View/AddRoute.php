@@ -139,7 +139,7 @@ include_once('../config/connection.php');
 
                                         console.log('your position is:');
                                         console.log('Latitude : ' + crdL.latitude);
-                                        document.getElementById("latid").innerHTML = crdL.latitude;
+                                        //document.getElementById("latid").innerHTML = crdL.latitude;
 
                                         console.log('Longitude: ' + _crdL.longitude);
                                         document.getElementById("long").innerHTML = _crdL.longitude;
@@ -189,6 +189,8 @@ include_once('../config/connection.php');
                     <h4>Seleccion de conductor:</h4>
                     <form method="post" action="../Controller/AddRoutes.php">
                         <input type="text" name="codigoEnvio" id="codigoEnvio" hidden="">
+                        <input name="peso" id="peso">
+                        <input name="medida" id="medida">
                         
                         <section class="cards_">
                             <?php
@@ -217,6 +219,7 @@ include_once('../config/connection.php');
                         </section>
                         <h4>Seleccion de Vehiculo:</h4>
                         <section class="cards_">
+                        
                             <?php
                             require_once('../Controller/controllerList.php');
                             ?>
@@ -227,10 +230,17 @@ include_once('../config/connection.php');
                                     <div class="cards_body">
                                         <h5 class="cards_title"><?php echo $listCars["tipoVehiculo"] ?></h5>
                                         <p class="cards_text"><?php echo $listCars["marcaVehiculo"] . " - " . $listCars["placaVehicular"] ?></p>
+                                        <input type="text" id="pesoNeto" name="pesoNeto"value="<?php echo $listCars["capacidadCarga"]; ?>"></input>
+
+                                        <p class="" id="uMCarga" name="uMCarga"><?php echo $listCars["unidadMedidaCarga"] ?></p>
                                         <input class="cards_check" type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
                                         <!--<a href="#" class="btn btn-primary">Button</a>-->
                                     </div>
                                 </div>
+                                <?php
+                                $value = $listCars["capacidadCarga"];
+                                
+                                ?>
                             <?php
                             }
                             ?>
@@ -269,8 +279,26 @@ include_once('../config/connection.php');
                     return $(this).text();
                 }).get();
                 console.log(data);
-                console.log(data[4]);
                 $('#codigoEnvio').val(data[0]);
+                $('#peso').val(data[4]);
+
+
+                var str1= $("#peso");
+                console.log(str1.val());
+
+
+                if (str1.val() <= 1000) {
+                    console.log("peso aceptado");
+                }else{
+                    console.log("peso demasiado alto para este vehiculo");
+                }
+                
+                $('#medida').val(data[5]);
+
+                var str2=$('#pesoNeto').val();
+                console.log(str2);
+
+                
             });
         });
     </script>

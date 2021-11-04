@@ -34,13 +34,13 @@ class Vehiculo
 		}
 	}
 
-	function agregarCamion($tipoVehiculo,$marcaVehiculo,$anio,$placaVehicular,$kilometraje,$capacidadCarga, $largo, $ancho, $alto){
+	function agregarCamion($tipoVehiculo,$marcaVehiculo,$anio,$placaVehicular,$kilometraje,$capacidadCarga,$unidadMedida, $largo, $ancho, $alto){
 		/*		include_once '../config/connection.php';
 				$cnx = new Conexion();
 				$cn = $cnx->abrirConexion();*/
 				try {
-					$sql = "INSERT INTO vehiculos (IDvehiculo,tipoVehiculo, marcaVehiculo, anio, placaVehicular,kilometraje,capacidadCarga,largo,ancho,alto) 
-											    VALUES (null,:tipoVehiculo,:marcaVehiculo, :anio, :placaVehicular,:kilometraje,:capacidadCarga,:largo,:ancho,:alto);";
+					$sql = "INSERT INTO vehiculos (IDvehiculo,tipoVehiculo, marcaVehiculo, anio, placaVehicular,kilometraje,capacidadCarga,unidadMedidaCarga,largo,ancho,alto) 
+											    VALUES (null,:tipoVehiculo,:marcaVehiculo, :anio, :placaVehicular,:kilometraje,:capacidadCarga,:unidadMedidaCarga,:largo,:ancho,:alto);";
 					$stmt = $this->db->prepare($sql);
 					$stmt->bindParam(':tipoVehiculo', $tipoVehiculo);
 					$stmt->bindParam(':marcaVehiculo', $marcaVehiculo);
@@ -48,6 +48,7 @@ class Vehiculo
 					$stmt->bindParam(':placaVehicular', $placaVehicular);
 					$stmt->bindParam(':kilometraje', $kilometraje);
 					$stmt->bindParam(':capacidadCarga',$capacidadCarga);
+					$stmt->bindParam(':unidadMedidaCarga',$unidadMedida);
 					$stmt->bindParam(':largo',$largo);
 					$stmt->bindParam(':ancho',$ancho);
 					$stmt->bindParam(':alto',$alto);
@@ -58,6 +59,7 @@ class Vehiculo
 									':placaVehicular' => $placaVehicular,
 									':kilometraje' => $kilometraje,
 									':capacidadCarga'=>$capacidadCarga,
+									'unidadMedidaCarga' =>$unidadMedida,
 									':largo'=> $largo,
 									':ancho'=>$ancho,
 									':alto'=>$alto)
