@@ -17,20 +17,28 @@ include_once 'config/connection.php';
     <title>Test</title>
 
     <link rel="stylesheet" href="View/css/main.css">
-    
+
+    <!--  -->
+    <!-- <link rel="stylesheet" href="css/corona/app.0d92b70a.css">
+    <link rel="stylesheet" href="css/corona/chunk-4ab62850.48f556ca.css">
+    <link rel="stylesheet" href="css/corona/chunk-162ef2da.0e433876.css">
+    <link rel="stylesheet" href="css/corona/chunk-vendors.0dbf83be.css"> -->
+    <!--  -->
+
 </head>
 
 <body>
 
     <div class="header">
         <nav class="navigation">
-            <a class="inner-shadow active" href="#">Home</a>
-            <a class="outer-shadow hover-in-shadow" href="View/AddRoute.php">Asignar Rutas</a>
-            <a class="outer-shadow hover-in-shadow" href="View/Cliente/AddClientes.php">Agregar Clientes</a>
-            <a class="outer-shadow hover-in-shadow" href="View/Carga/AddCargas.php">Agregar Cargas</a>
-            <a class="outer-shadow hover-in-shadow" href="View/Vehiculo/AddVehiculos.php">Agregar Vehiculo</a>
+            <a class="a_cont" href="index.php">Home</a>
+            <a class="a_cont" href="View/AddRoute.php">Asignar Rutas</a>
+            <a class="a_cont" href="View/Cliente/AddClientes.php">Agregar Clientes</a>
+            <a class="a_cont" href="View/Carga/AddCargas.php">Agregar Cargas</a>
+            <a class="a_cont" href="View/Vehiculo/AddVehiculos.php">Agregar Vehiculo</a>
         </nav>
     </div>
+
     <section class="sec_container">
         <div id="googleMap" style="width:100%;height:900px;"></div>
     </section>
@@ -47,3 +55,7 @@ include_once 'config/connection.php';
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFjupaAAf9ne0JlXq-B48RHwppD7LDDA&callback=theMap"></script>
+
+<!--  -->
+<script src="View/js/test.js"></script>
+<!--  -->

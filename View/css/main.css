@@ -1,34 +1,75 @@
-    @import "../css/style.css";
-    @import "../css/cliente.css";
-    @import "../css/styleCards.css";
-    /*  */
-    
-     :root {
-        /* COLORS */
-        --bk-color: #1c1c1c;
-        --color: #ffb400;
-        /* COLORS SHADOWS */
-        --shadow-1-1: #141414;
-        --shadow-1-2: #282828;
-        /* SHADOWS */
-        --outer-shadow: 3px 3px 3px var(--shadow-1-1), -3px -3px 3px var(--shadow-1-2);
-        --outer-shadow-0: 0 0 0 var(--shadow-1-1), 0 0 0 var(--shadow-1-2);
-        --inner-shadow: inset 3px 3px 3px var(--shadow-1-1), inset -3px -3px 3px var(--shadow-1-2);
-        --inner-shadow-0: inset 0 0 0 var(--shadow-1-1), inset 0 0 0 var(--shadow-1-2);
-    }
-    /*  */
-    
-    html,
-    body {
-        font-family: none;
-        line-height: 1.19 !important;
-        background-color: #2e2f32 !important;
-    }
-    
-    .table td:last-child {
-        padding: 0;
-    }
-    
-    .btn {
-        padding: 7px 10px !important;
-    }
+@import "../css/style.css";
+@import "../css/cliente.css";
+@import "../css/styleCards.css";
+
+/*  */
+
+@font-face {
+    font-family: Glitch;
+    src: url(../fonts/CFGlitchCity-Regular.ttf);
+}
+
+@font-face {
+    font-family: Gagalin;
+    src: url(../fonts/Gagalin-Regular.ttf);
+}
+
+@font-face {
+    font-family: Blogger;
+    src: url(../fonts/blogger-sans.medium.ttf);
+}
+
+@font-face {
+    font-family: Drawing;
+    src: url(../fonts/Drawing-Rainbow.ttf);
+}
+
+@font-face {
+    font-family: DoodleItalic;
+    src: url(../fonts/DoodleSketchDemoItalic.ttf);
+}
+
+@font-face {
+    font-family: DoodleRegular;
+    src: url(../fonts/DoodleSketchDemoRegular.ttf);
+}
+
+@font-face {
+    font-family: Crayon;
+    src: url(../fonts/OneCrayon.ttf);
+}
+
+
+/*  */
+
+:root {
+    /* COLORS */
+    --bk-color: #1c1c1c;
+    --color: #ffb400;
+    /* COLORS SHADOWS */
+    --shadow-1-1: #141414;
+    --shadow-1-2: #282828;
+    /* SHADOWS */
+    --outer-shadow: 3px 3px 3px var(--shadow-1-1), -3px -3px 3px var(--shadow-1-2);
+    --outer-shadow-0: 0 0 0 var(--shadow-1-1), 0 0 0 var(--shadow-1-2);
+    --inner-shadow: inset 3px 3px 3px var(--shadow-1-1), inset -3px -3px 3px var(--shadow-1-2);
+    --inner-shadow-0: inset 0 0 0 var(--shadow-1-1), inset 0 0 0 var(--shadow-1-2);
+}
+
+
+/*  */
+
+html,
+body {
+    font-family: Blogger !important;
+    line-height: 1.19 !important;
+    background-color: #2e2f32 !important;
+}
+
+.table td:last-child {
+    padding: 0;
+}
+
+.btn {
+    padding: 7px 10px !important;
+}

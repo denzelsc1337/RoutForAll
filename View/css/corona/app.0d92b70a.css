@@ -14202,7 +14202,8 @@ input:focus {
     outline: none
 }
 
-@font-face {
+
+/* @font-face {
     font-family: Assistant-light;
     src: url(../fonts/Assistant-Light.9aad344c.eot);
     src: url(../fonts/Assistant-Light.699a6b5f.woff2) format("woff2"), url(../fonts/Assistant-Light.ebfe4d32.woff) format("woff"), url(../fonts/Assistant-Light.83bbee90.ttf) format("truetype")
@@ -14224,7 +14225,7 @@ input:focus {
     font-family: Assistant-bold;
     src: url(../fonts/Assistant-Bold.8bcc276f.eot);
     src: url(../fonts/Assistant-Bold.5c65779e.woff2) format("woff2"), url(../fonts/Assistant-Bold.02c5fc67.woff) format("woff"), url(../fonts/Assistant-Bold.48b43ed4.ttf) format("truetype")
-}
+} */
 
 .text-twitter {
     color: #2caae1

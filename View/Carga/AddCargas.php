@@ -16,8 +16,8 @@
 
     <div class="header">
         <nav class="navigation">
-            <a class="inner-shadow active" href="../../index.php">Home</a>
-            <a class="outer-shadow hover-in-shadow" href="../AddRoute.php">Asignar Routes</a>
+            <a class="a_cont" href="../../index.php">Home</a>
+            <a class="a_cont" href="../AddRoute.php">Asignar Routes</a>
             <?php include("../../View/Header/mainHeader.php"); ?>
         </nav>
     </div>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="input">
                             <!--onkeyup="getDetail(this.value)"-->
-                            <input class="ruc" autocomplete="off" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc"  maxlength="11" />
+                            <input class="ruc" autocomplete="off" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc" maxlength="11" />
                         </div>
                     </div>
 
@@ -103,40 +103,43 @@
     </script>
 
     <script type="text/javascript">
-    $(".ruc").keyup("click blur keyup paste", function() {
-        var numruc = $("#numruc").val();
+        $(".ruc").keyup("click blur keyup paste", function() {
+            var numruc = $("#numruc").val();
             if (this.value.length == this.maxLength) {
                 $.ajax({
                     type: "GET",
                     url: "getData.php",
                     cache: false,
                     data: {
-                        numruc:numruc
+                        numruc: numruc
                     },
-                success: function(response){
-                    var result = JSON.parse(response);
-                    console.log(result);
-                    //document.getElementById("razon").value = result;
-                    //document.getElementById("numruc").readOnly = true;
-/*                    if (response==true) {
+                    success: function(response) {
                         var result = JSON.parse(response);
                         console.log(result);
-                        document.getElementById("razon").value = result;
-                        document.getElementById("numruc").readOnly = true;
-                    }*/
-                    var r = confirm("La razon social es: '"+result+"'?");
+                        //document.getElementById("razon").value = result;
+                        //document.getElementById("numruc").readOnly = true;
+                        /*                    if (response==true) {
+                                                var result = JSON.parse(response);
+                                                console.log(result);
+                                                document.getElementById("razon").value = result;
+                                                document.getElementById("numruc").readOnly = true;
+                                            }*/
+                        var r = confirm("La razon social es: '" + result + "'?");
                         if (r == true) {
-                          document.getElementById("razon").value = result;
-                          document.getElementById("numruc").readOnly = true;
+                            document.getElementById("razon").value = result;
+                            document.getElementById("numruc").readOnly = true;
                         } else {
-                          document.getElementById("numruc").readOnly = false;
+                            document.getElementById("numruc").readOnly = false;
                         }
-                    return response;
-                }
-            });
-        }
-    });
-
+                        return response;
+                    }
+                });
+            }
+        });
     </script>
+    <!--  -->
+    <script src="../js/test.js"></script>
+    <!--  -->
 </body>
+
 </html>
