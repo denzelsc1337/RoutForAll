@@ -2,40 +2,40 @@ form {
     width: 100%;
 }
 
-.fieldset dt {
-    padding: 20px 0 10px 0;
+.sec_container form fieldset .sec_:last-child {
+    padding: 0;
 }
 
 
 /*  */
 
-.sec_ {
+.sec_container form fieldset .sec_ {
     padding: 20px;
 }
 
-.sec_:nth-child(4) .sec_1 .input input {
+.sec_container form fieldset .sec_:nth-child(4) .sec_1 .input input {
     width: 500px;
 }
 
 
 /*  */
 
-.sec_ .sec_1 {
+.sec_container form fieldset .sec_ .sec_1 {
     width: 50%;
     height: 70px;
 }
 
-.sec_ .sec_1 .label {
+.sec_container form fieldset .sec_ .sec_1 .label {
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.sec_ .sec_1 .input {
+.sec_container form fieldset .sec_ .sec_1 .input {
     font-weight: 600;
     margin-left: 10px;
 }
 
-.sec_ .sec_1 .input input {
+.sec_container form fieldset .sec_ .sec_1 .input input {
     width: 350px;
     height: 25px;
     padding-left: 5px;
@@ -47,17 +47,17 @@ form {
 
 /*  */
 
-.sec_ .form-group {
+.sec_container form fieldset .sec_ .form-group {
     padding: 0 20px;
     font-size: 17px;
     text-transform: capitalize;
 }
 
-.sec_ .form-group .radio {
+.sec_container form fieldset .sec_ .form-group .radio {
     margin-bottom: 7px;
 }
 
-.sec_ .form-group .radio:last-child {
+.sec_container form fieldset .sec_ .form-group .radio:last-child {
     margin-bottom: 0px;
 }
 

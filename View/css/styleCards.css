@@ -113,10 +113,6 @@ html::-webkit-scrollbar-thumb:hover,
     content: "\f4fc";
 }
 
-section {
-    display: flex;
-}
-
 section dt {
     padding: 20px 0 10px 0;
 }
@@ -133,16 +129,29 @@ section dl dd input {
 
 /* TABLE */
 
+.table {
+    margin-top: 10px !important;
+    border-radius: 10px;
+}
+
 .table_ {
     text-align: center;
-    /* font-size: 13px; */
     margin: auto;
+    text-transform: capitalize;
+    /* background-color: #191c20; */
+    background-color: #565656;
 }
 
 .table_ th {
-    background: black;
+    font-weight: 700 !important;
     color: #fff;
     text-transform: capitalize;
+}
+
+.table_ tr td:nth-child(1),
+.table_ tr td:nth-child(6),
+.table_ tr td:nth-child(7) {
+    font-weight: 700;
 }
 
 
