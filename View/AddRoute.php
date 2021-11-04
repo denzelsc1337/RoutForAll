@@ -53,12 +53,12 @@ include_once('../config/connection.php');
 
     <div class="header">
         <nav class="navigation">
-            <a class="inner-shadow active" href="../index.php">Home</a>
-            
-            <a class="outer-shadow hover-in-shadow" href="AddRoute.php">Asignar Routes</a>
-            <a class="outer-shadow hover-in-shadow" href="Cliente/AddClientes.php">Agregar Clientes</a>
-            <a class="outer-shadow hover-in-shadow" href="Carga/AddCargas.php">Agregar Cargas</a>
-            <a class="outer-shadow hover-in-shadow" href="Vehiculo/AddVehiculos.php">Agregar Vehiculo</a>
+            <a class="a_cont" href="../index.php">Home</a>
+
+            <a class="a_cont" href="AddRoute.php">Asignar Routes</a>
+            <a class="a_cont" href="Cliente/AddClientes.php">Agregar Clientes</a>
+            <a class="a_cont" href="Carga/AddCargas.php">Agregar Cargas</a>
+            <a class="a_cont" href="Vehiculo/AddVehiculos.php">Agregar Vehiculo</a>
             <a></a>
         </nav>
     </div>
@@ -67,10 +67,10 @@ include_once('../config/connection.php');
     <section class="sec_container">
         <strong>tabla de envios aqui</strong>
         <br>
-        <?php  
+        <?php
         echo 'Versión actual de PHP: ' . phpversion();
         ?>
-        <table  class="table table_ b-table">
+        <table class="table table_ b-table">
             <?php
             require_once('../Controller/controllerList.php');
             ?>
@@ -191,7 +191,7 @@ include_once('../config/connection.php');
                         <input type="text" name="codigoEnvio" id="codigoEnvio" hidden="">
                         <input name="peso" id="peso">
                         <input name="medida" id="medida">
-                        
+
                         <section class="cards_">
                             <?php
                             require_once('../Controller/controllerList.php');
@@ -219,7 +219,7 @@ include_once('../config/connection.php');
                         </section>
                         <h4>Seleccion de Vehiculo:</h4>
                         <section class="cards_">
-                        
+
                             <?php
                             require_once('../Controller/controllerList.php');
                             ?>
@@ -230,7 +230,7 @@ include_once('../config/connection.php');
                                     <div class="cards_body">
                                         <h5 class="cards_title"><?php echo $listCars["tipoVehiculo"] ?></h5>
                                         <p class="cards_text"><?php echo $listCars["marcaVehiculo"] . " - " . $listCars["placaVehicular"] ?></p>
-                                        <input type="text" id="pesoNeto" name="pesoNeto"value="<?php echo $listCars["capacidadCarga"]; ?>"></input>
+                                        <input type="text" id="pesoNeto" name="pesoNeto" value="<?php echo $listCars["capacidadCarga"]; ?>"></input>
 
                                         <p class="" id="uMCarga" name="uMCarga"><?php echo $listCars["unidadMedidaCarga"] ?></p>
                                         <input class="cards_check" type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
@@ -239,7 +239,7 @@ include_once('../config/connection.php');
                                 </div>
                                 <?php
                                 $value = $listCars["capacidadCarga"];
-                                
+
                                 ?>
                             <?php
                             }
@@ -283,22 +283,22 @@ include_once('../config/connection.php');
                 $('#peso').val(data[4]);
 
 
-                var str1= $("#peso");
+                var str1 = $("#peso");
                 console.log(str1.val());
 
 
                 if (str1.val() <= 1000) {
                     console.log("peso aceptado");
-                }else{
+                } else {
                     console.log("peso demasiado alto para este vehiculo");
                 }
-                
+
                 $('#medida').val(data[5]);
 
-                var str2=$('#pesoNeto').val();
+                var str2 = $('#pesoNeto').val();
                 console.log(str2);
 
-                
+
             });
         });
     </script>
@@ -323,6 +323,11 @@ include_once('../config/connection.php');
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!--  -->
+    <script src="js/test.js"></script>
+    <!--  -->
+
 </body>
 
 </html>
