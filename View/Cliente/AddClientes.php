@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="../css/main.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--  -->
     <link rel="stylesheet" href="../css/corona/app.0d92b70a.css">
     <link rel="stylesheet" href="../css/corona/chunk-4ab62850.48f556ca.css">
@@ -71,7 +72,7 @@
 
                     <div id="radios2" role="radiogroup" tabindex="-1" class="">
                         <div class="custom-control custom-control-inline custom-radio">
-                            <input type="radio" autocomplete="off" class="custom-control-input" name="tipo" value="natural" checked="checked" id="__BVID__118" required>
+                            <input type="radio" autocomplete="off" class="custom-control-input" name="tipo" value="natural" id="__BVID__118" required>
                             <label class="custom-control-label" for="__BVID__118">Natural</label>
                         </div>
                         <div class="custom-control custom-control-inline custom-radio">
@@ -135,6 +136,27 @@
     <!--  -->
     <script src="../js/test.js"></script>
     <!--  -->
+
+    <script>
+        /*$("#numruc").keyup(function() {
+            var nroruc = $('#numruc').val().substring(0,2);
+            if (nroruc == 20) {
+                document.getElementById("__BVID__118").checked = false;
+                document.getElementById("__BVID__119").checked = true;
+            }else if(nroruc == 10){
+                document.getElementById("__BVID__118").checked = true;
+                document.getElementById("__BVID__119").checked = false;
+            }
+        });*/
+
+        if(document.getElementById('__BVID__118').checked) {
+            var nroruc = $('#numruc').val(10);
+        }else if(document.getElementById('__BVID__119').checked) {
+            var nroruc = $('#numruc').val(20);
+            console.log("testing");
+        }
+
+    </script>
 
 </body>
 

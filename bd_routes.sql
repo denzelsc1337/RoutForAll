@@ -27,6 +27,7 @@ anio varchar(50) not null,
 placaVehicular char(7) not null,
 kilometraje varchar(100) not null,
 capacidadCarga bigint (150) not null,
+unidadMedidaCarga varchar(150) not null,
 largo varchar (150) not null,
 ancho varchar (150) not null,
 alto varchar (150) not null
@@ -70,9 +71,9 @@ insert into cargas values (null,10754811043, "domestico", "lejias", 250, 400, "K
 
 select * from cargas;
 
-update cargas
-set rucCliente = 10754811043 
-where IDcargas = 3;
+-- update cargas
+-- set rucCliente = 10754811043 
+-- where IDcargas = 3;
 
 
 create table rutas(
@@ -87,7 +88,7 @@ create table rutas(
     FOREIGN KEY (idconductor) REFERENCES conductor(IDconduct)
 );
 
-insert into rutas values(null, 1,1,1,"14:25:00","14:50:00");
+
 select * from rutas;
 
 -- MOSTRAR EN POPOUP CONDUCTOR--
