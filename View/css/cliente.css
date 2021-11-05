@@ -15,11 +15,15 @@ form {
     padding: 20px;
 }
 
-.sec_:nth-child(4) .sec_1 .input input {
+.sec_:nth-child(3) .sec_1 .input input {
     width: 500px;
 }
 
-.sec_:nth-child(3) {
+.sec_:nth-child(4) .sec_1 .input input {
+    width: 200px;
+}
+
+.sec_:nth-child(2) {
     padding: 0 0 0 20px;
 }
 
@@ -28,7 +32,7 @@ form {
 
 .sec_ .sec_1 {
     width: 50%;
-    height: 70px;
+    height: 80px;
 }
 
 .sec_ .sec_1 .label {
@@ -43,7 +47,6 @@ form {
 
 .sec_ .sec_1 .input input {
     width: 350px;
-    height: 25px;
     padding-left: 5px;
 }
 
@@ -54,6 +57,7 @@ form {
 /*  */
 
 .sec_ .form-group {
+    width: 20rem;
     padding: 0 20px;
     font-size: 17px;
     text-transform: capitalize;

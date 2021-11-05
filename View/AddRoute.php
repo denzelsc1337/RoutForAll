@@ -232,7 +232,7 @@ include_once('../config/connection.php');
                                         <p class="cards_text"><?php echo $listCars["marcaVehiculo"] . " - " . $listCars["placaVehicular"] ?></p>
                                         <input type="text" id="pesoNeto" name="pesoNeto" value="<?php echo $listCars["capacidadCarga"]; ?>"></input>
 
-                                        <p class="" id="uMCarga" name="uMCarga"><?php echo $listCars["unidadMedidaCarga"] ?></p>
+                                        <!-- <p class="" id="uMCarga" name="uMCarga"><?php echo $listCars["unidadMedidaCarga"] ?></p> -->
                                         <input class="cards_check" type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
                                         <!--<a href="#" class="btn btn-primary">Button</a>-->
                                     </div>
@@ -245,7 +245,7 @@ include_once('../config/connection.php');
                             }
                             ?>
                         </section>
-                        <section>
+                        <section style="display: flex;">
                             <dl>
                                 <dt><label title="text">Hora Salida </label></dt>
                                 <dd><input tabindex="2" accesskey="p" name="horaSalida" type="time" maxlength="20" id="horaSalida" /></dd>

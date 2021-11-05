@@ -40,7 +40,7 @@ include_once 'config/connection.php';
     </div>
 
     <section class="sec_container">
-        <div id="googleMap" style="width:100%;height:900px;"></div>
+        <div id="googleMap" style="width:100%;height:580px;"></div>
     </section>
 </body>
 

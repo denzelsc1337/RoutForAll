@@ -115,7 +115,7 @@ section dl dd input {
     text-transform: capitalize;
     background-color: #888888;
     color: #e3e3e3 !important;
-    border-radius: 10px !important;
+    /* border-radius: 10px !important; */
 }
 
 .table_ th {
@@ -124,13 +124,20 @@ section dl dd input {
     text-transform: capitalize;
 }
 
-.table_ tr:hover {
+.table_ tbody tr {
+    background-color: transparent;
+}
+
+.table_ tbody tr:hover {
     background-color: #6f6f6f;
 }
 
-.table_ tr:hover::after {
-    background-color: red !important;
-    border-radius: 10px !important;
+.table_ tbody tr::after {
+    content: "";
+}
+
+.table_ tbody tr:hover::after {
+    border-radius: 0 0 10px 10px !important;
 }
 
 .table_ tr td:nth-child(1),

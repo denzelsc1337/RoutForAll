@@ -9,116 +9,132 @@
 
     <link rel="stylesheet" href="../css/main.css">
 
+    <!--  -->
+    <link rel="stylesheet" href="../css/corona/app.0d92b70a.css">
+    <link rel="stylesheet" href="../css/corona/chunk-4ab62850.48f556ca.css">
+    <link rel="stylesheet" href="../css/corona/chunk-162ef2da.0e433876.css">
+    <link rel="stylesheet" href="../css/corona/chunk-vendors.0dbf83be.css">
+    <!--  -->
+
 </head>
 
 <body>
-<div class="header">
-    <nav class="navigation">
-        <a class="a_cont" href="../../index.php">Home</a>
-        <a class="a_cont" href="../AddRoute.php">Asignar Routes</a>
-        <?php include("../../View/Header/mainHeader.php"); ?>
+    <div class="header">
+        <nav class="navigation">
+            <a class="a_cont" href="../../index.php">Home</a>
+            <a class="a_cont" href="../AddRoute.php">Asignar Routes</a>
+            <?php include("../../View/Header/mainHeader.php"); ?>
 
-    </nav>
-</div>
-<section class="sec_container">
-    <form name="login-form" id="login-form" method="post" action="../../Controller/AddClients.php">
+        </nav>
+    </div>
+    <section class="sec_container">
+        <form name="login-form" id="login-form" method="post" action="../../Controller/AddClients.php">
 
 
-        <fieldset>
-            <legend>Guardar</legend>
-            <section class="sec_">
-                <div class="sec_1">
-                    <div class="label">
-                        <label title="codenvio">RUC</label>
+            <fieldset>
+                <!-- <legend>Guardar</legend> -->
+                <section class="sec_">
+                    <div class="sec_1">
+                        <div class="label">
+                            <label title="codenvio" for="numruc">RUC</label>
+                        </div>
+                        <div class="input">
+                            <input class="form-control" tabindex="1" accesskey="u" name="numruc" type="text" maxlength="11" id="numruc" />
+                        </div>
                     </div>
-                    <div class="input">
-                        <input tabindex="1" accesskey="u" name="numruc" type="text" maxlength="30" id="numruc" />
+                    <div class="sec_1">
+                        <div class="label">
+                            <label title="razon" for="razon">Razon Social</label>
+                        </div>
+                        <div class="input">
+                            <input class="form-control" tabindex="2" accesskey="p" name="razon" type="text" maxlength="30" id="razon" />
+                        </div>
                     </div>
-                </div>
-                <div class="sec_1">
-                    <div class="label">
-                        <label title="razon">Razon Social</label>
-                    </div>
-                    <div class="input">
-                        <input tabindex="2" accesskey="p" name="razon" type="text" maxlength="20" id="razon" />
-                    </div>
-                </div>
-            </section>
-            <section class="sec_">
-                <div class="form-group">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="tipo" value="natural" checked="checked" required>
+                </section>
+                <section class="sec_">
+                    <!-- <div class="form-group" role="radiogroup" tabindex="-1">
+                        <div class="custom-control custom-control-inline custom-radio">
+                            <input class="custom-control-input" id="natural_" type="radio" name="tipo" value="natural" checked="checked" required>
                             <i class=" far fa-check-circle fa-fw"></i> &nbsp; natural
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="tipo" value="juridica" required>
+                            <label class="custom-control-label" for="natural_"> Natural</label>
+
+                        </div>
+                        <div class="custom-control custom-control-inline custom-radio">
+
+                            <input class="custom-control-input" type="radio" name="tipo" value="juridica" required>
                             <i class=" far fa-times-circle fa-fw"></i> &nbsp; juridica
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="tipo" value="natural-negocio" required>
-                            <i class=" far fa-times-circle fa-fw"></i> &nbsp; natural-negocio
-                        </label>
-                    </div>
-                </div>
-            </section>
-            <section class="sec_">
-                <div class="sec_1">
+                            <label class="custom-control-label"> Jurídica </label>
 
-                    <div class="label">
-                        <label title="text">Direccion</label>
-                    </div>
-                    <div class="input">
-                        <input tabindex="2" accesskey="p" name="direccion" type="text" maxlength="20" id="direccion" />
+                        </div>
+                        
+                    </div> -->
+
+                    <div id="radios2" role="radiogroup" tabindex="-1" class="">
+                        <div class="custom-control custom-control-inline custom-radio">
+                            <input type="radio" autocomplete="off" class="custom-control-input" name="tipo" value="natural" checked="checked" id="__BVID__118" required>
+                            <label class="custom-control-label" for="__BVID__118">Natural</label>
+                        </div>
+                        <div class="custom-control custom-control-inline custom-radio">
+                            <input type="radio" autocomplete="off" class="custom-control-input" name="tipo" value="juridica" id="__BVID__119" required>
+                            <label class="custom-control-label" for="__BVID__119">Jurídica</label>
+                        </div>
                     </div>
 
-                </div>
-                <div class="sec_1">
+                </section>
 
-                    <div class="label">
-                        <label title="text">Correo</label>
+                <section class="sec_">
+                    <div class="sec_1">
+
+                        <div class="label">
+                            <label title="text" for="direccion">Direccion</label>
+                        </div>
+                        <div class="input">
+                            <input class="form-control" tabindex="2" accesskey="p" name="direccion" type="text" maxlength="40" id="direccion" />
+                        </div>
+
                     </div>
-                    <div class="input">
-                        <input tabindex="2" accesskey="p" name="correo" type="text" maxlength="20" id="correo" />
+                    <div class="sec_1">
+
+                        <div class="label">
+                            <label title="text" for="correo">Correo</label>
+                        </div>
+                        <div class="input">
+                            <input class="form-control" tabindex="2" accesskey="p" name="correo" type="text" maxlength="20" id="correo" />
+                        </div>
+
                     </div>
-
-                </div>
-            </section>
+                </section>
 
 
-            <section class="sec_">
-                <div class="sec_1">
-                    <div class="label">
-                        <label title="text">Telefono</label>
+                <section class="sec_">
+                    <div class="sec_1">
+                        <div class="label">
+                            <label title="text" for="telefono">Telefono</label>
+                        </div>
+                        <div class="input">
+                            <input class="form-control" tabindex="2" accesskey="p" name="telefono" type="text" maxlength="7" id="telefono" />
+                        </div>
                     </div>
-                    <div class="input">
-                        <input tabindex="2" accesskey="p" name="telefono" type="text" maxlength="20" id="telefono" />
+                    <div class="sec_1">
+                        <div class="label">
+                            <label title="text" for="celular">Celular</label>
+                        </div>
+                        <div class="input">
+                            <input class="form-control" tabindex="2" accesskey="p" name="celular" type="text" maxlength="9" id="celular" />
+                        </div>
                     </div>
-                </div>
-                <div class="sec_1">
-                    <div class="label">
-                        <label title="text">Celular</label>
-                    </div>
-                    <div class="input">
-                        <input tabindex="2" accesskey="p" name="celular" type="text" maxlength="20" id="celular" />
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <button type="submit" class="btn btn-success"><i class="far fa-save"></i>GUARDAR</button>
+                <button style="float: right;" type="submit" class="btn btn-success"><i class="far fa-save"></i>GUARDAR</button>
 
-        </fieldset>
-</section>
+            </fieldset>
+    </section>
 
-</form>
+    </form>
 
-<!--  -->
-<script src="../js/test.js"></script>
-<!--  -->
+    <!--  -->
+    <script src="../js/test.js"></script>
+    <!--  -->
 
 </body>
 
