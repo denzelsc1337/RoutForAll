@@ -138,7 +138,7 @@
     <!--  -->
 
     <script>
-        /*$("#numruc").keyup(function() {
+        $("#numruc").keyup(function() {
             var nroruc = $('#numruc').val().substring(0,2);
             if (nroruc == 20) {
                 document.getElementById("__BVID__118").checked = false;
@@ -147,14 +147,14 @@
                 document.getElementById("__BVID__118").checked = true;
                 document.getElementById("__BVID__119").checked = false;
             }
-        });*/
+        });
 
-        if(document.getElementById('__BVID__118').checked) {
+        /*if(document.getElementById('__BVID__118').checked) {
             var nroruc = $('#numruc').val(10);
         }else if(document.getElementById('__BVID__119').checked) {
             var nroruc = $('#numruc').val(20);
             console.log("testing");
-        }
+        }*/
 
     </script>
 
