@@ -15,4 +15,27 @@
         }
     }
 
+
+    const tabsItem = document.querySelectorAll(".tabs-item"),
+        tabSubContent = document.querySelectorAll(".sub-content-item");
+
+
+
+    tabsItem.forEach((tabItem, i) => {
+
+        tabsItem[i].addEventListener('click', () => {
+
+            tabsItem.forEach((tabItem, i) => {
+
+                tabsItem[i].classList.remove("active");
+                tabSubContent[i].classList.remove("active");
+
+            })
+
+            tabsItem[i].classList.add("active");
+            tabSubContent[i].classList.add("active");
+
+        })
+    })
+
 })();

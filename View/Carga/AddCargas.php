@@ -10,6 +10,13 @@
 
     <link rel="stylesheet" href="../css/main.css">
 
+    <!--  -->
+    <link rel="stylesheet" href="../css/corona/app.0d92b70a.css">
+    <link rel="stylesheet" href="../css/corona/chunk-4ab62850.48f556ca.css">
+    <link rel="stylesheet" href="../css/corona/chunk-162ef2da.0e433876.css">
+    <link rel="stylesheet" href="../css/corona/chunk-vendors.0dbf83be.css">
+    <!--  -->
+
 </head>
 
 <body>
@@ -25,7 +32,7 @@
     <section class="sec_container">
         <form name="login-form" id="login-form" method="post" action="../../Controller/AddCarga.php">
             <fieldset>
-                <legend>Guardar</legend>
+
 
                 <section class="sec_">
                     <div class="sec_1">
@@ -34,7 +41,7 @@
                         </div>
                         <div class="input">
                             <!--onkeyup="getDetail(this.value)"-->
-                            <input class="ruc" autocomplete="off" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc" maxlength="11" />
+                            <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc" maxlength="11" />
                         </div>
                     </div>
 
@@ -43,7 +50,7 @@
                             <label title="razon">Razon Social</label>
                         </div>
                         <div class="input">
-                            <input tabindex="2" accesskey="p" name="razon" disabled="true" type="text" maxlength="20" id="razon" />
+                            <input class="form-control" tabindex="2" accesskey="p" name="razon" disabled="true" type="text" maxlength="20" id="razon" />
                         </div>
                     </div>
                 </section>

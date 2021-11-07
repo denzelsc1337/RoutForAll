@@ -9,12 +9,14 @@ html::-webkit-scrollbar,
 .modal::-webkit-scrollbar {
     height: 10px;
     width: 10px;
+    background-color: #2e2f32;
 }
 
 html::-webkit-scrollbar-thumb,
 .cards_::-webkit-scrollbar-thumb,
 .modal::-webkit-scrollbar-thumb {
     background: #888888;
+    border: 3px solid #2e2f32;
     border-radius: 5px;
 }
 
@@ -27,7 +29,7 @@ html::-webkit-scrollbar-corner,
 html::-webkit-scrollbar-thumb:hover,
 .cards_::-webkit-scrollbar-thumb:hover,
 .modal::-webkit-scrollbar-thumb:hover {
-    background: #3e3e3e;
+    background: #565656;
 }
 
 .cards_ .cards_container {
