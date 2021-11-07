@@ -56,31 +56,58 @@
                 </section>
 
 
-                <fieldset style="width:45%">
-                    <dl>
-                        <label title="text">Tipo de producto</label>
+                <fieldset style="width:1%">
+                    <section class="sec_">
+                        <!-- <label title="text">Tipo de producto</label>
                         <input tabindex="2" accesskey="p" name="tipoProd" id="tipoProd" type="text" maxlength="20" />
                         <label title="text">Producto</label>
-                        <input tabindex="2" accesskey="p" name="prod" type="text" id="prod" maxlength="20" />
-                        <label title="text">Cantidad</label>
-                        <input tabindex="2" accesskey="p" name="cant" type="text" id="cant" maxlength="20" />
-                    </dl>
+                        <input tabindex="2" accesskey="p" name="prod" type="text" id="prod" maxlength="20" /> -->
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Cantidad</label>
+                            </div>
+                            <div class="input">
+                                <input class="form-control" tabindex="2" accesskey="p" name="cant" type="text" id="cant" maxlength="20" />
+                            </div>
+                        </div>
+                    </section>
                 </fieldset>
-                <br>
-                <fieldset style="width:30%">
-                    <dl>
-                        <label title="text">Peso</label>
-                        <input tabindex="2" accesskey="p" name="peso" id="peso" type="text" maxlength="20" />
-                        <label title="text">Unidad Medida</label>
-                        <input tabindex="2" accesskey="p" name="unidadM" id="unidadM" type="text" maxlength="20" />
-                    </dl>
-                    <dt>
-                        <label>Direccion de Envio</label>
-                    <dd>
-                        <label>Indique su direccion:</label>
-                        <input tabindex="2" accesskey="p" name="direccionE" id="direccionE" type="text" maxlength="20" />
-                    </dd>
-                    </dt>
+
+                <fieldset style="width:1%; height: 375px;">
+                    <section class="sec_" style="display:block;">
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Peso</label>
+                            </div>
+                            <div class="input">
+                                <input class="form-control" tabindex="2" accesskey="p" name="peso" id="peso" type="text" maxlength="20" />
+                            </div>
+                        </div>
+
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Unidad Medida</label>
+                            </div>
+
+                            <div class="input">
+                                <input class="form-control" tabindex="2" accesskey="p" name="unidadM" id="unidadM" type="text" maxlength="20" />
+                            </div>
+                        </div>
+
+                        <div class="sec_1">
+                            <div class="label">
+                                <label>Direccion de Envio</label>
+                            </div>
+                            <div class="label">
+                                <label>Indique su direccion:</label>
+                            </div>
+                            <div class="input">
+                                <input class="form-control" tabindex="2" accesskey="p" name="direccionE" id="direccionE" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                    </section>
+
+
                 </fieldset>
                 <p>
                     <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
