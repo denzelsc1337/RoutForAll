@@ -29,91 +29,108 @@
         </nav>
     </div>
 
-    <section class="sec_container">
-        <form name="login-form" id="login-form" method="post" action="../../Controller/AddCarga.php">
-            <fieldset>
+
+    <div class="tabs">
+        <p data-target="#uno" class="tabs-item active">Mostrar</p>
+        <p data-target="#dos" class="tabs-item">Agregar</p>
+        <p data-target="#tres" class="tabs-item">Tab 3</p>
+    </div>
+
+    <div class="tab-sub-content">
+        <div data-content id="uno" class="sub-content-item active">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, dolorem repellendus! Optio magnam ea dolorum, nihil voluptatem reiciendis voluptas sit exercitationem eius facere maiores harum animi cupiditate, illum deleniti incidunt!
+        </div>
+        <div data-content id="dos" class="sub-content-item">
+
+            <form name="login-form" id="login-form" method="post" action="../../Controller/AddCarga.php">
+                <fieldset>
 
 
-                <section class="sec_">
-                    <div class="sec_1">
-                        <div class="label">
-                            <label title="codenvio">RUC cliente</label>
-                        </div>
-                        <div class="input">
-                            <!--onkeyup="getDetail(this.value)"-->
-                            <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc" maxlength="11" />
-                        </div>
-                    </div>
-
-                    <div class="sec_1">
-                        <div class="label">
-                            <label title="razon">Razon Social</label>
-                        </div>
-                        <div class="input">
-                            <input class="form-control" tabindex="2" accesskey="p" name="razon" disabled="true" type="text" maxlength="20" id="razon" />
-                        </div>
-                    </div>
-                </section>
-
-
-                <fieldset style="width:1%">
                     <section class="sec_">
-                        <!-- <label title="text">Tipo de producto</label>
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="codenvio">RUC cliente</label>
+                            </div>
+                            <div class="input">
+                                <!--onkeyup="getDetail(this.value)"-->
+                                <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="numruc" type="text" id="numruc" maxlength="11" />
+                            </div>
+                        </div>
+
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="razon">Razon Social</label>
+                            </div>
+                            <div class="input">
+                                <input class="form-control" tabindex="2" accesskey="p" name="razon" disabled="true" type="text" maxlength="20" id="razon" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section style="display:flex; flex-wrap:wrap; justify-content: center;">
+
+                        <fieldset style="flex: 0 0 50%;">
+                            <section class="sec_">
+                                <!-- <label title="text">Tipo de producto</label>
                         <input tabindex="2" accesskey="p" name="tipoProd" id="tipoProd" type="text" maxlength="20" />
                         <label title="text">Producto</label>
                         <input tabindex="2" accesskey="p" name="prod" type="text" id="prod" maxlength="20" /> -->
-                        <div class="sec_1">
-                            <div class="label">
-                                <label title="text">Cantidad</label>
-                            </div>
-                            <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="cant" type="text" id="cant" maxlength="20" />
-                            </div>
-                        </div>
+                                <div class="sec_1">
+                                    <div class="label">
+                                        <label title="text">Cantidad</label>
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-control" tabindex="2" accesskey="p" name="cant" type="text" id="cant" maxlength="20" />
+                                    </div>
+                                </div>
+                            </section>
+                        </fieldset>
+
+                        <fieldset style="width:1%; height: 100%;">
+                            <section class="sec_" style="display:block;">
+                                <div class="sec_1">
+                                    <div class="label">
+                                        <label title="text">Peso</label>
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-control" tabindex="2" accesskey="p" name="peso" id="peso" type="text" maxlength="20" />
+                                    </div>
+                                </div>
+
+                                <div class="sec_1">
+                                    <div class="label">
+                                        <label title="text">Unidad Medida</label>
+                                    </div>
+
+                                    <div class="input">
+                                        <input class="form-control" tabindex="2" accesskey="p" name="unidadM" id="unidadM" type="text" maxlength="20" />
+                                    </div>
+                                </div>
+
+                                <div class="sec_1">
+                                    <div class="label">
+                                        <label>Direccion de Envio</label>
+                                    </div>
+                                    <div class="label">
+                                        <label>Indique su direccion:</label>
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-control" tabindex="2" accesskey="p" name="direccionE" id="direccionE" type="text" maxlength="20" />
+                                    </div>
+                                </div>
+                            </section>
+
+                        </fieldset>
                     </section>
-                </fieldset>
+                
+                        <button style="float: right;" type="submit" class="btn btn-success"><i class="far fa-save"></i>GUARDAR</button>
+                    
+            </form>
 
-                <fieldset style="width:1%; height: 375px;">
-                    <section class="sec_" style="display:block;">
-                        <div class="sec_1">
-                            <div class="label">
-                                <label title="text">Peso</label>
-                            </div>
-                            <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="peso" id="peso" type="text" maxlength="20" />
-                            </div>
-                        </div>
-
-                        <div class="sec_1">
-                            <div class="label">
-                                <label title="text">Unidad Medida</label>
-                            </div>
-
-                            <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="unidadM" id="unidadM" type="text" maxlength="20" />
-                            </div>
-                        </div>
-
-                        <div class="sec_1">
-                            <div class="label">
-                                <label>Direccion de Envio</label>
-                            </div>
-                            <div class="label">
-                                <label>Indique su direccion:</label>
-                            </div>
-                            <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="direccionE" id="direccionE" type="text" maxlength="20" />
-                            </div>
-                        </div>
-                    </section>
-
-
-                </fieldset>
-                <p>
-                    <button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
-                </p>
-        </form>
-    </section>
+        </div>
+    </div>
+    <!-- </section> -->
+    <!-- </div> -->
 
     <script type="text/javascript">
         function getDetail(str) {

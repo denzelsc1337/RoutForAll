@@ -51,7 +51,6 @@
 /*  */
 
 .header {
-    /* position: absolute; */
     width: 100%;
     top: 0;
     left: 0;
@@ -75,9 +74,6 @@
     color: var(--color);
 }
 
-
-/* .header .navigation a:hover {} */
-
 .header .navigation .a_cont:hover:not(.active) {
     opacity: 0.6;
     color: var(--color);
@@ -96,31 +92,14 @@
 
 /* TABS */
 
-.tablink {
-    padding: 5px 15px 10px;
-    /* margin-left: 7px; */
-    border: none;
-}
-
-.tablink.active {
-    color: #fff;
-    background-color: var(--bk-color);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.tablink:nth-child(2) {
-    margin-left: 20px;
-}
-
 .tab-content {
     width: 100%;
-    height: 100vh;
     overflow-y: hidden;
 }
 
-.tab-content .tabs {
+.tabs {
     width: 100%;
+    padding-left: 1rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -128,64 +107,61 @@
     list-style-type: none;
 }
 
-.tab-content .tabs .tabs-item {
+.tabs .tabs-item {
     position: relative;
     padding: .5em 1em;
+    line-height: 1.8;
+    font-size: .875rem;
     cursor: pointer;
 }
 
-.tab-content .tabs .tabs-item.active {
+.tabs .tabs-item.active {
     background-color: var(--bk-color);
     color: var(--color);
     border-radius: 0 0 15px 15px;
 }
 
-.tab-content .tabs .tabs-item.active::before {
+.tabs .tabs-item.active::before {
     content: '';
     position: absolute;
     width: 20px;
     height: 20px;
     top: -1px;
     left: -20px;
-    /* border-radius: 50%; */
     border-radius: 0px 100px 0px 0px;
     background-color: transparent;
     box-shadow: 7px -3px 0px var(--bk-color);
 }
 
-.tab-content .tabs .tabs-item.active::after {
+.tabs .tabs-item.active::after {
     content: '';
     position: absolute;
     width: 20px;
     height: 20px;
     top: -1px;
     right: -20px;
-    /* border-radius: 50%; */
     border-radius: 100px 0px 0px 0px;
     background-color: transparent;
     box-shadow: -7px -3px 0px var(--bk-color);
 }
 
-.tab-content .tab-sub-content {
-    width: 100%;
+.tab-sub-content {
     position: relative;
-}
-
-.tab-content .tab-sub-content .sub-content-item {
-    /* margin: 1em;*/
-    padding: 0 1em;
-    width: 100%;
-    position: absolute;
-    opacity: 0;
+    overflow-y: hidden;
     transition: all 1s ease;
 }
 
-.tab-content .tab-sub-content .sub-content-item.active {
-    opacity: 1;
+.tab-sub-content .sub-content-item {
+    padding: 0 1em 1em;
+    width: 100%;
 }
 
-.tab-content .tab-sub-content .sub-content-item:not(.active) {
-    z-index: -1;
+[data-content] {
+    display: none;
+}
+
+.active[data-content] {
+    display: block;
 }
 
 
