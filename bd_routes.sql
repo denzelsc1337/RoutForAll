@@ -4,70 +4,74 @@ use routforall;
 
 create table conductor(
 IDconduct int auto_increment primary key not null,
-nombres varchar(150) not null,
-apellidos varchar(150) not null,
 tipoDoc varchar(100) not null,
 numDoc char(8) not null,
+nombres varchar(150) not null,
+apellidoP varchar(150) not null,
+apellidoM varchar(150) not null,
+fechaNacimiento date,
+edad char(4),
 celular int(9) not null,
 correo varchar(100) not null,
-tipoLicencia varchar(100) not null
+tipoLicencia varchar(100) not null,
+estadoLicencia varchar(50) not null
 );
 
-insert into conductor values(null,'denzel stefano', 'sotomayor correa', 'dni', '75481104',981374706, 'denzelsotomayor@gmail.com','A1A');
-insert into conductor values(null,'victor cevastian', 'arroyo loayza', 'dni', '45124578',951753486, 'cevitas123@gmail.com','A1A');
-insert into conductor values(null,'alonso christian', 'arroyo loayza', 'dni', '45124578',951753486, 'cevitas123@gmail.com','A1A');
-insert into conductor values(null,'Alejandro', 'izarra', 'dni', '56231245',923154753, 'ayowa123@gmail.com','A1A');
+
 select * from conductor;
 
 create table vehiculos(
 IDvehiculo int auto_increment primary key not null,
 tipoVehiculo varchar(150) not null,
 marcaVehiculo varchar(150) not null,
-anio varchar(50) not null,
+anio char(4) not null,
 placaVehicular char(7) not null,
-kilometraje varchar(100) not null,
-capacidadCarga bigint (150) not null,
-unidadMedidaCarga varchar(150) not null,
-largo varchar (150) not null,
-ancho varchar (150) not null,
-alto varchar (150) not null
+capacidadCarga bigint (150) not null,	
+largo bigint(11) not null,
+ancho bigint(11) not null,
+alto bigint(11) not null,
+estado varchar(50) not null
 );
 
+INSERT INTO `vehiculos` VALUES (NULL, 'camion', 'foton', '2020', 'A45A32', '1500', '150', '2400', '230', 'activo');
 
 select * from vehiculos;
 
+SELECT razonSocial FROM clientes WHERE RUC_cliente = 10754811043;
 
 create table clientes(
 RUC_cliente bigint(11) primary key not null,
-tipoPersona varchar(255) not null,
 razonSocial varchar(255) not null,
+tipoPersona varchar(255) not null,
 direccion varchar(255) not null,
 correo varchar(255) not null,
 telefono char(8) not null,
-celular char (9) not null 
+celular char (9) not null,
+contactoPersona varchar(120) not null
 );
+
+INSERT INTO `clientes` VALUES ('10754811043', 'denzel test', 'juridica', 'san juan', 'denzelsotomayor@gmail.com', '45678512', '981374706', 'ivan leon');
 
 select * from clientes;
 
-SELECT razonSocial FROM clientes WHERE RUC_cliente='45781245124';
-
-insert into clientes values (20457845124, "juridica", "arroyos sac","jr.junin 15","arroyoscontact@hotmail.com", 4512457, 963852741);
-insert into clientes values (10754811043, "natural-negocio","denzels sac","jr.junin 15","denzelcontact@hotmail.com", 4512457, 963852741);
 
 create table cargas(
 IDcargas int auto_increment primary key,
 rucCliente bigint,
-tipoProducto varchar(80) not null,
-producto varchar (80) not null,
-cantidad int not null,
-peso int not null,
-unidadMedida varchar(50),
+descripcionCarga varchar(250) not null,
+unidadMedidaCarga varchar(50) not null,
+pesoCarga bigint(11) not null,
+largoCarga bigint(11) not null,
+anchoCarga bigInt(11) not null,
+altoCarga bigint(11) not null,
 direccionEnvio varchar(200) not null,
+direccionEntrega varchar(200) not null,
+fechaRegistro date,
+estado varchar(50) not null,
 FOREIGN KEY (rucCliente) REFERENCES clientes(RUC_cliente)
 );
 
 
-insert into cargas values (null,10754811043, "domestico", "lejias", 250, 400, "KG" ,"av.santa cruz");
 
 select * from cargas;
 
@@ -81,12 +85,22 @@ create table rutas(
     idenvio int not null,
 	idvehiculo int not null,
 	idconductor int not null,
-    horaSalida time not null,
-    horaLlegada time not null,
+    fechaSalida date not null,
+    fechaLlegada date not null,
+    fechaRegistro date not null,
+	horaLlegada time not null,
+	horaSalida time not null,
+    kilometrajeSalida bigint(20) not null,
+    kilometrajeFinal double as (kilometrajeSalida /horaSalida),
+    tiempoEstimado time not null,
+	direccionEnvio varchar(250) not null,
+    direccionEntrega varchar(250) not null,
     FOREIGN KEY (idenvio) REFERENCES cargas(IDcargas),
     FOREIGN KEY (idvehiculo) REFERENCES vehiculos(IDvehiculo),
     FOREIGN KEY (idconductor) REFERENCES conductor(IDconduct)
 );
+
+
 
 
 select * from rutas;

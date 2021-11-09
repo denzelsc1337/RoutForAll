@@ -82,7 +82,14 @@
                                     <div class="input">
                                         <input class="form-control" tabindex="2" accesskey="p" name="cant" type="text" id="cant" maxlength="20" />
                                     </div>
+                                    <div class="label">
+                                        <label title="text">Cantidad</label>
+                                    </div>
+                                    <div class="input">
+                                    <textarea name="desc" id="desc" rows="10" cols="50">Write something here</textarea>
+                                    </div>
                                 </div>
+                                
                             </section>
                         </fieldset>
 
@@ -154,7 +161,7 @@
     </script>
 
     <script type="text/javascript">
-        $(".ruc").keyup("click blur keyup paste", function() {
+        $("#numruc").keyup("click blur keyup paste", function() {
             var numruc = $("#numruc").val();
             if (this.value.length == this.maxLength) {
                 $.ajax({

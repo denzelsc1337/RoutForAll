@@ -119,14 +119,6 @@
                                 <input class="form-control" tabindex="2" accesskey="p" name="celular" type="text" maxlength="9" id="celular" />
                             </div>
                         </div>
-                        <div class="sec_1">
-                            <div class="label">
-                                <label title="text" for="celular">Contacto</label>
-                            </div>
-                            <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="contacto" type="text" maxlength="9" id="contacto" />
-                            </div>
-                        </div>
                     </section>
 
                     <button style="float: right;" type="submit" class="btn btn-success"><i class="far fa-save"></i>GUARDAR</button>

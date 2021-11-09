@@ -15,29 +15,31 @@ class Cliente
 		$this->db = $conn->getConexion();
 	}
 
-	function agregarClientes($ruc,$tipoPersona,$razonSocial,$direccion,$correo,$telefono,$celular){
+	function agregarClientes($ruc,$razonSocial,$tipoPersona,$direccion,$correo,$telefono,$celular,$contactoPersona){
 /*		include_once '../config/connection.php';
 		$cnx = new Conexion();
 		$cn = $cnx->abrirConexion();*/
 		try {
-			$sql = "INSERT INTO clientes VALUES (:ruc,:tipoPersona, :razonSocial, :direccion,:correo,:telefono, :celular);";
+			$sql = "INSERT INTO clientes VALUES (:ruc,:razonSocial, :tipoPersona, :direccion,:correo,:telefono, :celular, :contactoPersona)";
 			$stmt = $this->db->prepare($sql);
 			$stmt->bindParam(':ruc', $ruc);
-			$stmt->bindParam(':tipoPersona', $tipoPersona);
 			$stmt->bindParam(':razonSocial', $razonSocial);
+			$stmt->bindParam(':tipoPersona', $tipoPersona);
 			$stmt->bindParam(':direccion', $direccion);
 			$stmt->bindParam(':correo', $correo);
 			$stmt->bindParam(':telefono', $telefono);
 			$stmt->bindParam(':celular', $celular);
+			$stmt->bindParam(':contactoPersona', $contactoPersona);
 
-			$stmt->execute([':ruc' => $ruc, 
-							':tipoPersona' => $tipoPersona,
+			$stmt->execute(array(':ruc' => $ruc, 
 							':razonSocial' => $razonSocial,
+							':tipoPersona' => $tipoPersona,
 							':direccion' => $direccion,
 							':correo' => $correo,
 							':telefono' => $telefono,
-							':celular' => $celular
-							 ]);
+							':celular' => $celular,
+							':contactoPersona' => $contactoPersona)
+							);
 ?>
 		<META http-equiv="Refresh" content = "0.3 ; URL =../View/Cliente/AddClientes.php">
 <?php 

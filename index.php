@@ -36,6 +36,7 @@ include_once 'config/connection.php';
             <a class="a_cont" href="View/Cliente/AddClientes.php">Agregar Clientes</a>
             <a class="a_cont" href="View/Carga/AddCargas.php">Agregar Cargas</a>
             <a class="a_cont" href="View/Vehiculo/AddVehiculos.php">Agregar Vehiculo</a>
+            <a class="a_cont" href="View/Conductor/AddConductor.php">Agregar Conductor</a>
         </nav>
     </div>
 

@@ -34,35 +34,33 @@ class Vehiculo
 		}
 	}
 
-	function agregarCamion($tipoVehiculo,$marcaVehiculo,$anio,$placaVehicular,$kilometraje,$capacidadCarga,$unidadMedida, $largo, $ancho, $alto){
+	function agregarCamion($tipoVehiculo,$marcaVehiculo,$anio,$placaVehicular,$capacidadCarga, $largo, $ancho, $alto, $estado){
 		/*		include_once '../config/connection.php';
 				$cnx = new Conexion();
 				$cn = $cnx->abrirConexion();*/
 				try {
-					$sql = "INSERT INTO vehiculos (IDvehiculo,tipoVehiculo, marcaVehiculo, anio, placaVehicular,kilometraje,capacidadCarga,unidadMedidaCarga,largo,ancho,alto) 
-											    VALUES (null,:tipoVehiculo,:marcaVehiculo, :anio, :placaVehicular,:kilometraje,:capacidadCarga,:unidadMedidaCarga,:largo,:ancho,:alto);";
+					$sql = "INSERT INTO vehiculos (`IDvehiculo`, `tipoVehiculo`, `marcaVehiculo`, `anio`, `placaVehicular`, `capacidadCarga`, `largo`, `ancho`, `alto`, `estado`) 
+											    VALUES (null,:tipoVehiculo,:marcaVehiculo, :anio, :placaVehicular,:capacidadCarga,:largo,:ancho,:alto,:estado);";
 					$stmt = $this->db->prepare($sql);
 					$stmt->bindParam(':tipoVehiculo', $tipoVehiculo);
 					$stmt->bindParam(':marcaVehiculo', $marcaVehiculo);
 					$stmt->bindParam(':anio', $anio);
 					$stmt->bindParam(':placaVehicular', $placaVehicular);
-					$stmt->bindParam(':kilometraje', $kilometraje);
 					$stmt->bindParam(':capacidadCarga',$capacidadCarga);
-					$stmt->bindParam(':unidadMedidaCarga',$unidadMedida);
 					$stmt->bindParam(':largo',$largo);
 					$stmt->bindParam(':ancho',$ancho);
 					$stmt->bindParam(':alto',$alto);
+					$stmt->bindParam(':estado',$estado);
 		
 					$stmt->execute(array(':tipoVehiculo' => $tipoVehiculo, 
 									':marcaVehiculo' => $marcaVehiculo,
 									':anio' => $anio,
 									':placaVehicular' => $placaVehicular,
-									':kilometraje' => $kilometraje,
 									':capacidadCarga'=>$capacidadCarga,
-									'unidadMedidaCarga' =>$unidadMedida,
 									':largo'=> $largo,
 									':ancho'=>$ancho,
-									':alto'=>$alto)
+									':alto'=>$alto,
+									':estado'=>$estado)
 									);
 ?>
 				<META http-equiv="Refresh" content = "0.3 ; URL =../View/Vehiculo/AddVehiculos.php">

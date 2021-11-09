@@ -75,6 +75,7 @@
                             </div>
                         </div>
                     </section>
+                    <!--
                     <section class="sec_">
                         <label title="razon">Unidad Medida</label>
                         <div class="form-group">
@@ -98,7 +99,7 @@
                                 </label>
                             </div>
                         </div>
-                    </section>
+                    </section>-->
 
 
                     <section class="sec_">
@@ -186,7 +187,7 @@
                                 <label title="text">Año</label>
                             </div>
                             <div class="input">
-                                <input name="anio" type="date" id="anio" />
+                                <input name="anio" type="text" id="anio" />
                             </div>
                         </div>
                     </section>
@@ -197,6 +198,30 @@
                             </div>
                             <div class="input">
                                 <input name="placaVehicular" id="placaVehicular" type="text" maxlength="7" style="text-transform:uppercase;" onkeyup="addGuion(this)" />
+                            </div>
+                        </div>
+                    </section>
+                    <section class="sec_">
+                        <label title="razon">Estado</label>
+                        <div class="form-group">
+                            <script>
+                                function displayRadioValue(tipo) {
+                                    //document.getElementById('text').value = tipo; - mandar a un txt
+                                    console.log(tipo);
+                                }
+                            </script>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="estado" name="estado" value="Activo" onclick="displayRadioValue(this.value)" checked="checked" required>
+                                    <i class=" far fa-check-circle fa-fw"></i> &nbsp; Activo
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="estado" name="estado" value="No activo" onclick="displayRadioValue(this.value)" required>
+                                    <i class=" far fa-times-circle fa-fw"></i> &nbsp; No activo
+                                </label>
                             </div>
                         </div>
                     </section>
