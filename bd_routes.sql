@@ -53,7 +53,8 @@ contactoPersona varchar(120) not null
 INSERT INTO `clientes` VALUES ('10754811043', 'denzel test', 'juridica', 'san juan', 'denzelsotomayor@gmail.com', '45678512', '981374706', 'ivan leon');
 
 select * from clientes;
-DELETE FROM clientes WHERE RUC_cliente = 45781245126;
+
+-- DELETE FROM clientes WHERE RUC_cliente = 45781245126;
 
 create table cargas(
 IDcargas int auto_increment primary key,
@@ -66,7 +67,7 @@ anchoCarga bigInt(11) not null,
 altoCarga bigint(11) not null,
 direccionEnvio varchar(200) not null,
 direccionEntrega varchar(200) not null,
-fechaRegistro date,
+fechaRegistro datetime,
 estado varchar(50) not null,
 FOREIGN KEY (rucCliente) REFERENCES clientes(RUC_cliente)
 );
