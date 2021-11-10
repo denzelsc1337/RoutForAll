@@ -53,7 +53,7 @@ contactoPersona varchar(120) not null
 INSERT INTO `clientes` VALUES ('10754811043', 'denzel test', 'juridica', 'san juan', 'denzelsotomayor@gmail.com', '45678512', '981374706', 'ivan leon');
 
 select * from clientes;
-
+DELETE FROM clientes WHERE RUC_cliente = 45781245126;
 
 create table cargas(
 IDcargas int auto_increment primary key,

@@ -11,5 +11,5 @@ $contacto = $_POST['contacto'];
 require_once('../Model/Cliente.php');
 
 $oClient = new Cliente();
-$c = $oClient->agregarClientes($ruc,$tipoPersona,$razonSocial,$direccion,$correo,$telefono,$celular,$contacto);
+$c = $oClient->agregarClientes($ruc,$razonSocial,$tipoPersona,$direccion,$correo,$telefono,$celular,$contacto);
  ?>

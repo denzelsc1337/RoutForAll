@@ -1,14 +1,17 @@
 <?php 
 $ruc = $_POST['numruc'];
-$tipoProd = $_POST['tipoProd'];
-$producto = $_POST['prod'];
-$cantidad = $_POST['cant'];
+$desc = $_POST['desc'];
+$umedida = $_POST['unidadM'];
 $peso = $_POST['peso'];
-$unidadMedidad = $_POST['unidadM'];
-$direccionEnvio = $_POST['direccionE'];
+$largo = $_POST['largoC'];
+$ancho = $_POST['anchoC'];
+$alto = $_POST['altoC'];
+$direccionEnv = $_POST['direccionE'];
+$direccionEnt = $_POST['direccionEntr'];
+$estado = $_POST['estado'];
 
 require_once('../Model/Carga.php');
 
 $oCarga = new Carga();
-$c = $oCarga->agregarCargas($ruc,$tipoProd,$producto,$cantidad,$peso,$unidadMedidad,$direccionEnvio);
+$c = $oCarga->agregarCargas($ruc,$desc,$umedida,$peso,$largo,$ancho,$alto,$direccionEnv,$direccionEnt,$estado);
  ?>

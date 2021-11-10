@@ -15,29 +15,37 @@ class Carga
 		$this->db = $conn->getConexion();
 	}
 
-	function agregarCargas($ruc,$tipoProd,$producto,$cantidad,$peso,$unidadMedida,$direccionEnvio){
+	function agregarCargas($ruc,$descrip,$unidadMedida,$pesoCarga,$largoCarga,$anchoCarga,$altoCarga,$direccionEnvio,$direccionEntrega,$estado){
 /*		include_once '../config/connection.php';
 		$cnx = new Conexion();
 		$cn = $cnx->abrirConexion();*/
 		try {
-			$sql = "INSERT INTO cargas VALUES (null,:ruc,:tipoProd, :producto, :cantidad,:peso,:unidadMedida, :direccionEnvio);";
+			$sql = "INSERT INTO cargas VALUES (null,:ruc,:descrip, :unidadMedida, :pesoCarga,:largoCarga,:anchoCarga, :altoCarga,:direccionEnvio,:direccionEntrega,now(),:estado);";
 			$stmt = $this->db->prepare($sql);
 			$stmt->bindParam(':ruc', $ruc);
-			$stmt->bindParam(':tipoProd', $tipoProd);
-			$stmt->bindParam(':producto', $producto);
-			$stmt->bindParam(':cantidad', $cantidad);
-			$stmt->bindParam(':peso', $peso);
+			$stmt->bindParam(':descrip', $descrip);
 			$stmt->bindParam(':unidadMedida', $unidadMedida);
+			$stmt->bindParam(':pesoCarga', $pesoCarga);
+			$stmt->bindParam(':largoCarga', $largoCarga);
+			$stmt->bindParam(':anchoCarga', $anchoCarga);
+			$stmt->bindParam(':altoCarga', $altoCarga);
 			$stmt->bindParam(':direccionEnvio', $direccionEnvio);
+			$stmt->bindParam(':direccionEntrega', $direccionEntrega);
+			
+			$stmt->bindParam(':estado', $estado);
 
-			$stmt->execute([':ruc' => $ruc, 
-							':tipoProd' => $tipoProd,
-							':producto' => $producto,
-							':cantidad' => $cantidad,
-							':peso' => $peso,
+			$stmt->execute(array(':ruc' => $ruc, 
+							':descrip' => $descrip,
 							':unidadMedida' => $unidadMedida,
-							':direccionEnvio' => $direccionEnvio
-							 ]);
+							':pesoCarga' => $pesoCarga,
+							':largoCarga' => $largoCarga,
+							':anchoCarga' => $anchoCarga,
+							':altoCarga' => $altoCarga,
+							':direccionEnvio' => $direccionEnvio,
+							':direccionEntrega' => $direccionEntrega,
+							
+							':estado' => $estado
+							));
 ?>
 		<META http-equiv="Refresh" content = "0.3 ; URL =../View/Carga/AddCargas.php">
 <?php 

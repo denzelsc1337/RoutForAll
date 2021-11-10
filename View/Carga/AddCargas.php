@@ -77,19 +77,37 @@
                         <input tabindex="2" accesskey="p" name="prod" type="text" id="prod" maxlength="20" /> -->
                                 <div class="sec_1">
                                     <div class="label">
-                                        <label title="text">Cantidad</label>
+                                        <label title="text">Descripcion</label>
                                     </div>
                                     <div class="input">
-                                        <input class="form-control" tabindex="2" accesskey="p" name="cant" type="text" id="cant" maxlength="20" />
+                                    <textarea name="desc" id="desc" rows="10" cols="50"></textarea>
                                     </div>
                                     <div class="label">
-                                        <label title="text">Cantidad</label>
+                                        <label title="text">Estado</label>
                                     </div>
                                     <div class="input">
-                                    <textarea name="desc" id="desc" rows="10" cols="50">Write something here</textarea>
+                                    <select class="form-control" name="estado" id="estado"">
+                                            <option value="" selected="" disabled>Seleccione una opción</option>
+                                            <option value="entregado">entregado</option>
+                                            <option value="por asignar">por asignar</option>
+                                            <option value="pendiente">pendiente</option>
+                                    </select>
                                     </div>
                                 </div>
-                                
+                                <div class="sec_1">
+                                    <div class="label">
+                                        <label>Direccion de Envio</label>
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-control" tabindex="2" accesskey="p" name="direccionE" id="direccionE" type="text" maxlength="20" />
+                                    </div>
+                                    <div class="label">
+                                        <label>Indique su direccion entrega:</label>
+                                    </div>
+                                    <div class="input">
+                                        <input class="form-control" tabindex="2" accesskey="p" name="direccionEntr" id="direccionEntr" type="text" maxlength="20" />
+                                    </div>
+                                </div>
                             </section>
                         </fieldset>
 
@@ -112,19 +130,34 @@
                                     <div class="input">
                                         <input class="form-control" tabindex="2" accesskey="p" name="unidadM" id="unidadM" type="text" maxlength="20" />
                                     </div>
-                                </div>
 
-                                <div class="sec_1">
                                     <div class="label">
-                                        <label>Direccion de Envio</label>
-                                    </div>
-                                    <div class="label">
-                                        <label>Indique su direccion:</label>
+                                        <label>largo</label>
                                     </div>
                                     <div class="input">
-                                        <input class="form-control" tabindex="2" accesskey="p" name="direccionE" id="direccionE" type="text" maxlength="20" />
+                                        <input class="form-control" tabindex="2" accesskey="p" name="largoC" id="largoC" type="text" maxlength="20" />
                                     </div>
                                 </div>
+                                
+                                <div class="sec_1">
+                                    <div class="label">
+                                        <label>Ancho</label>
+                                    </div>
+
+                                    <div class="input">
+                                        <input class="form-control" tabindex="2" accesskey="p" name="anchoC" id="anchoC" type="text" maxlength="20" />
+                                    </div>
+                                </div>
+                                <div class="sec_1">
+                                    <div class="label">
+                                        <label>Alto</label>
+                                    </div>
+
+                                    <div class="input">
+                                        <input class="form-control" tabindex="2" accesskey="p" name="altoC" id="altoC" type="text" maxlength="20" />
+                                    </div>
+                                </div>
+
                             </section>
 
                         </fieldset>

@@ -38,7 +38,39 @@
 
     <div class="tab-sub-content">
         <div data-content id="uno" class="sub-content-item active">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, dolorem repellendus! Optio magnam ea dolorum, nihil voluptatem reiciendis voluptas sit exercitationem eius facere maiores harum animi cupiditate, illum deleniti incidunt!
+            <table class="table table_ b-table">
+            <?php
+                //require_once('../Controller/controllerList.php');
+                require_once ((dirname(__FILE__) .'../../../Controller/controllerList.php'));
+                
+                ?>
+                <thead>
+                    <tr>
+                        <th>RUC</th>
+                        <th>Razon Social</th>
+                        <th>Tipo de Persona</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Celular</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach ($listClient as $listClients) {
+                    ?>
+                    <tr>
+                        <td><?php echo $listClients["RUC_cliente"]; ?></td>
+                        <td><?php echo $listClients["razonSocial"]; ?></td>
+                        <td><?php echo $listClients["tipoPersona"]; ?></td>
+                        <td><?php echo $listClients["correo"]; ?></td>
+                        <td><?php echo $listClients["telefono"]; ?></td>
+                        <td><?php echo $listClients["celular"]; ?></td>
+                        
+                    </tr>
+                </tbody>
+                <?php } ?>
+
+            </table>
         </div>
         <div data-content id="dos" class="sub-content-item">
 
@@ -87,7 +119,7 @@
                                 <label title="text" for="direccion">Direccion</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="direccion" type="text" maxlength="40" id="direccion" />
+                                <input class="form-control" tabindex="2" accesskey="p" name="direccion" type="text" id="direccion" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -95,7 +127,7 @@
                                 <label title="text" for="correo">Correo</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="correo" type="text" maxlength="20" id="correo" />
+                                <input class="form-control" tabindex="2" accesskey="p" name="correo" type="text" id="correo" />
                             </div>
                         </div>
 

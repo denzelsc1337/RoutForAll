@@ -40,9 +40,7 @@
         <div data-content id="uno" class="sub-content-item active">
            <table class="table table_ b-table">
                 <?php
-                require_once('../../Model/Conductor.php');
-                $driver = new Conductor();
-                $listDriver = $driver->listarConductores();
+                    require_once ((dirname(__FILE__) .'../../../Controller/controllerList.php'));
                 ?>
                 <thead>
                     <tr>
@@ -69,9 +67,11 @@
                         <td><?php echo $listDrivers["estadoLicencia"]; ?></td>
                     </tr>
                 </tbody>
-            <?php } ?>
+                <?php } ?>
            </table>
         </div>
+
+
         <div data-content id="dos" class="sub-content-item">
 
             <form name="login-form" id="login-form" method="post" action="../../Controller/AddConductores.php">

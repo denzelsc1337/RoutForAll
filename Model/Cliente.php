@@ -1,5 +1,5 @@
 <?php 
-require_once ('../config/connection.php');
+require_once ((dirname(__FILE__) .'../../config/connection.php'));
 class Cliente
 {
 	private $db;
@@ -13,6 +13,24 @@ class Cliente
 		$conn = new Conexion();
 		//$this->dbname = $this->conn->db; //nombre de la bd
 		$this->db = $conn->getConexion();
+	}
+
+	function listarClientes(){
+		try {
+		$sql = "SELECT *  FROM clientes";
+		$stmt = $this->db->prepare($sql);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+
+		while ($row = $stmt->fetch()) {
+			/*echo "Producto: " .$row->producto ."<br>";
+			echo "Cantidad: " .$row->cantidad ."<br>";*/
+			$this->listClient[] = $row;
+		}
+			return $this->listClient;
+		} catch (PDOException $e) {
+			die($e->getMessage());
+		}
 	}
 
 	function agregarClientes($ruc,$razonSocial,$tipoPersona,$direccion,$correo,$telefono,$celular,$contactoPersona){
