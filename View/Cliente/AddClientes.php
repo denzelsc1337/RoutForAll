@@ -42,7 +42,6 @@
             <?php
                 //require_once('../Controller/controllerList.php');
                 require_once ((dirname(__FILE__) .'../../../Controller/controllerList.php'));
-                
                 ?>
                 <thead>
                     <tr>

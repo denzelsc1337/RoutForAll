@@ -66,10 +66,10 @@ include_once('../config/connection.php');
 
 
     <section class="sec_container">
-        <strong>tabla de envios aqui</strong>
+        <!--<strong>tabla de envios aqui</strong>-->
         <br>
         <?php
-        echo 'Versión actual de PHP: ' . phpversion();
+        //echo 'Versión actual de PHP: ' . phpversion();
         ?>
         <table class="table table_ b-table">
             <?php
@@ -78,18 +78,18 @@ include_once('../config/connection.php');
             <thead>
                 <tr>
                     <th>id envio</th>
-                    <th>tipoProducto</th>
-                    <th>producto</th>
-                    <th>cantidad</th>
-                    <th>peso</th>
-                    <th>unidadMedida</th>
-                    <th>RUC</th>
+                    <th>RUC cliente</th>
+                    <th>Descripcion</th>
+                    <th>Peso Carga</th>
+                    <th>Direccion Envio</th>
+                    <th>Direccion Entrega</th>
+                    <th>Fecha de Registro</th>
+                    <th>Estado</th>
                     <!--<th>apellidoCliente</th>
                         <th>docCliente</th>
                         <th>correoCliente</th>
                         <th>telefCliente</th>
                         <th>celularCliente</th>-->
-                    <th>direccionEnvio</th>
                 </tr>
             </thead>
             <tbody>
@@ -98,12 +98,10 @@ include_once('../config/connection.php');
                 ?>
                     <tr>
                         <td><?php echo $listaPedidos["IDcargas"]; ?></td>
-                        <td><?php echo $listaPedidos["tipoProducto"]; ?></td>
-                        <td><?php echo $listaPedidos["producto"]; ?></td>
-                        <td><?php echo $listaPedidos["cantidad"]; ?></td>
-                        <td><?php echo $listaPedidos["peso"]; ?></td>
-                        <td><?php echo $listaPedidos["unidadMedida"]; ?></td>
                         <td><?php echo $listaPedidos["rucCliente"]; ?></td>
+                        <td><?php echo $listaPedidos["descripcionCarga"]; ?></td>
+                        <td><?php echo $listaPedidos["pesoCarga"]; ?></td>
+                        <td><?php echo $listaPedidos["direccionEnvio"]; ?></td>
                         <!--<td><?php /*echo $listaPedidos["apellidoCliente"]; ?></td>
                             <td><?php echo $listaPedidos["docCliente"]; ?></td>
                             <td><?php echo $listaPedidos["correoCliente"]; ?></td>
@@ -113,7 +111,7 @@ include_once('../config/connection.php');
                         <!--agregar google maps here-->
                         <td id="container">
                             <!--<a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">-->
-                            <a href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=<?php echo urlencode($listaPedidos["direccionEnvio"]) ?>';return false;"><?php echo $listaPedidos["direccionEnvio"] ?></a>
+                            <a href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=<?php echo urlencode($listaPedidos["direccionEntrega"]) ?>';return false;"><?php echo $listaPedidos["direccionEntrega"] ?></a>
                             <!--https://developers.google.com/maps/documentation/javascript/localization-->
                             <!--
                             <a href="https://www.google.com/maps/search/?api=1&query=<?php // echo urlencode($listaPedidos["direccionEnvio"]) 
@@ -158,6 +156,8 @@ include_once('../config/connection.php');
                                                                                                             ?>">testing</a>-->
                             <!--<input type="button" onclick="getCurrentLocation();">-->
                         </td>
+                        <td><?php echo $listaPedidos["fechaRegistro"]; ?></td>
+                        <td><?php echo $listaPedidos["estado"]; ?></td>
                         <!--<td>
                                 <a id="latid" href="">latitud</a>
                                 <a id="long" href="">long</a>

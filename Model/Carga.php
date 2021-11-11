@@ -1,5 +1,6 @@
 <?php 
-require_once ('../config/connection.php');
+//require_once ('../config/connection.php');
+require_once ((dirname(__FILE__) .'../../config/connection.php'));
 class Carga
 {
 	private $db;
@@ -9,10 +10,27 @@ class Carga
 	
 	public function __construct()
 	{
-		$this->listPedidos = array();
+		$this->listCarga = array();
 		$conn = new Conexion();
 		//$this->dbname = $this->conn->db; //nombre de la bd
 		$this->db = $conn->getConexion();
+	}
+	function listarCarga(){
+		try {
+		$sql = "SELECT *  FROM cargas";
+		$stmt = $this->db->prepare($sql);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+
+		while ($row = $stmt->fetch()) {
+			/*echo "Producto: " .$row->producto ."<br>";
+			echo "Cantidad: " .$row->cantidad ."<br>";*/
+			$this->listCarga[] = $row;
+		}
+			return $this->listCarga;
+		} catch (PDOException $e) {
+			die($e->getMessage());
+		}
 	}
 
 	function agregarCargas($ruc,$descrip,$unidadMedida,$pesoCarga,$largoCarga,$anchoCarga,$altoCarga,$direccionEnvio,$direccionEntrega,$estado){

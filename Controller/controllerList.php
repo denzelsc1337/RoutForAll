@@ -26,4 +26,9 @@ require_once ((dirname(__FILE__) .'../../Model/Cliente.php'));
 $cliente = new Cliente();
 $listClient = $cliente->listarClientes();
 
+
+require_once ((dirname(__FILE__) .'../../Model/Carga.php'));
+$carga = new Carga();
+$listCarga = $carga->listarCarga();
+
  ?>

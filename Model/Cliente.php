@@ -9,7 +9,7 @@ class Cliente
 	
 	public function __construct()
 	{
-		$this->listPedidos = array();
+		$this->listClient = array();
 		$conn = new Conexion();
 		//$this->dbname = $this->conn->db; //nombre de la bd
 		$this->db = $conn->getConexion();

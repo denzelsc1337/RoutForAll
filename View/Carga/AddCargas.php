@@ -38,14 +38,40 @@
 
     <div class="tab-sub-content">
         <div data-content id="uno" class="sub-content-item active">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, dolorem repellendus! Optio magnam ea dolorum, nihil voluptatem reiciendis voluptas sit exercitationem eius facere maiores harum animi cupiditate, illum deleniti incidunt!
+            <table class="table table_ b-table">
+                <?php
+                    require_once ((dirname(__FILE__) .'../../../Controller/controllerList.php'));
+                ?>
+                <thead>
+                    <tr>
+                        <th>RUC</th>
+                        <th>Descripcion</th>
+                        <th>Peso de Carga</th>
+                        <th>Direccion Envio</th>
+                        <th>Fecha Registro</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach ($listCarga as $listCargas) {
+                     ?>
+                     <tr>
+                        <td><?php echo $listCargas["rucCliente"];?></td>
+                        <td><?php echo $listCargas["descripcionCarga"];?></td>
+                        <td><?php echo $listCargas["pesoCarga"];?></td>
+                        <td><?php echo $listCargas["direccionEnvio"];?></td>
+                        <td><?php echo $listCargas["fechaRegistro"];?></td>
+                        <td><?php echo $listCargas["estado"];?></td>
+                     </tr>
+                </tbody>
+                <?php } ?>
+            </table>
         </div>
         <div data-content id="dos" class="sub-content-item">
 
             <form name="login-form" id="login-form" method="post" action="../../Controller/AddCarga.php">
                 <fieldset>
-
-
                     <section class="sec_">
                         <div class="sec_1">
                             <div class="label">

@@ -37,7 +37,33 @@
 
     <div class="tab-sub-content">
         <div data-content id="uno" class="sub-content-item active">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, dolorem repellendus! Optio magnam ea dolorum, nihil voluptatem reiciendis voluptas sit exercitationem eius facere maiores harum animi cupiditate, illum deleniti incidunt!
+            <table class="table table_ b-table">
+                <?php
+                require_once ((dirname(__FILE__) .'../../../Controller/controllerList.php'));
+                ?>
+                <thead>
+                    <tr>
+                        <th>Tipo de Vehiculo</th>
+                        <th>Marca de Vehiculo</th>
+                        <th>Placa vehicular</th>
+                        <th>Capacidad Carga</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach ($listCar as $listCars) {
+                    ?>
+                    <tr>
+                        <td><?php echo $listCars["tipoVehiculo"]; ?></td>
+                        <td><?php echo $listCars["marcaVehiculo"]; ?></td>
+                        <td><?php echo $listCars["placaVehicular"]; ?></td>
+                        <td><?php echo $listCars["capacidadCarga"]; ?></td>
+                        <td><?php echo $listCars["estado"]; ?></td>
+                    </tr>
+                </tbody>
+                <?php } ?>
+            </table>
         </div>
         <div data-content id="dos" class="sub-content-item">
 
