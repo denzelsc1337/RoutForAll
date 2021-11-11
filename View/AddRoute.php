@@ -203,7 +203,7 @@ include_once('../config/connection.php');
                                 <div class="cards_container">
                                     <div class="cards_body">
 
-                                        <h5 class="cards_title"><?php echo $listDrivers["nombres"] . "  " . $listDrivers["apellidos"] ?></h5>
+                                        <h5 class="cards_title"><?php echo $listDrivers["nombres"] . "  " . $listDrivers["apellidoP"] ?></h5>
                                         <p class="cards_text"><span><?php echo $listDrivers["tipoDoc"] ?>: </span> <?php echo $listDrivers["numDoc"] ?></p>
 
 
