@@ -412,14 +412,16 @@ input[type=time] {
     -webkit-appearance: listbox
 }
 
-textarea {
+
+/* textarea {
     overflow: auto;
     resize: vertical
-}
+} */
 
-fieldset {
+
+/* fieldset {
     padding: 10px;
-}
+} */
 
 legend {
     display: block;
@@ -2437,7 +2439,7 @@ pre code {
 .form-control:focus {
     color: #fff;
     background-color: #2e2f32;
-    border-color: #80bdff;
+    border-color: #656565;
     -webkit-box-shadow: 0 0 0 .2rem rgba(81, 81, 81, 0.5);
     box-shadow: 0 0 0 .2rem rgba(81, 81, 81, 0.5)
 }
@@ -2469,8 +2471,10 @@ pre code {
 
 .form-control:disabled,
 .form-control[readonly] {
-    background-color: #404040;
-    opacity: 1
+    background-color: #2e2f32;
+    opacity: 1;
+    border: 1px solid white;
+    color: white;
 }
 
 select.form-control:focus::-ms-value {
@@ -2544,7 +2548,8 @@ select.form-control:focus::-ms-value {
 select.form-control[multiple],
 select.form-control[size],
 textarea.form-control {
-    height: auto
+    height: auto;
+    width: auto;
 }
 
 .form-group {
@@ -14130,10 +14135,11 @@ textarea:focus {
     outline-style: none
 }
 
-textarea {
+
+/* textarea {
     resize: none;
     overflow-x: hidden
-}
+} */
 
 .btn,
 .btn-group.open .dropdown-toggle,
@@ -16351,7 +16357,8 @@ code {
 
 .btn {
     font-size: .875rem;
-    line-height: 1
+    line-height: 1;
+    margin: 0 15px 15px 0;
 }
 
 .btn i {
@@ -17601,7 +17608,8 @@ code {
 }
 
 select.form-control {
-    padding: .4375rem .75rem
+    padding: .4375rem .75rem;
+    width: 350px;
 }
 
 .form-group label {

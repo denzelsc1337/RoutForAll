@@ -40,7 +40,7 @@
         <div data-content id="uno" class="sub-content-item active">
             <table class="table table_ b-table">
                 <?php
-                    require_once ((dirname(__FILE__) .'../../../Controller/controllerList.php'));
+                require_once((dirname(__FILE__) . '../../../Controller/controllerList.php'));
                 ?>
                 <thead>
                     <tr>
@@ -54,18 +54,18 @@
                 </thead>
                 <tbody>
                     <?php
-                        foreach ($listCarga as $listCargas) {
-                     ?>
-                     <tr>
-                        <td><?php echo $listCargas["rucCliente"];?></td>
-                        <td><?php echo $listCargas["descripcionCarga"];?></td>
-                        <td><?php echo $listCargas["pesoCarga"];?></td>
-                        <td><?php echo $listCargas["direccionEnvio"];?></td>
-                        <td><?php echo $listCargas["fechaRegistro"];?></td>
-                        <td><?php echo $listCargas["estado"];?></td>
-                     </tr>
+                    foreach ($listCarga as $listCargas) {
+                    ?>
+                        <tr>
+                            <td><?php echo $listCargas["rucCliente"]; ?></td>
+                            <td><?php echo $listCargas["descripcionCarga"]; ?></td>
+                            <td><?php echo $listCargas["pesoCarga"]; ?></td>
+                            <td><?php echo $listCargas["direccionEnvio"]; ?></td>
+                            <td><?php echo $listCargas["fechaRegistro"]; ?></td>
+                            <td><?php echo $listCargas["estado"]; ?></td>
+                        </tr>
                 </tbody>
-                <?php } ?>
+            <?php } ?>
             </table>
         </div>
         <div data-content id="dos" class="sub-content-item">
@@ -93,9 +93,10 @@
                         </div>
                     </section>
 
-                    <section style="display:flex; flex-wrap:wrap; justify-content: center;">
+                    <section>
+                        <!-- style="display:flex; flex-wrap:wrap; justify-content: center;" -->
 
-                        <fieldset style="flex: 0 0 50%;">
+                        <fieldset style="flex: 0 0 50%; margin: 15px;">
                             <section class="sec_">
                                 <!-- <label title="text">Tipo de producto</label>
                         <input tabindex="2" accesskey="p" name="tipoProd" id="tipoProd" type="text" maxlength="20" />
@@ -106,18 +107,18 @@
                                         <label title="text">Descripcion</label>
                                     </div>
                                     <div class="input">
-                                    <textarea name="desc" id="desc" rows="10" cols="50"></textarea>
+                                        <textarea class="form-control" name="desc" id="desc" rows="7" cols="60"></textarea>  
                                     </div>
                                     <div class="label">
                                         <label title="text">Estado</label>
                                     </div>
                                     <div class="input">
-                                    <select class="form-control" name="estado" id="estado"">
+                                        <select class="form-control" name="estado" id="estado"">
                                             <option value="" selected="" disabled>Seleccione una opción</option>
-                                            <option value="entregado">entregado</option>
-                                            <option value="por asignar">por asignar</option>
-                                            <option value="pendiente">pendiente</option>
-                                    </select>
+                                            <option value="entregado">Entregado</option>
+                                            <option value="por asignar">Por Asignar</option>
+                                            <option value="pendiente">Pendiente</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="sec_1">
@@ -137,8 +138,8 @@
                             </section>
                         </fieldset>
 
-                        <fieldset style="width:1%; height: 100%;">
-                            <section class="sec_" style="display:block;">
+                        <fieldset style="flex: 0 0 50%; margin: 15px;">
+                            <section class="sec_" > <!-- style="display:block;" -->
                                 <div class="sec_1">
                                     <div class="label">
                                         <label title="text">Peso</label>
@@ -146,9 +147,9 @@
                                     <div class="input">
                                         <input class="form-control" tabindex="2" accesskey="p" name="peso" id="peso" type="text" maxlength="20" />
                                     </div>
-                                </div>
+                                    <!-- </div> -->
 
-                                <div class="sec_1">
+                                    <!-- <div class="sec_1"> -->
                                     <div class="label">
                                         <label title="text">Unidad Medida</label>
                                     </div>
@@ -156,16 +157,16 @@
                                     <div class="input">
                                         <input class="form-control" tabindex="2" accesskey="p" name="unidadM" id="unidadM" type="text" maxlength="20" />
                                     </div>
-
+                                </div>
+                                <div class="sec_1">
                                     <div class="label">
                                         <label>largo</label>
                                     </div>
                                     <div class="input">
                                         <input class="form-control" tabindex="2" accesskey="p" name="largoC" id="largoC" type="text" maxlength="20" />
                                     </div>
-                                </div>
-                                
-                                <div class="sec_1">
+
+
                                     <div class="label">
                                         <label>Ancho</label>
                                     </div>
@@ -173,8 +174,8 @@
                                     <div class="input">
                                         <input class="form-control" tabindex="2" accesskey="p" name="anchoC" id="anchoC" type="text" maxlength="20" />
                                     </div>
-                                </div>
-                                <div class="sec_1">
+                                    <!-- </div>
+                                <div class="sec_1"> -->
                                     <div class="label">
                                         <label>Alto</label>
                                     </div>
@@ -188,9 +189,9 @@
 
                         </fieldset>
                     </section>
-                
-                        <button style="float: right;" type="submit" class="btn btn-success"><i class="far fa-save"></i>GUARDAR</button>
-                    
+
+                    <button style="float: right;" type="submit" class="btn btn-success"><i class="far fa-save"></i>GUARDAR</button>
+
             </form>
 
         </div>
