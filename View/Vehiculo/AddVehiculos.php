@@ -78,28 +78,40 @@
                             <div class="label">
                                 <label title="razon">Tipo De Vehiculo</label>
                             </div>
-                        </div>
-                    </section>
+                            <div id="radios2" role="radiogroup" tabindex="-1" style="padding-left: 50px">
+                                <div class="custom-control custom-control-inline custom-radio">
+                                    <input class="custom-control-input" type="radio" autocomplete="off" name="tipoVehiculo" value="vann" id="__BVID__118" required>
+                                    <!-- <input class="custom-control-input" type="radio" name="tipoVehiculo" value="Vann" checked="checked" required> -->
+                                    <label class="custom-control-label" for="__BVID__118">Vann</label>
+                                </div>
+                                <div class="custom-control custom-control-inline custom-radio">
+                                    <input class="custom-control-input" type="radio" name="tipoVehiculo" value="camion" id="__BVID__119" required>
+                                    <!-- <i class=" far fa-times-circle fa-fw"></i> &nbsp; camion -->
+                                    <label class="custom-control-label" for="__BVID__119">Camion</label>
 
-                    <section class="sec_" style="padding-top: 0px">
-                        <div id="radios2" role="radiogroup" tabindex="-1"  style="padding-left: 50px">
-                            <div class="custom-control custom-control-inline custom-radio">
-                                <input type="radio" autocomplete="off" class="custom-control-input" name="tipoVehiculo" value="Vann" id="__BVID__118" required>
-
-                                <!-- <input class="custom-control-input" type="radio" name="tipoVehiculo" value="Vann" checked="checked" required> -->
-                                <label class="custom-control-label" for="__BVID__118">Vann</label>
-
-                                <!-- <i class=" far fa-check-circle fa-fw"></i> &nbsp; Vann -->
-                            </div>
-                            <div class="custom-control custom-control-inline custom-radio">
-                                <input class="custom-control-input" type="radio" name="tipoVehiculo" value="camion" id="__BVID__119" required>
-                                <!-- <i class=" far fa-times-circle fa-fw"></i> &nbsp; camion -->
-                                <label class="custom-control-label" for="__BVID__119">Camion</label>
-
+                                </div>
                             </div>
                         </div>
-                    </section>
 
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Placa Vehicular</label>
+                            </div>
+                            <div class="input">
+                                <input style="width: 200px;" class="form-control" name="placaVehicular" id="placaVehicular" type="text" maxlength="7" style="text-transform:uppercase;" onkeyup="addGuion(this)" />
+                            </div>
+                        </div>
+
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Marca Vehiculo</label>
+                            </div>
+                            <div class="input">
+                                <input style="width: 200px;" class="form-control" name="marcaVehiculo" type="text" maxlength="20" id="marcaVehiculo" />
+                            </div>
+                        </div>
+
+                    </section>
 
 
                     <section class="sec_">
@@ -109,165 +121,93 @@
                                 <label title="text">Capacidad Carga</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" name="capacidadCarga" type="text" maxlength="20" id="capacidadCarga" />
+                                <input style="width: 200px;" class="form-control" name="capacidadCarga" type="text" maxlength="20" id="capacidadCarga" />
                             </div>
                         </div>
-
-                        <div class="sec_1">
-
-                            <div class="label">
-                                <label title="text">Marca Vehiculo</label>
-                            </div>
-                            <div class="input">
-                                <input class="form-control" name="marcaVehiculo" type="text" maxlength="20" id="marcaVehiculo" />
-
-                            </div>
-                        </div>
-
-                    </section>
-                    <!--
-                    <section class="sec_">
-                        <label title="razon">Unidad Medida</label>
-                        <div class="form-group">
-                            <script>
-                                function displayRadioValue(tipo) {
-                                    //document.getElementById('text').value = tipo; - mandar a un txt
-                                    console.log(tipo);
-                                }
-                            </script>
-
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" id="unidadMedidaCarga" name="unidadMedidaCarga" value="KG" onclick="displayRadioValue(this.value)" checked="checked" required>
-                                    <i class=" far fa-check-circle fa-fw"></i> &nbsp; KG
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" id="unidadMedidaCarga" name="unidadMedidaCarga" value="TL" onclick="displayRadioValue(this.value)" required>
-                                    <i class=" far fa-times-circle fa-fw"></i> &nbsp; Tonelada
-                                </label>
-                            </div>
-                        </div>
-                    </section>-->
-
-
-                    <section class="sec_">
-
 
                         <div class="sec_1">
                             <div class="label">
                                 <label title="text">Kilometraje</label>
                             </div>
-                            <!-- <script>
-                                function getkilometraje(val) {
-                                    var txt = document.getElementById('KM').value = val;
-                                    console.log(txt.value);
-                                }
 
-                                function getLargo(val) {
-                                    document.getElementById('largo').value = val;
-                                }
-
-                                function getAncho(val) {
-                                    document.getElementById('ancho').value = val;
-                                }
-
-                                function getAlto(val) {
-                                    document.getElementById('alto').value = val;
-                                }
-
-                                function addGuion(txt) {
-                                    let ele = document.getElementById(txt.id);
-                                    ele = ele.value.split('-').join('');
-
-                                    let finalVal = ele.match(/.{1,3}/g).join('-');
-                                    document.getElementById(txt.id).value = finalVal;
-                                }
-                            </script> -->
-                            <!-- <div class="input"> -->
-                            <!-- <input type="range" list="tickmarks" min="0" max="100" onchange="getkilometraje(this.value+' KM');" /> -->
-                            <!-- </div> -->
                             <div class="input">
-                                <input class="form-control" type="text" name="KM" id="KM">
-                            </div>
-
-                        </div>
-                        <div class="sec_1">
-                            <div class="label">
-                                <label title="text">Largo</label>
-                            </div>
-                            <div class="input">
-                                <input type="range" list="tickmarks" min="10" max="100" onchange="getLargo(this.value+' M');" />
-                                <input type="text" placeholder="deslice la barra" name="largo" id="largo">
+                                <input style="width: 200px;" class="form-control" type="text" name="KM" id="KM">
                             </div>
                         </div>
-                    </section>
-                    <section class="sec_">
-                        <div class="sec_1">
-                            <div class="label">
-                                <label title="text">Ancho</label>
-                            </div>
-                            <div class="input">
-                                <input type="range" list="tickmarks" min="10" max="100" onchange="getAncho(this.value+' M');" />
-                                <br>
-                                <input type="text" placeholder="deslice la barra" name="ancho" id="ancho">
-                            </div>
-                        </div>
-                        <div class="sec_1">
-                            <div class="label">
-                                <label title="text">Alto</label>
-                            </div>
-                            <div class="input">
-                                <input type="range" list="tickmarks" min="10" max="100" onchange="getAlto(this.value+' M');" />
-                                <br>
-                                <input type="text" placeholder="deslice la barra" name="alto" id="alto">
-                            </div>
-                        </div>
-                    </section>
-                    <section class="sec_">
+
                         <div class="sec_1">
                             <div class="label">
                                 <label title="text">Año</label>
                             </div>
                             <div class="input">
-                                <input name="anio" type="text" id="anio" />
+                                <input style="width: 200px;" class="form-control" name="anio" type="text" id="anio" />
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section class="sec_">
+
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Largo</label>
+                            </div>
+                            <div class="input">
+                                <input style="width: 250px;" class="form-control" type="text" name="largo" id="largo">
+                            </div>
+                        </div>
+
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Ancho</label>
+                            </div>
+                            <div class="input">
+                                <input style="width: 250px;" class="form-control" type="text" name="ancho" id="ancho">
+                            </div>
+                        </div>
+
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Alto</label>
+                            </div>
+                            <div class="input">
+                                <input style="width: 250px;" class="form-control" type="text" name="alto" id="alto">
                             </div>
                         </div>
                     </section>
+
+
                     <section class="sec_">
                         <div class="sec_1">
                             <div class="label">
-                                <label title="text">Placa Vehicular</label>
+                                <label title="razon">Estado</label>
                             </div>
-                            <div class="input">
-                                <input name="placaVehicular" id="placaVehicular" type="text" maxlength="7" style="text-transform:uppercase;" onkeyup="addGuion(this)" />
-                            </div>
-                        </div>
-                    </section>
-                    <section class="sec_">
-                        <label title="razon">Estado</label>
-                        <div class="form-group">
-                            <script>
-                                function displayRadioValue(tipo) {
-                                    //document.getElementById('text').value = tipo; - mandar a un txt
-                                    console.log(tipo);
-                                }
-                            </script>
+                            <div class="form-group">
+                                <script>
+                                    function displayRadioValue(tipo) {
+                                        //document.getElementById('text').value = tipo; - mandar a un txt
+                                        console.log(tipo);
+                                    }
+                                </script>
 
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" id="estado" name="estado" value="Activo" onclick="displayRadioValue(this.value)" checked="checked" required>
-                                    <i class=" far fa-check-circle fa-fw"></i> &nbsp; Activo
-                                </label>
+                                <div id="radios3" role="radiogroup" tabindex="-1" style="padding-left: 50px">
+                                    <div class="custom-control custom-control-inline custom-radio">
+                                        <input type="radio" autocomplete="off" class="custom-control-input" name="estado" value="activo" id="__BVID__120" onclick="displayRadioValue(this.value)" checked="checked" required>
+                                        <!-- <i class=" far fa-check-circle fa-fw"></i> &nbsp; Activo -->
+                                        <label class="custom-control-label" for="__BVID__120">Activo</label>
+                                    </div>
+
+                                    <div class="custom-control custom-control-inline custom-radio">
+
+                                        <input type="radio" autocomplete="off" class="custom-control-input" name="estado" value="no_activo" id="__BVID__121" onclick="displayRadioValue(this.value)" required>
+                                        <!-- <i class=" far fa-times-circle fa-fw"></i> &nbsp; No activo -->
+                                        <label class="custom-control-label" for="__BVID__121">No Activo</label>
+
+                                    </div>
+                                </div>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" id="estado" name="estado" value="No activo" onclick="displayRadioValue(this.value)" required>
-                                    <i class=" far fa-times-circle fa-fw"></i> &nbsp; No activo
-                                </label>
-                            </div>
-                        </div>
+
+
                     </section>
 
 
