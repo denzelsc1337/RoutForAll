@@ -39,9 +39,9 @@
     <div class="tab-sub-content">
         <div data-content id="uno" class="sub-content-item active">
             <table class="table table_ b-table">
-            <?php
+                <?php
                 //require_once('../Controller/controllerList.php');
-                require_once ((dirname(__FILE__) .'../../../Controller/controllerList.php'));
+                require_once((dirname(__FILE__) . '../../../Controller/controllerList.php'));
                 ?>
                 <thead>
                     <tr>
@@ -55,19 +55,19 @@
                 </thead>
                 <tbody>
                     <?php
-                        foreach ($listClient as $listClients) {
+                    foreach ($listClient as $listClients) {
                     ?>
-                    <tr>
-                        <td><?php echo $listClients["RUC_cliente"]; ?></td>
-                        <td><?php echo $listClients["razonSocial"]; ?></td>
-                        <td><?php echo $listClients["tipoPersona"]; ?></td>
-                        <td><?php echo $listClients["correo"]; ?></td>
-                        <td><?php echo $listClients["telefono"]; ?></td>
-                        <td><?php echo $listClients["celular"]; ?></td>
-                        
-                    </tr>
+                        <tr>
+                            <td><?php echo $listClients["RUC_cliente"]; ?></td>
+                            <td><?php echo $listClients["razonSocial"]; ?></td>
+                            <td><?php echo $listClients["tipoPersona"]; ?></td>
+                            <td><?php echo $listClients["correo"]; ?></td>
+                            <td><?php echo $listClients["telefono"]; ?></td>
+                            <td><?php echo $listClients["celular"]; ?></td>
+
+                        </tr>
                 </tbody>
-                <?php } ?>
+            <?php } ?>
 
             </table>
         </div>
@@ -98,7 +98,7 @@
 
                     <section class="sec_">
 
-                        <div id="radios2" role="radiogroup" tabindex="-1" class="">
+                        <div id="radios2" role="radiogroup" tabindex="-1" style="padding-left: 50px">
                             <div class="custom-control custom-control-inline custom-radio">
                                 <input type="radio" autocomplete="off" class="custom-control-input" name="tipo" value="natural" id="__BVID__118" required>
                                 <label class="custom-control-label" for="__BVID__118">Natural</label>
@@ -118,7 +118,7 @@
                                 <label title="text" for="direccion">Direccion</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="direccion" type="text" id="direccion" />
+                                <input  style="width: 500px;" class="form-control" tabindex="2" accesskey="p" name="direccion" type="text" id="direccion" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -126,7 +126,7 @@
                                 <label title="text" for="correo">Correo</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="correo" type="text" id="correo" />
+                                <input  style="width: 500px;" class="form-control" tabindex="2" accesskey="p" name="correo" type="text" id="correo" />
                             </div>
                         </div>
 
@@ -139,7 +139,7 @@
                                 <label title="text" for="telefono">Telefono</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="telefono" type="text" maxlength="7" id="telefono" />
+                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="telefono" type="text" maxlength="7" id="telefono" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -147,7 +147,7 @@
                                 <label title="text" for="celular">Celular</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="celular" type="text" maxlength="9" id="celular" />
+                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="celular" type="text" maxlength="9" id="celular" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -155,7 +155,7 @@
                                 <label title="text" for="celular">Contacto</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="contacto" type="text" maxlength="9" id="contacto" />
+                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="contacto" type="text" maxlength="9" id="contacto" />
                             </div>
                         </div>
                     </section>
@@ -164,7 +164,7 @@
 
                 </fieldset>
             </form>
-            
+
         </div>
 
     </div>

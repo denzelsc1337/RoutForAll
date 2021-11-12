@@ -39,7 +39,7 @@
         <div data-content id="uno" class="sub-content-item active">
             <table class="table table_ b-table">
                 <?php
-                require_once ((dirname(__FILE__) .'../../../Controller/controllerList.php'));
+                require_once((dirname(__FILE__) . '../../../Controller/controllerList.php'));
                 ?>
                 <thead>
                     <tr>
@@ -52,19 +52,20 @@
                 </thead>
                 <tbody>
                     <?php
-                        foreach ($listCar as $listCars) {
+                    foreach ($listCar as $listCars) {
                     ?>
-                    <tr>
-                        <td><?php echo $listCars["tipoVehiculo"]; ?></td>
-                        <td><?php echo $listCars["marcaVehiculo"]; ?></td>
-                        <td><?php echo $listCars["placaVehicular"]; ?></td>
-                        <td><?php echo $listCars["capacidadCarga"]; ?></td>
-                        <td><?php echo $listCars["estado"]; ?></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $listCars["tipoVehiculo"]; ?></td>
+                            <td><?php echo $listCars["marcaVehiculo"]; ?></td>
+                            <td><?php echo $listCars["placaVehicular"]; ?></td>
+                            <td><?php echo $listCars["capacidadCarga"]; ?></td>
+                            <td><?php echo $listCars["estado"]; ?></td>
+                        </tr>
                 </tbody>
-                <?php } ?>
+            <?php } ?>
             </table>
         </div>
+
         <div data-content id="dos" class="sub-content-item">
 
             <form name="login-form" id="login-form" method="post" action="../../Controller/AddVehicles.php">
@@ -72,23 +73,35 @@
 
                 <fieldset>
 
-                    <section class="sec_">
-                        <label title="razon">Tipo De Vehiculo</label>
-                        <div class="form-group">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="tipoVehiculo" value="Vann" checked="checked" required>
-                                    <i class=" far fa-check-circle fa-fw"></i> &nbsp; Vann
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="tipoVehiculo" value="camion" required>
-                                    <i class=" far fa-times-circle fa-fw"></i> &nbsp; camion
-                                </label>
+                    <section class="sec_" style="padding-bottom: 0px">
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="razon">Tipo De Vehiculo</label>
                             </div>
                         </div>
                     </section>
+
+                    <section class="sec_" style="padding-top: 0px">
+                        <div id="radios2" role="radiogroup" tabindex="-1"  style="padding-left: 50px">
+                            <div class="custom-control custom-control-inline custom-radio">
+                                <input type="radio" autocomplete="off" class="custom-control-input" name="tipoVehiculo" value="Vann" id="__BVID__118" required>
+
+                                <!-- <input class="custom-control-input" type="radio" name="tipoVehiculo" value="Vann" checked="checked" required> -->
+                                <label class="custom-control-label" for="__BVID__118">Vann</label>
+
+                                <!-- <i class=" far fa-check-circle fa-fw"></i> &nbsp; Vann -->
+                            </div>
+                            <div class="custom-control custom-control-inline custom-radio">
+                                <input class="custom-control-input" type="radio" name="tipoVehiculo" value="camion" id="__BVID__119" required>
+                                <!-- <i class=" far fa-times-circle fa-fw"></i> &nbsp; camion -->
+                                <label class="custom-control-label" for="__BVID__119">Camion</label>
+
+                            </div>
+                        </div>
+                    </section>
+
+
+
                     <section class="sec_">
                         <div class="sec_1">
 
@@ -96,10 +109,21 @@
                                 <label title="text">Capacidad Carga</label>
                             </div>
                             <div class="input">
-                                <input name="capacidadCarga" type="text" maxlength="20" id="capacidadCarga" />
+                                <input class="form-control" name="capacidadCarga" type="text" maxlength="20" id="capacidadCarga" />
+                            </div>
+                        </div>
+
+                        <div class="sec_1">
+
+                            <div class="label">
+                                <label title="text">Marca Vehiculo</label>
+                            </div>
+                            <div class="input">
+                                <input class="form-control" name="marcaVehiculo" type="text" maxlength="20" id="marcaVehiculo" />
 
                             </div>
                         </div>
+
                     </section>
                     <!--
                     <section class="sec_">
@@ -129,22 +153,13 @@
 
 
                     <section class="sec_">
-                        <div class="sec_1">
 
-                            <div class="label">
-                                <label title="text">Marca Vehiculo</label>
-                            </div>
-                            <div class="input">
-                                <input name="marcaVehiculo" type="text" maxlength="20" id="marcaVehiculo" />
-
-                            </div>
-                        </div>
 
                         <div class="sec_1">
                             <div class="label">
                                 <label title="text">Kilometraje</label>
                             </div>
-                            <script>
+                            <!-- <script>
                                 function getkilometraje(val) {
                                     var txt = document.getElementById('KM').value = val;
                                     console.log(txt.value);
@@ -169,11 +184,14 @@
                                     let finalVal = ele.match(/.{1,3}/g).join('-');
                                     document.getElementById(txt.id).value = finalVal;
                                 }
-                            </script>
+                            </script> -->
+                            <!-- <div class="input"> -->
+                            <!-- <input type="range" list="tickmarks" min="0" max="100" onchange="getkilometraje(this.value+' KM');" /> -->
+                            <!-- </div> -->
                             <div class="input">
-                                <input type="range" list="tickmarks" min="0" max="100" onchange="getkilometraje(this.value+' KM');" />
-                                <input type="text" placeholder="deslice la barra" name="KM" id="KM">
+                                <input class="form-control" type="text" name="KM" id="KM">
                             </div>
+
                         </div>
                         <div class="sec_1">
                             <div class="label">
@@ -259,14 +277,13 @@
 
 
             </form>
-
         </div>
 
-    </div>
 
-    <!--  -->
-    <script src="../js/test.js"></script>
-    <!--  -->
+
+        <!--  -->
+        <script src="../js/test.js"></script>
+        <!--  -->
 
 </body>
 
