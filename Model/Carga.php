@@ -39,7 +39,9 @@ class Carga
 		$cn = $cnx->abrirConexion();*/
 		try {
 			$sql = "INSERT INTO cargas VALUES (null,:ruc,:descrip, :unidadMedida, :pesoCarga,:largoCarga,:anchoCarga, :altoCarga,:direccionEnvio,:direccionEntrega,now(),:estado);";
+
 			$stmt = $this->db->prepare($sql);
+
 			$stmt->bindParam(':ruc', $ruc);
 			$stmt->bindParam(':descrip', $descrip);
 			$stmt->bindParam(':unidadMedida', $unidadMedida);

@@ -11,6 +11,7 @@ class Vehiculo
 	public function __construct()
 	{
 		$this->listCar = array();
+
 		$conn = new Conexion();
 		//$this->dbname = $this->conn->db; //nombre de la bd
 		$this->db = $conn->getConexion();
@@ -41,7 +42,9 @@ class Vehiculo
 				try {
 					$sql = "INSERT INTO vehiculos (`IDvehiculo`, `tipoVehiculo`, `marcaVehiculo`, `anio`, `placaVehicular`, `capacidadCarga`, `largo`, `ancho`, `alto`, `estado`) 
 											    VALUES (null,:tipoVehiculo,:marcaVehiculo, :anio, :placaVehicular,:capacidadCarga,:largo,:ancho,:alto,:estado);";
+
 					$stmt = $this->db->prepare($sql);
+
 					$stmt->bindParam(':tipoVehiculo', $tipoVehiculo);
 					$stmt->bindParam(':marcaVehiculo', $marcaVehiculo);
 					$stmt->bindParam(':anio', $anio);

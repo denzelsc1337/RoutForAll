@@ -41,6 +41,7 @@ class Conductor
 		try {
 			$sql = "INSERT INTO conductor VALUES (null,:tipoDoc,:numDoc, :nombres, :apellidoP,:apellidoM,:fechaNacimiento, :edad, :celular,:correo,:tipoLic, :estadoLic)";
 			$stmt = $this->db->prepare($sql);
+
 			$stmt->bindParam(':tipoDoc', $tipoDoc);
 			$stmt->bindParam(':numDoc', $numDoc);
 			$stmt->bindParam(':nombres', $nombres);

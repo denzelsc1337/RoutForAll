@@ -97,6 +97,16 @@
                             <div class="label">
                                 <label title="text">Placa Vehicular</label>
                             </div>
+                            <script type="text/javascript">
+                                function addGuion(txt) {
+                                let ele = document.getElementById(txt.id);
+                                ele = ele.value.split('-').join('');
+
+                                let finalVal = ele.match(/.{1,3}/g).join('-');
+                                document.getElementById(txt.id).value = finalVal;
+                            }
+
+                        </script>
                             <div class="input">
                                 <input style="width: 200px;" class="form-control" name="placaVehicular" id="placaVehicular" type="text" maxlength="7" style="text-transform:uppercase;" onkeyup="addGuion(this)" />
                             </div>
