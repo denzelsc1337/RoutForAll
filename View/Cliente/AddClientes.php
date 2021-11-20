@@ -155,7 +155,7 @@
                                 <label title="text" for="celular">Contacto</label>
                             </div>
                             <div class="input">
-                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="contacto" type="text" maxlength="9" id="contacto" />
+                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="contacto" type="text" maxlength="30" id="contacto" />
                             </div>
                         </div>
                     </section>

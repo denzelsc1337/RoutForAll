@@ -70,7 +70,6 @@
 
             <form name="login-form" id="login-form" method="post" action="../../Controller/AddVehicles.php">
 
-
                 <fieldset>
 
                     <section class="sec_" style="padding-bottom: 0px">
