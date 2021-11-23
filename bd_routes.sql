@@ -68,13 +68,14 @@ altoCarga bigint(11) not null,
 direccionEnvio varchar(200) not null,
 direccionEntrega varchar(200) not null,
 fechaRegistro datetime,
-estado varchar(50) not null,
+estado varchar(50) NOT NULL DEFAULT 'Pendiente',
 FOREIGN KEY (rucCliente) REFERENCES clientes(RUC_cliente)
 );
+-- ALTER TABLE `cargas` CHANGE `estado` `estado` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'Pendiente';
 
+INSERT INTO `cargas` VALUES (null,'10754811043', 'denzel test', 'KILO', 45, 45, 45, 45, 'ivan leon',"test",now(),"activo");
 
-
-select * from cargas;
+desc cargas;
 
 -- update cargas
 -- set rucCliente = 10754811043 
@@ -105,6 +106,8 @@ create table rutas(
 
 
 select * from rutas;
+
+
 
 -- MOSTRAR EN POPOUP CONDUCTOR--
 select env.nombreCliente, apellidoCliente, direccionEnvio, celularCliente 

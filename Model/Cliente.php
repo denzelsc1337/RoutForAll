@@ -41,6 +41,7 @@ class Cliente
 		try {
 			$sql = "INSERT INTO clientes VALUES (:ruc,:razonSocial, :tipoPersona, :direccion,:correo,:telefono, :celular, :contactoPersona)";
 			$stmt = $this->db->prepare($sql);
+			
 			$stmt->bindParam(':ruc', $ruc);
 			$stmt->bindParam(':razonSocial', $razonSocial);
 			$stmt->bindParam(':tipoPersona', $tipoPersona);

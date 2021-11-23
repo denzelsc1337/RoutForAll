@@ -109,17 +109,19 @@
                                     <div class="input">
                                         <textarea class="form-control" name="desc" id="desc" rows="7" cols="60"></textarea>  
                                     </div>
+                                    <!--
                                     <div class="label">
                                         <label title="text">Estado</label>
                                     </div>
                                     <div class="input">
-                                        <select class="form-control" name="estado" id="estado"">
+                                        <select class="form-control" name="estado" id="estado">
                                             <option value="" selected="" disabled>Seleccione una opción</option>
                                             <option value="entregado">Entregado</option>
                                             <option value="por asignar">Por Asignar</option>
                                             <option value="pendiente">Pendiente</option>
                                         </select>
                                     </div>
+                                -->
                                 </div>
                                 <div class="sec_1">
                                     <div class="label">

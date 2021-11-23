@@ -5,18 +5,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Agregar Clientes</title>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!--  -->
     <link rel="stylesheet" href="../css/corona/app.0d92b70a.css">
     <link rel="stylesheet" href="../css/corona/chunk-4ab62850.48f556ca.css">
     <link rel="stylesheet" href="../css/corona/chunk-162ef2da.0e433876.css">
     <link rel="stylesheet" href="../css/corona/chunk-vendors.0dbf83be.css">
     <!--  -->
-
+    <title>Agregar Clientes</title>
 </head>
 
 <body>
@@ -51,6 +48,8 @@
                         <th>Correo</th>
                         <th>Telefono</th>
                         <th>Celular</th>
+                        <th>Edit</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -64,19 +63,39 @@
                             <td><?php echo $listClients["correo"]; ?></td>
                             <td><?php echo $listClients["telefono"]; ?></td>
                             <td><?php echo $listClients["celular"]; ?></td>
-
+                             <td>
+                                <button type="button" class="btn btn-success btnAsign" data-toggle="modal" data-target="exampleModal">Edit</button>
+                             </td>
                         </tr>
                 </tbody>
             <?php } ?>
 
             </table>
         </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div data-content id="dos" class="sub-content-item">
 
             <form name="login-form" id="login-form" method="post" action="../../Controller/AddClients.php">
-
                 <fieldset>
-
                     <section class="sec_">
                         <div class="sec_1">
                             <div class="label">

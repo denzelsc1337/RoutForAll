@@ -189,9 +189,8 @@ include_once('../config/connection.php');
                 <div class="modal-body">
                     <h4>Seleccion de conductor:</h4>
                     <form method="post" action="../Controller/AddRoutes.php">
-                        <input type="text" name="codigoEnvio" id="codigoEnvio" hidden="">
+                        <input type="text" name="codigoEnvio" id="codigoEnvio">
                         <input name="peso" id="peso">
-                        <input name="medida" id="medida">
 
                         <section class="cards_">
                             <?php
@@ -281,7 +280,7 @@ include_once('../config/connection.php');
                 }).get();
                 console.log(data);
                 $('#codigoEnvio').val(data[0]);
-                $('#peso').val(data[4]);
+                $('#peso').val(data[3]);
 
 
                 var str1 = $("#peso");

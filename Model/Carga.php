@@ -33,12 +33,12 @@ class Carga
 		}
 	}
 
-	function agregarCargas($ruc,$descrip,$unidadMedida,$pesoCarga,$largoCarga,$anchoCarga,$altoCarga,$direccionEnvio,$direccionEntrega,$estado){
+	function agregarCargas($ruc,$descrip,$unidadMedida,$pesoCarga,$largoCarga,$anchoCarga,$altoCarga,$direccionEnvio,$direccionEntrega){
 /*		include_once '../config/connection.php';
 		$cnx = new Conexion();
 		$cn = $cnx->abrirConexion();*/
 		try {
-			$sql = "INSERT INTO cargas VALUES (null,:ruc,:descrip, :unidadMedida, :pesoCarga,:largoCarga,:anchoCarga, :altoCarga,:direccionEnvio,:direccionEntrega,now(),:estado);";
+			$sql = "INSERT INTO cargas VALUES (null,:ruc,:descrip, :unidadMedida, :pesoCarga,:largoCarga,:anchoCarga, :altoCarga,:direccionEnvio,:direccionEntrega,now(),'Pendiente');";
 
 			$stmt = $this->db->prepare($sql);
 
@@ -52,7 +52,7 @@ class Carga
 			$stmt->bindParam(':direccionEnvio', $direccionEnvio);
 			$stmt->bindParam(':direccionEntrega', $direccionEntrega);
 			
-			$stmt->bindParam(':estado', $estado);
+			//$stmt->bindParam(':estado', $estado);
 
 			$stmt->execute(array(':ruc' => $ruc, 
 							':descrip' => $descrip,
@@ -62,9 +62,7 @@ class Carga
 							':anchoCarga' => $anchoCarga,
 							':altoCarga' => $altoCarga,
 							':direccionEnvio' => $direccionEnvio,
-							':direccionEntrega' => $direccionEntrega,
-							
-							':estado' => $estado
+							':direccionEntrega' => $direccionEntrega
 							));
 ?>
 		<META http-equiv="Refresh" content = "0.3 ; URL =../View/Carga/AddCargas.php">
