@@ -6624,16 +6624,16 @@ a.close.disabled {
     padding: .75rem
 }
 
-.modal-open {
+.modall-open {
     overflow: hidden
 }
 
-.modal-open .modal {
+.modall-open .modall {
     overflow-x: hidden;
     overflow-y: auto
 }
 
-.modal {
+.modall {
     position: fixed;
     top: 0;
     left: 0;
@@ -6645,14 +6645,14 @@ a.close.disabled {
     outline: 0
 }
 
-.modal-dialog {
+.modall-dialog {
     position: relative;
     width: auto;
     margin: 10px;
     pointer-events: none
 }
 
-.modal.fade .modal-dialog {
+.modall.fade .modall-dialog {
     -webkit-transition: -webkit-transform .4s ease;
     transition: -webkit-transform .4s ease;
     transition: transform .4s ease;
@@ -6662,45 +6662,45 @@ a.close.disabled {
 }
 
 @media (prefers-reduced-motion:reduce) {
-    .modal.fade .modal-dialog {
+    .modall.fade .modall-dialog {
         -webkit-transition: none;
         transition: none
     }
 }
 
-.modal.show .modal-dialog {
+.modall.show .modall-dialog {
     -webkit-transform: none;
     transform: none
 }
 
-.modal.modal-static .modal-dialog {
+.modall.modall-static .modall-dialog {
     -webkit-transform: scale(1.02);
     transform: scale(1.02)
 }
 
-.modal-dialog-scrollable {
+.modall-dialog-scrollable {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     max-height: calc(100% - 20px)
 }
 
-.modal-dialog-scrollable .modal-content {
+.modall-dialog-scrollable .modall-content {
     max-height: calc(100vh - 20px);
     overflow: hidden
 }
 
-.modal-dialog-scrollable .modal-footer,
-.modal-dialog-scrollable .modal-header {
+.modall-dialog-scrollable .modall-footer,
+.modall-dialog-scrollable .modall-header {
     -ms-flex-negative: 0;
     flex-shrink: 0
 }
 
-.modal-dialog-scrollable .modal-body {
+.modall-dialog-scrollable .modall-body {
     overflow-y: auto
 }
 
-.modal-dialog-centered {
+.modall-dialog-centered {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6710,13 +6710,13 @@ a.close.disabled {
     min-height: calc(100% - 20px)
 }
 
-.modal-dialog-centered:before {
+.modall-dialog-centered:before {
     display: block;
     height: calc(100vh - 20px);
     content: ""
 }
 
-.modal-dialog-centered.modal-dialog-scrollable {
+.modall-dialog-centered.modall-dialog-scrollable {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -6727,15 +6727,15 @@ a.close.disabled {
     height: 100%
 }
 
-.modal-dialog-centered.modal-dialog-scrollable .modal-content {
+.modall-dialog-centered.modall-dialog-scrollable .modall-content {
     max-height: none
 }
 
-.modal-dialog-centered.modal-dialog-scrollable:before {
+.modall-dialog-centered.modall-dialog-scrollable:before {
     content: none
 }
 
-.modal-content {
+.modall-content {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6753,7 +6753,7 @@ a.close.disabled {
     outline: 0
 }
 
-.modal-backdrop {
+.modall-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -6763,15 +6763,15 @@ a.close.disabled {
     background-color: #000
 }
 
-.modal-backdrop.fade {
+.modall-backdrop.fade {
     opacity: 0
 }
 
-.modal-backdrop.show {
+.modall-backdrop.show {
     opacity: .5
 }
 
-.modal-header {
+.modall-header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6787,17 +6787,17 @@ a.close.disabled {
     border-top-right-radius: calc(.3rem - 1px)
 }
 
-.modal-header .close {
+.modall-header .close {
     padding: 1rem 1rem;
     margin: -25px -26px -25px auto
 }
 
-.modal-title {
+.modall-title {
     margin-bottom: 0;
     line-height: 1.5
 }
 
-.modal-body {
+.modall-body {
     position: relative;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
@@ -6805,7 +6805,7 @@ a.close.disabled {
     padding: .9375rem
 }
 
-.modal-footer {
+.modall-footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6823,11 +6823,11 @@ a.close.disabled {
     border-bottom-left-radius: calc(.3rem - 1px)
 }
 
-.modal-footer>* {
+.modall-footer>* {
     margin: .25rem
 }
 
-.modal-scrollbar-measure {
+.modall-scrollbar-measure {
     position: absolute;
     top: -9999px;
     width: 50px;
@@ -6836,36 +6836,36 @@ a.close.disabled {
 }
 
 @media (min-width:576px) {
-    .modal-dialog {
+    .modall-dialog {
         max-width: 500px;
         margin: 30px auto
     }
-    .modal-dialog-scrollable {
+    .modall-dialog-scrollable {
         max-height: calc(100% - 60px)
     }
-    .modal-dialog-scrollable .modal-content {
+    .modall-dialog-scrollable .modall-content {
         max-height: calc(100vh - 60px)
     }
-    .modal-dialog-centered {
+    .modall-dialog-centered {
         min-height: calc(100% - 60px)
     }
-    .modal-dialog-centered:before {
+    .modall-dialog-centered:before {
         height: calc(100vh - 60px)
     }
-    .modal-sm {
+    .modall-sm {
         max-width: 300px
     }
 }
 
 @media (min-width:992px) {
-    .modal-lg,
-    .modal-xl {
+    .modall-lg,
+    .modall-xl {
         max-width: 90%
     }
 }
 
 @media (min-width:1200px) {
-    .modal-xl {
+    .modall-xl {
         max-width: 1140px
     }
 }
@@ -9188,7 +9188,7 @@ button.bg-dark:hover {
     margin: 0!important
 }
 
-.demo-modal .modal-dialog,
+.demo-modall .modall-dialog,
 .mt-0,
 .my-0 {
     margin-top: 0!important
@@ -11950,7 +11950,7 @@ input[type=color].form-control:disabled {
     background: no-repeat 50%/50% 50%
 }
 
-.modal-backdrop {
+.modall-backdrop {
     opacity: .5
 }
 
@@ -15724,12 +15724,12 @@ code {
     padding: 15px
 }
 
-.demo-modal {
+.demo-modall {
     position: static;
     display: block
 }
 
-.demo-modal .modal-dialog.modal-lg {
+.demo-modall .modall-dialog.modall-lg {
     max-width: 100%
 }
 
