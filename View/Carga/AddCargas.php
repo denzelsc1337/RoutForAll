@@ -88,7 +88,7 @@
                                 <label title="razon">Razon Social</label>
                             </div>
                             <div class="input">
-                                <input class="form-control" tabindex="2" accesskey="p" name="razon" disabled="true" type="text" maxlength="20" id="razon" />
+                                <input class="form-control" tabindex="2" accesskey="p" name="razon" disabled="true" type="text" maxlength="40" id="razon" />
                             </div>
                         </div>
                     </section>
