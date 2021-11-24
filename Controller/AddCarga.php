@@ -1,4 +1,5 @@
 <?php 
+$idclient = $_POST['id_cliente'];
 $ruc = $_POST['numruc'];
 $desc = $_POST['desc'];
 $umedida = $_POST['unidadM'];
@@ -13,5 +14,5 @@ $direccionEnt = $_POST['direccionEntr'];
 require_once('../Model/Carga.php');
 
 $oCarga = new Carga();
-$c = $oCarga->agregarCargas($ruc,$desc,$umedida,$peso,$largo,$ancho,$alto,$direccionEnv,$direccionEnt);
+$c = $oCarga->agregarCargas($idclient,$ruc,$desc,$umedida,$peso,$largo,$ancho,$alto,$direccionEnv,$direccionEnt);
  ?>

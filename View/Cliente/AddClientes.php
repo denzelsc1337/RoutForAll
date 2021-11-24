@@ -20,7 +20,7 @@
 <body>
     <div class="header">
         <nav class="navigation">
-            <a class="a_cont" href="../../index.php">Home</a>
+            <a class="a_cont" href="../principal.php">Home</a>
             <a class="a_cont" href="../AddRoute.php">Asignar Routes</a>
             <?php include("../../View/Header/mainHeader.php"); ?>
 
@@ -46,6 +46,7 @@
                 ?>
                 <thead>
                     <tr>
+                        <th>IDCLIENT</th>
                         <th>RUC</th>
                         <th>Razon Social</th>
                         <th>Tipo de Persona</th>
@@ -61,6 +62,7 @@
                     foreach ($listClient as $listClients) {
                     ?>
                         <tr>
+                            <td><?php echo $listClients["IDclient"]; ?></td>
                             <td><?php echo $listClients["RUC_cliente"]; ?></td>
                             <td><?php echo $listClients["razonSocial"]; ?></td>
                             <td><?php echo $listClients["tipoPersona"]; ?></td>
@@ -216,7 +218,11 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Razon Social</label>
-                                <input type="text" class="form-control" id="rucUpdt">
+                                <input type="text" class="form-control" id="razonS">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>id client</label>
+                                <input type="text" class="form-control" id="idclient">
                             </div>
                         </div>
                         <div class="form-group">
@@ -230,21 +236,17 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                        </div>
-                        <div class="form-group">
                             <label for="inputAddress">Correo</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Email">
+                            <input type="text" class="form-control" id="correoUpdt" placeholder="Email">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Telefono</label>
-                                <input type="text" class="form-control" id="rucUpdt">
+                                <input type="text" class="form-control" id="tlfnUpdt">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Celular</label>
-                                <input type="text" class="form-control" id="rucUpdt">
+                                <input type="text" class="form-control" id="celUpdt">
                             </div>
                         </div>
                         <div class="form-group">
@@ -272,7 +274,28 @@
     <script src="../js/test.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <!--  -->
+    <script>
+        $(document).ready(function() {
+            $('.btnAsign').on('click', function() {
+                $('#asdasdasd').modal('show');
 
+                $tr = $(this).closest('tr');
+                var data = $tr.children('td').map(function() {
+                    return $(this).text();
+                }).get();
+                console.log(data);
+                $('#idclient').val(data[0]);
+                $('#rucUpdt').val(data[1]);
+                $('#razonS').val(data[2]);
+                $('#customRadioInline1').prop('checked', data[3]);
+                $('#correoUpdt').val(data[4]);
+                $('#tlfnUpdt').val(data[5]);
+                $('#celUpdt').val(data[6]);
+                
+
+            });
+        });
+    </script>
     <script>
         $("#numruc").keyup(function() {
             var nroruc = $('#numruc').val().substring(0, 2);

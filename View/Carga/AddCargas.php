@@ -23,7 +23,7 @@
 
     <div class="header">
         <nav class="navigation">
-            <a class="a_cont" href="../../index.php">Home</a>
+            <a class="a_cont" href="../principal.php">Home</a>
             <a class="a_cont" href="../AddRoute.php">Asignar Routes</a>
             <?php include("../../View/Header/mainHeader.php"); ?>
         </nav>
@@ -57,7 +57,7 @@
                     foreach ($listCarga as $listCargas) {
                     ?>
                         <tr>
-                            <td><?php echo $listCargas["rucCliente"]; ?></td>
+                            <td><?php echo $listCargas["rucClient"]; ?></td>
                             <td><?php echo $listCargas["descripcionCarga"]; ?></td>
                             <td><?php echo $listCargas["pesoCarga"]; ?></td>
                             <td><?php echo $listCargas["direccionEnvio"]; ?></td>
@@ -73,6 +73,15 @@
             <form name="login-form" id="login-form" method="post" action="../../Controller/AddCarga.php">
                 <fieldset>
                     <section class="sec_">
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="codenvio">id_cliente</label>
+                            </div>
+                            <div class="input">
+                                <!--onkeyup="getDetail(this.value)"-->
+                                <input class="form-control" autocomplete="off" tabindex="1" disabled="true" accesskey="u" name="id_cliente" type="text" id="id_cliente" />
+                            </div>
+                        </div>
                         <div class="sec_1">
                             <div class="label">
                                 <label title="codenvio">RUC cliente</label>
@@ -235,7 +244,9 @@
                     },
                     success: function(response) {
                         var result = JSON.parse(response);
-                        console.log(result);
+                        console.log(result.razon);
+                        console.log(result.id_client);
+
                         //document.getElementById("razon").value = result;
                         //document.getElementById("numruc").readOnly = true;
                         /*                    if (response==true) {
@@ -244,12 +255,15 @@
                                                 document.getElementById("razon").value = result;
                                                 document.getElementById("numruc").readOnly = true;
                                             }*/
-                        var r = confirm("La razon social es: '" + result + "'?");
+                        var r = confirm("La razon social es: '" + result.razon + "'?");
                         if (r == true) {
-                            document.getElementById("razon").value = result;
+                            document.getElementById("razon").value = result.razon;
+                            document.getElementById("id_cliente").value = result.id_client;
                             document.getElementById("numruc").readOnly = true;
+                            document.getElementById("id_cliente").readOnly = true;
                         } else {
                             document.getElementById("numruc").readOnly = false;
+                            document.getElementById("id_cliente").readOnly = false;
                         }
                         return response;
                     }

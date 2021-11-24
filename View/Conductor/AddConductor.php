@@ -22,7 +22,7 @@
 <body>
     <div class="header">
         <nav class="navigation">
-            <a class="a_cont" href="../../index.php">Home</a>
+            <a class="a_cont" href="../principal.php">Home</a>
             <a class="a_cont" href="../AddRoute.php">Asignar Routes</a>
             <?php include("../../View/Header/mainHeader.php"); ?>
 

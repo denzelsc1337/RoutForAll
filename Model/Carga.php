@@ -33,15 +33,15 @@ class Carga
 		}
 	}
 
-	function agregarCargas($ruc,$descrip,$unidadMedida,$pesoCarga,$largoCarga,$anchoCarga,$altoCarga,$direccionEnvio,$direccionEntrega){
+	function agregarCargas($idclient,$ruc,$descrip,$unidadMedida,$pesoCarga,$largoCarga,$anchoCarga,$altoCarga,$direccionEnvio,$direccionEntrega){
 /*		include_once '../config/connection.php';
 		$cnx = new Conexion();
 		$cn = $cnx->abrirConexion();*/
 		try {
-			$sql = "INSERT INTO cargas VALUES (null,:ruc,:descrip, :unidadMedida, :pesoCarga,:largoCarga,:anchoCarga, :altoCarga,:direccionEnvio,:direccionEntrega,now(),'Pendiente');";
+			$sql = "INSERT INTO cargas VALUES (null,:idclient,:ruc,:descrip, :unidadMedida, :pesoCarga,:largoCarga,:anchoCarga, :altoCarga,:direccionEnvio,:direccionEntrega,now(),'Pendiente');";
 
 			$stmt = $this->db->prepare($sql);
-
+			$stmt->bindParam(':idclient',$idclient);
 			$stmt->bindParam(':ruc', $ruc);
 			$stmt->bindParam(':descrip', $descrip);
 			$stmt->bindParam(':unidadMedida', $unidadMedida);
@@ -54,7 +54,8 @@ class Carga
 			
 			//$stmt->bindParam(':estado', $estado);
 
-			$stmt->execute(array(':ruc' => $ruc, 
+			$stmt->execute(array('idclient'=>$idclient,
+							':ruc' => $ruc, 
 							':descrip' => $descrip,
 							':unidadMedida' => $unidadMedida,
 							':pesoCarga' => $pesoCarga,

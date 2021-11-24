@@ -53,7 +53,7 @@ include_once('../config/connection.php');
 
     <div class="header">
         <nav class="navigation">
-            <a class="a_cont" href="../index.php">Home</a>
+            <a class="a_cont" href="principal.php">Home</a>
 
             <a class="a_cont" href="AddRoute.php">Asignar Routes</a>
             <a class="a_cont" href="Cliente/AddClientes.php">Agregar Clientes</a>
@@ -98,7 +98,7 @@ include_once('../config/connection.php');
                 ?>
                     <tr>
                         <td><?php echo $listaPedidos["IDcargas"]; ?></td>
-                        <td><?php echo $listaPedidos["rucCliente"]; ?></td>
+                        <td><?php echo $listaPedidos["rucClient"]; ?></td>
                         <td><?php echo $listaPedidos["descripcionCarga"]; ?></td>
                         <td><?php echo $listaPedidos["pesoCarga"]; ?></td>
                         <td><?php echo $listaPedidos["direccionEnvio"]; ?></td>

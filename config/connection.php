@@ -2,7 +2,7 @@
 
 class Conexion 
 {
-    private $conexion;
+    public $conexion;
     private $host;
     public $db;
     private $user;

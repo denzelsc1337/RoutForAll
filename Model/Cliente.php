@@ -39,7 +39,7 @@ class Cliente
 		$cnx = new Conexion();
 		$cn = $cnx->abrirConexion();*/
 		try {
-			$sql = "INSERT INTO clientes VALUES (:ruc,:razonSocial, :tipoPersona, :direccion,:correo,:telefono, :celular, :contactoPersona)";
+			$sql = "INSERT INTO clientes VALUES (null,:ruc,:razonSocial, :tipoPersona, :direccion,:correo,:telefono, :celular, :contactoPersona)";
 			$stmt = $this->db->prepare($sql);
 			
 			$stmt->bindParam(':ruc', $ruc);
