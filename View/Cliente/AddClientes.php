@@ -210,7 +210,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <form>
+                    <form action="../../Controlador/ActualizarProducto.php" method="POST">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>RUC</label>
@@ -249,11 +249,6 @@
                                 <input type="text" class="form-control" id="celUpdt">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Contacto</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Alberto">
-                        </div>
-
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -287,7 +282,17 @@
                 $('#idclient').val(data[0]);
                 $('#rucUpdt').val(data[1]);
                 $('#razonS').val(data[2]);
-                $('#customRadioInline1').prop('checked', data[3]);
+
+                var tipo = data[3];
+
+                if (tipo == "natural") {
+                   //console.log("testing");
+                   $('#customRadioInline1').prop('checked', true);
+                }
+                else if (tipo == "juridica") {
+                    //console.log("testing_2");
+                    $('#customRadioInline2').prop('checked', true);
+                }
                 $('#correoUpdt').val(data[4]);
                 $('#tlfnUpdt').val(data[5]);
                 $('#celUpdt').val(data[6]);
