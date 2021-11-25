@@ -118,11 +118,11 @@ select * from rutas;
 
 
 -- MOSTRAR EN POPOUP CONDUCTOR--
-select env.nombreCliente, apellidoCliente, direccionEnvio, celularCliente 
-from envios env
-inner join rutas rut
-on env.IDenvio = rut.idenvio
-where rut.IDruta = 1 ;
+-- select env.nombreCliente, apellidoCliente, direccionEnvio, celularCliente 
+-- from envios env
+-- inner join rutas rut
+-- on env.IDenvio = rut.idenvio
+-- where rut.IDruta = 1 ;
 -- MOSTRAR EN POPOUP CONDUCTOR --
 
 -- create table envios(

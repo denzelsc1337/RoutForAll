@@ -79,7 +79,7 @@
                             </div>
                             <div class="input">
                                 <!--onkeyup="getDetail(this.value)"-->
-                                <input class="form-control" autocomplete="off" tabindex="1" disabled="true" accesskey="u" name="id_cliente" type="text" id="id_cliente" />
+                                <input class="form-control" autocomplete="off" tabindex="1" readonly accesskey="u" name="id_cliente" type="text" id="id_cliente" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -260,10 +260,10 @@
                             document.getElementById("razon").value = result.razon;
                             document.getElementById("id_cliente").value = result.id_client;
                             document.getElementById("numruc").readOnly = true;
-                            document.getElementById("id_cliente").readOnly = true;
+                            //document.getElementById("id_cliente").readOnly = true;
                         } else {
                             document.getElementById("numruc").readOnly = false;
-                            document.getElementById("id_cliente").readOnly = false;
+                           // document.getElementById("id_cliente").readOnly = false;
                         }
                         return response;
                     }
