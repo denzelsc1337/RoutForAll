@@ -46,7 +46,7 @@
                 ?>
                 <thead>
                     <tr>
-                        <th>IDCLIENT</th>
+                        <th hidden>IDCLIENT</th>
                         <th>RUC</th>
                         <th>Razon Social</th>
                         <th>Tipo de Persona</th>
@@ -62,7 +62,7 @@
                     foreach ($listClient as $listClients) {
                     ?>
                         <tr>
-                            <td><?php echo $listClients["IDclient"]; ?></td>
+                            <td hidden><?php echo $listClients["IDclient"]; ?></td>
                             <td><?php echo $listClients["RUC_cliente"]; ?></td>
                             <td><?php echo $listClients["razonSocial"]; ?></td>
                             <td><?php echo $listClients["tipoPersona"]; ?></td>
@@ -210,50 +210,52 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <form action="../../Controlador/ActualizarProducto.php" method="POST">
+                    <form action="../../Controller/UpdateCliente.php" method="POST">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>RUC</label>
-                                <input type="text" class="form-control" id="rucUpdt">
+                                <input type="text" class="form-control" name="rucUpdt" id="rucUpdt">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Razon Social</label>
-                                <input type="text" class="form-control" id="razonS">
+                                <input type="text" class="form-control" name="razonS" id="razonS">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6" hidden>
                                 <label>id client</label>
-                                <input type="text" class="form-control" id="idclient">
+                                <input type="text" class="form-control" name="idclient" id="idclient">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                              <input type="radio" id="customRadioInline1" name="customRadioInline1" value="natural"  class="custom-control-input">
                               <label class="custom-control-label" for="customRadioInline1">Natural</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                              <input type="radio" id="customRadioInline2" name="customRadioInline1" value="juridica"  class="custom-control-input">
                               <label class="custom-control-label" for="customRadioInline2">Juridica</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Correo</label>
-                            <input type="text" class="form-control" id="correoUpdt" placeholder="Email">
+                            <input type="text" class="form-control" name="correoUpdt" id="correoUpdt" placeholder="Email">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Telefono</label>
-                                <input type="text" class="form-control" id="tlfnUpdt">
+                                <input type="text" class="form-control" name="tlfnUpdt" id="tlfnUpdt">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Celular</label>
-                                <input type="text" class="form-control" id="celUpdt">
+                                <input type="text" class="form-control" name="celUpdt" id="celUpdt">
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
                     </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                   </div>
                 </div>
               </div>

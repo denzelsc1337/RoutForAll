@@ -69,6 +69,41 @@ class Cliente
 		}
 		//$cnx->cerrarConexion($cn);
 	}
+	function updateCliente($data,$secuence){
+		try {
+			$query = "UPDATE `clientes` 
+				    SET `RUC_cliente`= :ruc,`razonSocial`= :razonSocial,`tipoPersona`=:tipoPersona,
+				    `correo`=:correo,`telefono`=:telefono,`celular`=:celular
+				    WHERE `IDclient`= :idclient";
+			$stmt = $this->db->prepare($query);
+
+			$stmt->bindParam(':ruc', $data[1]);
+			$stmt->bindParam(':razonSocial', $data[2]);
+			$stmt->bindParam(':tipoPersona', $data[3]);
+			$stmt->bindParam(':correo', $data[4]);
+			$stmt->bindParam(':telefono', $data[5]);
+			$stmt->bindParam(':celular', $data[6]);
+			$stmt->bindParam(':idclient', $secuence);
+
+			$stmt->execute(array(':ruc' => $data[1], 
+							':razonSocial' => $data[2],
+							':tipoPersona' => $data[3],
+							':correo' => $data[4],
+							':telefono' => $data[5],
+							':celular' => $data[6],
+							':idclient' => $secuence)
+							);
+		echo '<script> alert("Cliente Actualizado");</script>';
+?>
+	<META http-equiv="Refresh" content = "0.3 ; URL =../View/Cliente/AddClientes.php">
+<?php
+			
+		} catch (PDOException $e) {
+			die($e->getMessage());
+			return "error al insertar data";
+		}
+	}
+
 }
 
 
