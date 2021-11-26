@@ -74,6 +74,44 @@ class Vehiculo
 				}
 				//$cnx->cerrarConexion($cn);
 			}
+
+
+
+
+			function updateVehiculo($data,$secuence){
+				try {
+					$query = "UPDATE `vehiculos` 
+							SET `tipoVehiculo`=:tipoVehiculo, `marcaVehiculo`=:marcaVehiculo,`placaVehicular`=:placaVehicular,`capacidadCarga`=:capacidadCarga,`estado`=:estado
+							WHERE `IDvehiculo`= :IDvehiculo";
+					$stmt = $this->db->prepare($query);
+		
+					$stmt->bindParam(':tipoVehiculo', $data[1]);
+					$stmt->bindParam(':marcaVehiculo', $data[2]);
+					$stmt->bindParam(':placaVehicular', $data[3]);
+					$stmt->bindParam(':capacidadCarga', $data[4]);
+					$stmt->bindParam(':estado', $data[5]);
+					$stmt->bindParam(':IDvehiculo', $secuence);
+		
+					$stmt->execute(array(':tipoVehiculo'=> $data[1],
+										':marcaVehiculo'=> $data[2],
+										':placaVehicular'=> $data[3],
+										':capacidadCarga'=> $data[4],
+										':estado'=> $data[5],
+										':IDvehiculo'=> $secuence)
+										);
+				echo '<script> alert("Vehiculo Actualizado");</script>';
+		?>
+			<META http-equiv="Refresh" content = "0.3 ; URL =../View/Vehiculo/AddVehiculos.php">
+		<?php
+					
+				} catch (PDOException $e) {
+					die($e->getMessage());
+					return "error al insertar data";
+				}
+			}
+
+
+
 }
 
 

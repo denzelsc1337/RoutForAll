@@ -8,6 +8,7 @@
     <title>Agregar Clientes</title>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--  -->
@@ -44,6 +45,7 @@
                 ?>
                 <thead>
                     <tr>
+                        <th hidden>ID</th>
                         <th>DNI</th>
                         <th>Nombres</th>
                         <th>Apellido Paterno</th>
@@ -51,6 +53,7 @@
                         <th>Correo</th>
                         <th>Tipo de Licencia</th>
                         <th>Estado Licencia</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,13 +61,18 @@
                     foreach ($listDriver as $listDrivers) {
                     ?>
                         <tr>
+                            <td hidden><?php echo $listDrivers["IDconduct"]; ?></td>
                             <td><?php echo $listDrivers["numDoc"]; ?></td>
                             <td><?php echo $listDrivers["nombres"]; ?></td>
                             <td><?php echo $listDrivers["apellidoP"]; ?></td>
                             <td><?php echo $listDrivers["apellidoM"]; ?></td>
-                            <td><?php echo $listDrivers["correo"]; ?></td>
+                            <td style="text-transform: none;"><?php echo $listDrivers["correo"]; ?></td>
                             <td><?php echo $listDrivers["tipoLicencia"]; ?></td>
                             <td><?php echo $listDrivers["estadoLicencia"]; ?></td>
+                            <td>
+                                <button type="button" class="btn btn-success btnAsign" data-bs-toggle="modal" data-bs-target="#asdasdasd">Edit</button>
+                                <!-- <button type="button" class="btn btn-success btnAsign" data-toggle="modal" data-target="asdasdasd">Edit</button> -->
+                            </td>
                         </tr>
                 </tbody>
             <?php } ?>
@@ -272,7 +280,69 @@
 
 
 
+    <!-- Modal -->
+    <div class="modal fade" id="asdasdasd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">Editar</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../Controller/UpdateConductor.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-6" hidden>
+                                <label>ID</label>
+                                <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="idC" type="text" id="idC" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>DNI</label>
+                                <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="dniC" type="text" id="dniC" maxlength="8" />
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label>Nombres</label>
+                                <input type="text" class="form-control" name="nombresC" id="nombresC">
+                            </div>
 
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Apellido Paterno</label>
+                                <input class="form-control" tabindex="2" accesskey="p" name="apePaternoC" id="apePaternoC" type="text" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Apellido Materno</label>
+                                <input type="text" class="form-control" name="apeMaternoC" id="apeMaternoC">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label>Correo</label>
+                                <input style="text-transform: none;" type="text" class="form-control" name="correoC" id="correoC">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>Tipo Licencia</label>
+                                <input type="text" class="form-control" name="licenciaC" id="licenciaC">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Estado</label>
+                                <input type="text" class="form-control" name="estado" id="estado">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -280,6 +350,7 @@
 
     <!--  -->
     <script src="../js/test.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <!--  -->
 
     <script>
@@ -308,6 +379,29 @@
             console.log("testing");
         }*/
     </script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('.btnAsign').on('click', function() {
+        $('#asdasdasd').modal('show');
+
+        $tr = $(this).closest('tr');
+        var data = $tr.children('td').map(function() {
+            return $(this).text();
+        }).get();
+        console.log(data);
+        $('#idC').val(data[0]);
+        $('#dniC').val(data[1]);
+        $('#nombresC').val(data[2]);
+        $('#apePaternoC').val(data[3]);
+        $('#apeMaternoC').val(data[4]);
+        $('#correoC').val(data[5]);
+        $('#licenciaC').val(data[6]);
+        $('#estado').val(data[7]);
+    });
+});
+</script>
 
 </body>
 

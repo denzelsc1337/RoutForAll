@@ -82,11 +82,12 @@ html::-webkit-scrollbar-thumb:hover,
 
 /*  */
 
-@media (min-width: 576px) {
+
+/* @media (min-width: 576px) {
     .modal-dialog {
         max-width: 600px !important;
     }
-}
+} */
 
 
 /*  */
@@ -142,11 +143,12 @@ section dl dd input {
     border-radius: 0 0 10px 10px !important;
 }
 
-.table_ tr td:nth-child(1),
+
+/* .table_ tr td:nth-child(1),
 .table_ tr td:nth-child(6),
 .table_ tr td:nth-child(7) {
     font-weight: 600;
-}
+} */
 
 
 /* END TABLE */

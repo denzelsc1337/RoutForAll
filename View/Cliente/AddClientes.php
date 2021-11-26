@@ -54,7 +54,7 @@
                         <th>Telefono</th>
                         <th>Celular</th>
                         <th>Edit</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -66,13 +66,13 @@
                             <td><?php echo $listClients["RUC_cliente"]; ?></td>
                             <td><?php echo $listClients["razonSocial"]; ?></td>
                             <td><?php echo $listClients["tipoPersona"]; ?></td>
-                            <td><?php echo $listClients["correo"]; ?></td>
+                            <td style="text-transform: none;"><?php echo $listClients["correo"]; ?></td>
                             <td><?php echo $listClients["telefono"]; ?></td>
                             <td><?php echo $listClients["celular"]; ?></td>
-                             <td>
+                            <td>
                                 <button type="button" class="btn btn-success btnAsign" data-bs-toggle="modal" data-bs-target="#asdasdasd">Edit</button>
                                 <!-- <button type="button" class="btn btn-success btnAsign" data-toggle="modal" data-target="asdasdasd">Edit</button> -->
-                             </td>
+                            </td>
                         </tr>
                 </tbody>
             <?php } ?>
@@ -80,9 +80,9 @@
             </table>
 
         </div>
-        
 
-       
+
+
 
         <div data-content id="dos" class="sub-content-item">
 
@@ -129,7 +129,7 @@
                                 <label title="text" for="direccion">Direccion</label>
                             </div>
                             <div class="input">
-                                <input  style="width: 500px;" class="form-control" tabindex="2" accesskey="p" name="direccion" type="text" id="direccion" />
+                                <input style="width: 500px;" class="form-control" tabindex="2" accesskey="p" name="direccion" type="text" id="direccion" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -137,7 +137,7 @@
                                 <label title="text" for="correo">Correo</label>
                             </div>
                             <div class="input">
-                                <input  style="width: 500px;" class="form-control" tabindex="2" accesskey="p" name="correo" type="text" id="correo" />
+                                <input style="width: 500px;" class="form-control" tabindex="2" accesskey="p" name="correo" type="text" id="correo" />
                             </div>
                         </div>
 
@@ -181,36 +181,16 @@
     </div>
 
 
-    <!-- <div class="modal fade" id="asdasdasd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+    <!-- Modal -->
+    <div class="modal fade" id="asdasdasd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-            <!-- Modal -->
-            <div class="modal fade" id="asdasdasd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
+                <div class="modal-header">
                     <h2 class="modal-title" id="exampleModalLabel">Editar</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="../../Controller/UpdateCliente.php" method="POST">
+                </div>
+                <div class="modal-body">
+                    <form action="../../Controller/UpdateVehiculo.php" method="POST">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>RUC</label>
@@ -227,17 +207,17 @@
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="customRadioInline1" name="customRadioInline1" value="natural"  class="custom-control-input">
-                              <label class="custom-control-label" for="customRadioInline1">Natural</label>
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1" value="natural" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline1">Natural</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="customRadioInline2" name="customRadioInline1" value="juridica"  class="custom-control-input">
-                              <label class="custom-control-label" for="customRadioInline2">Juridica</label>
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1" value="juridica" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">Juridica</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Correo</label>
-                            <input type="text" class="form-control" name="correoUpdt" id="correoUpdt" placeholder="Email">
+                            <input  style="text-transform: none;" type="text" class="form-control" name="correoUpdt" id="correoUpdt" placeholder="Email">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -251,15 +231,15 @@
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
                     </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    
-                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-                  </div>
                 </div>
-              </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
             </div>
+        </div>
+    </div>
 
 
 
@@ -288,17 +268,16 @@
                 var tipo = data[3];
 
                 if (tipo == "natural") {
-                   //console.log("testing");
-                   $('#customRadioInline1').prop('checked', true);
-                }
-                else if (tipo == "juridica") {
+                    //console.log("testing");
+                    $('#customRadioInline1').prop('checked', true);
+                } else if (tipo == "juridica") {
                     //console.log("testing_2");
                     $('#customRadioInline2').prop('checked', true);
                 }
                 $('#correoUpdt').val(data[4]);
                 $('#tlfnUpdt').val(data[5]);
                 $('#celUpdt').val(data[6]);
-                
+
 
             });
         });

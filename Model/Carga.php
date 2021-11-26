@@ -74,6 +74,42 @@ class Carga
 		}
 		//$cnx->cerrarConexion($cn);
 	}
+
+
+
+	function updateCarga($data,$secuence){
+		try {
+			$query = "UPDATE `cargas` 
+				    SET `rucClient`=:ruc, `descripcionCarga`=:descrip,`pesoCarga`=:pesoCarga,`direccionEnvio`=:direccionEnvio,`fechaRegistro`=:fechaRegistro,`estado`=:estado
+				    WHERE `IDcargas`= :IDcargas";
+			$stmt = $this->db->prepare($query);
+
+			$stmt->bindParam(':ruc', $data[1]);
+			$stmt->bindParam(':descrip', $data[2]);
+			$stmt->bindParam(':pesoCarga', $data[3]);
+			$stmt->bindParam(':direccionEnvio', $data[4]);
+			$stmt->bindParam(':fechaRegistro', $data[5]);
+			$stmt->bindParam(':estado', $data[6]);
+			$stmt->bindParam(':IDcargas', $secuence);
+
+			$stmt->execute(array(':ruc'=> $data[1],
+								':descrip'=> $data[2],
+								':pesoCarga'=> $data[3],
+								':direccionEnvio'=> $data[4],
+								':fechaRegistro'=> $data[5],
+								':estado'=> $data[6],
+								':IDcargas'=> $secuence)
+								);
+		echo '<script> alert("Carga Actualizada");</script>';
+?>
+	<META http-equiv="Refresh" content = "0.3 ; URL =../View/Carga/AddCargas.php">
+<?php
+			
+		} catch (PDOException $e) {
+			die($e->getMessage());
+			return "error al insertar data";
+		}
+	}
 }
 
 
