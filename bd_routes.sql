@@ -59,7 +59,7 @@ INSERT INTO `clientes` VALUES (null,'10457845126','denzel test', 'juridica', 'sa
 select * from clientes;
 
 
-
+SELECT razonSocial, IDclient FROM clientes WHERE RUC_cliente = 10457845124;
 -- DELETE FROM clientes WHERE RUC_cliente = 45781245126;
 
 create table cargas(
