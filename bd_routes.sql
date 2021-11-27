@@ -59,7 +59,7 @@ INSERT INTO `clientes` VALUES (null,'10457845126','denzel test', 'juridica', 'sa
 select * from clientes;
 
 
-SELECT razonSocial, IDclient FROM clientes WHERE RUC_cliente = 10457845124;
+SELECT razonSocial, IDclient FROM clientes WHERE RUC_cliente = '10457845125';
 -- DELETE FROM clientes WHERE RUC_cliente = 45781245126;
 
 create table cargas(
@@ -79,10 +79,10 @@ estado varchar(50) NOT NULL DEFAULT 'Pendiente',
 FOREIGN KEY (id_client) REFERENCES clientes(IDclient)
 );
 
-select * from cargas;
+select * from cargas where rucClient = '10457845125';
 -- ALTER TABLE `cargas` CHANGE `estado` `estado` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'Pendiente';
 
-INSERT INTO `cargas` VALUES (null,'10001','10457845124', 'denzel test', 'KILO', 45, 45, 45, 45, 'ivan leon',"test",now(),'Pendiente');
+INSERT INTO `cargas` VALUES (null,'10001','10457845125', 'denzel test', 'KILO', 45, 45, 45, 45, 'ivan leon',"test",now(),'Pendiente');
 
 
 -- update cargas

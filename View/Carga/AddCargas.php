@@ -311,9 +311,16 @@
                         numruc: numruc
                     },
                     success: function(response) {
+                         
                         var result = JSON.parse(response);
+                        /*if (Object.keys(JSON.parse(response)).length == 0 ) {
+                            console.log("clients NOT found")
+                        } */
+
+
                         console.log(result.razon);
                         console.log(result.id_client);
+
 
                         //document.getElementById("razon").value = result;
                         //document.getElementById("numruc").readOnly = true;
