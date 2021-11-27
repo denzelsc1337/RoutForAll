@@ -8,6 +8,7 @@
     <title>Agregar Clientes</title>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!--  -->
     <link rel="stylesheet" href="../css/corona/app.0d92b70a.css">
@@ -22,7 +23,7 @@
     <div class="header">
         <nav class="navigation">
             <a class="a_cont" href="../principal.php">Home</a>
-            <a class="a_cont" href="../AddRoute.php">Asignar Routes</a>
+            <a class="a_cont" href="../AddRoute.php">Rutas</a>
             <?php include("../../View/Header/mainHeader.php"); ?>
 
         </nav>
@@ -43,11 +44,13 @@
                 ?>
                 <thead>
                     <tr>
+                        <th hidden>ID Vehiculo</th>
                         <th>Tipo de Vehiculo</th>
                         <th>Marca de Vehiculo</th>
                         <th>Placa vehicular</th>
                         <th>Capacidad Carga</th>
                         <th>Estado</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,11 +58,16 @@
                     foreach ($listCar as $listCars) {
                     ?>
                         <tr>
+                            <td hidden><?php echo $listCars["IDvehiculo"]; ?></td>
                             <td><?php echo $listCars["tipoVehiculo"]; ?></td>
                             <td><?php echo $listCars["marcaVehiculo"]; ?></td>
                             <td><?php echo $listCars["placaVehicular"]; ?></td>
                             <td><?php echo $listCars["capacidadCarga"]; ?></td>
                             <td><?php echo $listCars["estado"]; ?></td>
+                            <td>
+                                <button type="button" class="btn btn-success btnAsign" data-bs-toggle="modal" data-bs-target="#asdasdasd">Edit</button>
+                                <!-- <button type="button" class="btn btn-success btnAsign" data-toggle="modal" data-target="asdasdasd">Edit</button> -->
+                            </td>
                         </tr>
                 </tbody>
             <?php } ?>
@@ -98,14 +106,13 @@
                             </div>
                             <script type="text/javascript">
                                 function addGuion(txt) {
-                                let ele = document.getElementById(txt.id);
-                                ele = ele.value.split('-').join('');
+                                    let ele = document.getElementById(txt.id);
+                                    ele = ele.value.split('-').join('');
 
-                                let finalVal = ele.match(/.{1,3}/g).join('-');
-                                document.getElementById(txt.id).value = finalVal;
-                            }
-
-                        </script>
+                                    let finalVal = ele.match(/.{1,3}/g).join('-');
+                                    document.getElementById(txt.id).value = finalVal;
+                                }
+                            </script>
                             <div class="input">
                                 <input style="width: 200px;" class="form-control" name="placaVehicular" id="placaVehicular" type="text" maxlength="7" style="text-transform:uppercase;" onkeyup="addGuion(this)" />
                             </div>
@@ -226,13 +233,95 @@
 
 
             </form>
+            
         </div>
+    </div>
 
 
 
-        <!--  -->
-        <script src="../js/test.js"></script>
-        <!--  -->
+    <!-- Modal -->
+    <div class="modal fade" id="asdasdasd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">Editar</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../Controller/UpdateVehiculo.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-6" hidden>
+                                <label>IDVEHICULO</label>
+                                <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="idvehicular" type="text" id="idvehicular" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Tipo Vehiculo</label>
+                                <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="tipoV" type="text" id="tipoV" maxlength="11" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Narca Vehiculo</label>
+                                <input type="text" class="form-control" name="marcaV" id="marcaV">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label>Placa Vehicular</label>
+                                <input class="form-control" tabindex="2" accesskey="p" name="placaV" id="placaV" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputAddress">Capacidad de Carga</label>
+                                <input type="text" class="form-control" name="cargaV" id="cargaV">
+                            </div>
+                        </div>
+                        <div class="form-row">
+
+                            <div class="form-group col-md-4">
+                                <label>Estado</label>
+                                <input type="text" class="form-control" name="estado" id="estado">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--  -->
+    <script src="../js/test.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!--  -->
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('.btnAsign').on('click', function() {
+                $('#asdasdasd').modal('show');
+
+                $tr = $(this).closest('tr');
+                var data = $tr.children('td').map(function() {
+                    return $(this).text();
+                }).get();
+                console.log(data);
+                $('#idvehicular').val(data[0]);
+                $('#tipoV').val(data[1]);
+                $('#marcaV').val(data[2]);
+                $('#placaV').val(data[3]);
+                $('#cargaV').val(data[4]);
+                $('#estado').val(data[5]);
+            });
+        });
+    </script>
+
 
 </body>
 

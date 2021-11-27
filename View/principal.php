@@ -32,11 +32,11 @@ include_once ((dirname(__FILE__) . '../../config/connection.php'));
     <div class="header">
         <nav class="navigation">
             <a class="a_cont" href="principal.php">Home</a>
-            <a class="a_cont" href="AddRoute.php">Asignar Rutas</a>
-            <a class="a_cont" href="Cliente/AddClientes.php">Agregar Clientes</a>
-            <a class="a_cont" href="Carga/AddCargas.php">Agregar Cargas</a>
-            <a class="a_cont" href="Vehiculo/AddVehiculos.php">Agregar Vehiculo</a>
-            <a class="a_cont" href="Conductor/AddConductor.php">Agregar Conductor</a>
+            <a class="a_cont" href="AddRoute.php">Rutas</a>
+            <a class="a_cont" href="Cliente/AddClientes.php">Clientes</a>
+            <a class="a_cont" href="Carga/AddCargas.php">Cargas</a>
+            <a class="a_cont" href="Vehiculo/AddVehiculos.php">Vehiculo</a>
+            <a class="a_cont" href="Conductor/AddConductor.php">Conductor</a>
         </nav>
     </div>
 

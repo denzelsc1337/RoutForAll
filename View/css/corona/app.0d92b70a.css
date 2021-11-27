@@ -3689,7 +3689,7 @@ input[type=submit].btn-block {
     }
 }
 
-.fade:not(.show) {
+.fadee:not(.show) {
     opacity: 0
 }
 
@@ -11969,7 +11969,7 @@ input[type=color].form-control:disabled {
     opacity: 1
 }
 
-.popover.b-popover.fade:not(.show) {
+.popover.b-popover.fadee:not(.show) {
     opacity: 0
 }
 
@@ -12974,7 +12974,7 @@ input[type=color].form-control:disabled {
     opacity: 1
 }
 
-.b-toast .toast.fade:not(.show) {
+.b-toast .toast.fadee:not(.show) {
     opacity: 0
 }
 
@@ -13261,7 +13261,7 @@ input[type=color].form-control:disabled {
     opacity: .9
 }
 
-.tooltip.b-tooltip.fade:not(.show) {
+.tooltip.b-tooltip.fadee:not(.show) {
     opacity: 0
 }
 
@@ -16358,7 +16358,6 @@ code {
 .btn {
     font-size: .875rem;
     line-height: 1;
-    margin: 0 15px 15px 0;
 }
 
 .btn i {
@@ -17596,7 +17595,8 @@ code {
     font-weight: 400;
     background-color: #505050;
     border-radius: 4px;
-    color: #fff
+    color: #fff;
+    text-transform: capitalize;
 }
 
 .form-control.form-control-lg {

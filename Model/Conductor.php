@@ -74,6 +74,44 @@ class Conductor
 		}
 		//$cnx->cerrarConexion($cn);
 	}
+
+
+
+	function updateConductor($data,$secuence){
+		try {
+			$query = "UPDATE `conductor` 
+				    SET `numDoc`=:numDoc, `nombres`=:nombres,`apellidoP`=:apellidoP,`apellidoM`=:apellidoM,`correo`=:correo,`tipoLicencia`=:tipoLicencia,`estadoLicencia`=:estadoLicencia
+				    WHERE `IDconduct`= :IDconduct";
+			$stmt = $this->db->prepare($query);
+
+			$stmt->bindParam(':numDoc', $data[1]);
+			$stmt->bindParam(':nombres', $data[2]);
+			$stmt->bindParam(':apellidoP', $data[3]);
+			$stmt->bindParam(':apellidoM', $data[4]);
+			$stmt->bindParam(':correo', $data[5]);
+			$stmt->bindParam(':tipoLicencia', $data[6]);
+			$stmt->bindParam(':estadoLicencia', $data[7]);
+			$stmt->bindParam(':IDconduct', $secuence);
+
+			$stmt->execute(array(':numDoc'=> $data[1],
+								':nombres'=> $data[2],
+								':apellidoP'=> $data[3],
+								':apellidoM'=> $data[4],
+								':correo'=> $data[5],
+								':tipoLicencia'=> $data[6],
+								':estadoLicencia'=> $data[7],
+								':IDconduct'=> $secuence)
+								);
+		echo '<script> alert("Conductor Actualizado");</script>';
+?>
+	<META http-equiv="Refresh" content = "0.3 ; URL =../View/Conductor/AddConductor.php">
+<?php
+			
+		} catch (PDOException $e) {
+			die($e->getMessage());
+			return "error al insertar data";
+		}
+	}
 }
 
 

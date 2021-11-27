@@ -1,7 +1,7 @@
 <?php 
 $idclient = $_POST['id_cliente'];
 $ruc = $_POST['numruc'];
-$desc = $_POST['desc'];
+$desc = $_POST['descr'];
 $umedida = $_POST['unidadM'];
 $peso = $_POST['peso'];
 $largo = $_POST['largoC'];

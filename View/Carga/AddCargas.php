@@ -9,6 +9,7 @@
     <title>Agregar Cargas</title>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!--  -->
     <link rel="stylesheet" href="../css/corona/app.0d92b70a.css">
@@ -24,7 +25,7 @@
     <div class="header">
         <nav class="navigation">
             <a class="a_cont" href="../principal.php">Home</a>
-            <a class="a_cont" href="../AddRoute.php">Asignar Routes</a>
+            <a class="a_cont" href="../AddRoute.php">Rutas</a>
             <?php include("../../View/Header/mainHeader.php"); ?>
         </nav>
     </div>
@@ -44,12 +45,14 @@
                 ?>
                 <thead>
                     <tr>
+                        <th hidden>IDcargas</th>
                         <th>RUC</th>
                         <th>Descripcion</th>
                         <th>Peso de Carga</th>
                         <th>Direccion Envio</th>
                         <th>Fecha Registro</th>
                         <th>Estado</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,23 +60,30 @@
                     foreach ($listCarga as $listCargas) {
                     ?>
                         <tr>
+                            <td hidden><?php echo $listCargas["IDcargas"]; ?></td>
                             <td><?php echo $listCargas["rucClient"]; ?></td>
                             <td><?php echo $listCargas["descripcionCarga"]; ?></td>
                             <td><?php echo $listCargas["pesoCarga"]; ?></td>
                             <td><?php echo $listCargas["direccionEnvio"]; ?></td>
                             <td><?php echo $listCargas["fechaRegistro"]; ?></td>
                             <td><?php echo $listCargas["estado"]; ?></td>
+                            <td>
+                                <button type="button" class="btn btn-success btnAsign" data-bs-toggle="modal" data-bs-target="#asdasdasd">Edit</button>
+                                <!-- <button type="button" class="btn btn-success btnAsign" data-toggle="modal" data-target="asdasdasd">Edit</button> -->
+                            </td>
                         </tr>
                 </tbody>
             <?php } ?>
             </table>
         </div>
+
+
         <div data-content id="dos" class="sub-content-item">
 
             <form name="login-form" id="login-form" method="post" action="../../Controller/AddCarga.php">
                 <fieldset>
                     <section class="sec_">
-                        <div class="sec_1">
+                        <div class="sec_1" hidden>
                             <div class="label">
                                 <label title="codenvio">id_cliente</label>
                             </div>
@@ -116,7 +126,7 @@
                                         <label title="text">Descripcion</label>
                                     </div>
                                     <div class="input">
-                                        <textarea class="form-control" name="desc" id="desc" rows="7" cols="60"></textarea>  
+                                        <textarea class="form-control" name="descr" id="descr" rows="7" cols="60"></textarea>
                                     </div>
                                     <!--
                                     <div class="label">
@@ -150,7 +160,8 @@
                         </fieldset>
 
                         <fieldset style="flex: 0 0 50%; margin: 15px;">
-                            <section class="sec_" > <!-- style="display:block;" -->
+                            <section class="sec_">
+                                <!-- style="display:block;" -->
                                 <div class="sec_1">
                                     <div class="label">
                                         <label title="text">Peso</label>
@@ -207,8 +218,65 @@
 
         </div>
     </div>
-    <!-- </section> -->
-    <!-- </div> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="asdasdasd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLabel">Editar</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../Controller/UpdateCarga.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-6" hidden>
+                                <label>IDCARGAS</label>
+                                <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="idcargas" type="text" id="idcargas" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>RUC</label>
+                                <input class="form-control" autocomplete="off" tabindex="1" accesskey="u" name="rucclnt" type="text" id="rucclnt" maxlength="11" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Descripcion</label>
+                                <input type="text" class="form-control" name="desc" id="desc">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label>Peso</label>
+                                <input class="form-control" tabindex="2" accesskey="p" name="pesoC" id="pesoC" type="text" maxlength="20" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputAddress">Direccion Envio</label>
+                                <input type="text" class="form-control" name="direcenv" id="direcenv">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Fecha Registro</label>
+                                <input type="text" class="form-control" name="fecharegistro" id="fecharegistro">
+                            </div>
+                        </div>
+                        <div class="form-row">
+
+                            <div class="form-group col-md-4">
+                                <label>Estado</label>
+                                <input type="text" class="form-control" name="estado" id="estado">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script type="text/javascript">
         function getDetail(str) {
@@ -263,7 +331,7 @@
                             //document.getElementById("id_cliente").readOnly = true;
                         } else {
                             document.getElementById("numruc").readOnly = false;
-                           // document.getElementById("id_cliente").readOnly = false;
+                            // document.getElementById("id_cliente").readOnly = false;
                         }
                         return response;
                     }
@@ -271,8 +339,34 @@
             }
         });
     </script>
+
+    <script>
+        $(document).ready(function() {
+            $('.btnAsign').on('click', function() {
+                $('#asdasdasd').modal('show');
+
+                $tr = $(this).closest('tr');
+                var data = $tr.children('td').map(function() {
+                    return $(this).text();
+                }).get();
+                console.log(data);
+                $('#idcargas').val(data[0]);
+                $('#rucclnt').val(data[1]);
+                $('#desc').val(data[2]);
+                $('#pesoC').val(data[3]);
+                $('#direcenv').val(data[4]);
+                $('#fecharegistro').val(data[5]);
+                $('#estado').val(data[6]);
+
+
+            });
+        });
+    </script>
+
+
     <!--  -->
     <script src="../js/test.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <!--  -->
 </body>
 
