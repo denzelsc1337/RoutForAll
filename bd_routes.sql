@@ -151,6 +151,10 @@ CREATE TABLE tipo_usuario
     detalle_tipo_usuario VARCHAR (20) NOT NULL
 );
 
+
+
+insert into tipo_usuario values (null, "Admin");
+
 select * from tipo_usuario;
 
 Create table usuarios(
@@ -170,7 +174,7 @@ FOREIGN KEY (IDtipoUsu) REFERENCES tipo_usuario (id_tipo_usuario)
 
 select * from usuarios;
 
-insert into usuarios values(null, 75481104,"denzel stefano" , "sotomayor correa", );
+insert into usuarios values(null, 75481104,"denzel stefano" , "sotomayor correa", 1, "dsotomayor", "54811004","denzelsotomayor@gmail.com",981374706,1,"M");
 
 
 
