@@ -151,6 +151,8 @@ CREATE TABLE tipo_usuario
     detalle_tipo_usuario VARCHAR (20) NOT NULL
 );
 
+select * from tipo_usuario;
+
 Create table usuarios(
 secuence_usu INT auto_increment PRIMARY KEY NOT NULL,
 id_usuario char(8) NOT NULL,
@@ -167,6 +169,8 @@ FOREIGN KEY (IDtipoUsu) REFERENCES tipo_usuario (id_tipo_usuario)
 );
 
 select * from usuarios;
+
+insert into usuarios values(null, 75481104,"denzel stefano" , "sotomayor correa", );
 
 
 

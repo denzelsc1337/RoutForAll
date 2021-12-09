@@ -1,5 +1,6 @@
 <?php
 //include_once('config/Connection.php');
+require_once('../config/security.php');
 include_once ((dirname(__FILE__) . '../../config/connection.php'));
 // echo "<br>";
 // echo $_SERVER['HTTP_USER_AGENT'];
@@ -17,6 +18,7 @@ include_once ((dirname(__FILE__) . '../../config/connection.php'));
     <title>Test</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <!--  -->
     <!-- <link rel="stylesheet" href="css/corona/app.0d92b70a.css">
@@ -37,9 +39,15 @@ include_once ((dirname(__FILE__) . '../../config/connection.php'));
             <a class="a_cont" href="Carga/AddCargas.php">Cargas</a>
             <a class="a_cont" href="Vehiculo/AddVehiculos.php">Vehiculo</a>
             <a class="a_cont" href="Conductor/AddConductor.php">Conductor</a>
+            <a class="a_cont" href="Usuarios/AddUser.php">Usuarios</a>
+            <a class="a_cont" href="Usuarios/AddUser.php">Usuarios</a>
+            <a href="../config/logout.php" class="Blogger">Cerrar Sesión <i class="fa fa-power-off"></i></a>
         </nav>
     </div>
-
+        <p class="Blogger">
+        ¡Bienvenido 
+            <?php echo $_SESSION['user'] ?><i class="bi bi-person-fill"></i>
+        </p>
     <section class="sec_container">
         <div id="googleMap" style="width:100%;height:750px;"></div>
     </section>

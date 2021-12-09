@@ -29,10 +29,12 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 			$_SESSION['secuence_usu'] = $datos->secuence_usu;
 			$_SESSION['last_name'] = $datos->ape_usuario;
 			$_SESSION['sexo'] = $datos->sexo_usuario;
-			$_SESSION['user'] = $datos->suario;
-			$_SESSION['id_rol'] = $datos->id_tipo_usuario;
+			$_SESSION['user'] = $datos->usuario;
+			$_SESSION['id_rol'] = $datos->IDtipoUsu;
 			//$_SESSION['tipo_rol'] = $datos->detalle_tipo_usuario;
 			$_SESSION['autenticado'] = "si";
+
+		
 			//header('Location:Main.php');
 			?>
 
