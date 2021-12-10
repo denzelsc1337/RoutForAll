@@ -77,6 +77,7 @@ class Carga
 
 
 
+
 	function updateCarga($data,$secuence){
 		try {
 			$query = "UPDATE `cargas` 

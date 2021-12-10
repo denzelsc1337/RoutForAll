@@ -4,6 +4,7 @@ require_once ((dirname(__FILE__) .'../../Model/User.php'));
 //require_once('../Model/User.php');
 $user = new User();
 $listPedido = $user->listarPedidos();
+$selectorUser= $user->selectorUsuario();
 
 
 
@@ -30,5 +31,7 @@ $listClient = $cliente->listarClientes();
 require_once ((dirname(__FILE__) .'../../Model/Carga.php'));
 $carga = new Carga();
 $listCarga = $carga->listarCarga();
+
+
 
  ?>

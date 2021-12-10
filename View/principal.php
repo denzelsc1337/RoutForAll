@@ -35,13 +35,20 @@ include_once((dirname(__FILE__) . '../../config/connection.php'));
     <div class="header">
         <nav class="navigation">
             <div>
+
+                <?php
+                    $hide = "";
+                    if ($_SESSION['id_rol'] == '2') {
+                        $hide = "style='display:none;'";
+                    } 
+                ?>
                 <a class="a_cont" href="principal.php">Home</a>
                 <a class="a_cont" href="AddRoute.php">Rutas</a>
                 <a class="a_cont" href="Cliente/AddClientes.php">Clientes</a>
                 <a class="a_cont" href="Carga/AddCargas.php">Cargas</a>
                 <a class="a_cont" href="Vehiculo/AddVehiculos.php">Vehiculo</a>
                 <a class="a_cont" href="Conductor/AddConductor.php">Conductor</a>
-                <a class="a_cont" href="Usuarios/AddUser.php">Usuarios</a>
+                <a <?php echo $hide; ?> class="a_cont" href="Usuario/AddUsuario.php">Usuarios</a>
                 <!-- <a class="a_cont" href="Usuarios/AddUser.php">Usuarios</a> -->
                 <!-- <a href="../config/logout.php" class="Blogger">Cerrar Sesión <i class="fa fa-power-off"></i></a> -->
             </div>
