@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/corona/app.0d92b70a.css">
     <link rel="stylesheet" href="../css/corona/chunk-4ab62850.48f556ca.css">
@@ -20,6 +21,7 @@
 <body>
     <div class="header">
         <nav class="navigation">
+        <div>
             <a class="a_cont" href="../principal.php">Home</a>
             <a class="a_cont" href="../AddRoute.php">Rutas</a>
             <?php include("../../View/Header/mainHeader.php"); ?>

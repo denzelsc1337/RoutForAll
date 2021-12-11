@@ -9,6 +9,7 @@
     <title>Agregar Cargas</title>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!--  -->
@@ -24,6 +25,7 @@
 
     <div class="header">
         <nav class="navigation">
+        <div>
             <a class="a_cont" href="../principal.php">Home</a>
             <a class="a_cont" href="../AddRoute.php">Rutas</a>
             <?php include("../../View/Header/mainHeader.php"); ?>

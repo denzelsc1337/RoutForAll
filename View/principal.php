@@ -49,8 +49,6 @@ include_once((dirname(__FILE__) . '../../config/connection.php'));
                 <a class="a_cont" href="Vehiculo/AddVehiculos.php">Vehiculo</a>
                 <a class="a_cont" href="Conductor/AddConductor.php">Conductor</a>
                 <a <?php echo $hide; ?> class="a_cont" href="Usuario/AddUsuario.php">Usuarios</a>
-                <!-- <a class="a_cont" href="Usuarios/AddUser.php">Usuarios</a> -->
-                <!-- <a href="../config/logout.php" class="Blogger">Cerrar Sesión <i class="fa fa-power-off"></i></a> -->
             </div>
             <div class="logout">
                 <!-- <i class="fas fa-sort-down"></i> -->

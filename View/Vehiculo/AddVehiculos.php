@@ -8,6 +8,7 @@
     <title>Agregar Clientes</title>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!--  -->
@@ -22,9 +23,11 @@
 <body>
     <div class="header">
         <nav class="navigation">
-            <a class="a_cont" href="../principal.php">Home</a>
-            <a class="a_cont" href="../AddRoute.php">Rutas</a>
-            <?php include("../../View/Header/mainHeader.php"); ?>
+            <div>
+                <a class="a_cont" href="../principal.php">Home</a>
+                <a class="a_cont" href="../AddRoute.php">Rutas</a>
+                
+                <?php include("../../View/Header/mainHeader.php"); ?>
 
         </nav>
     </div>
@@ -233,7 +236,7 @@
 
 
             </form>
-            
+
         </div>
     </div>
 
@@ -302,7 +305,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <!--  -->
     <script type="text/javascript">
-
         $(document).ready(function() {
             $('.btnAsign').on('click', function() {
                 $('#asdasdasd').modal('show');
