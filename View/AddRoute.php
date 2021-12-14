@@ -299,17 +299,20 @@ require_once('../config/security.php');
                 var str1 = $("#peso");
                 console.log(str1.val());
 
-
-                if (str1.val() <= 1000) {
-                    console.log("peso aceptado");
-                } else {
-                    console.log("peso demasiado alto para este vehiculo");
-                }
-
                 $('#medida').val(data[5]);
 
-                var str2 = $('#pesoNeto').val();
-                console.log(str2);
+                var str2 = $('#pesoNeto');
+                console.log(str2.val());
+
+                var n1 = 500;
+                var n2 = 250;
+                if (str1 <= str2) {
+                    console.log("pesos no validos");
+                    alert("los pesos no son validos");
+                }else{
+                    console.log("pesos correctos");
+                    alert("los pesos son validos");
+                }
 
 
             });
