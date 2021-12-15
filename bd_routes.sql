@@ -95,11 +95,14 @@ create table rutas(
     idenvio int not null,
 	idvehiculo int not null,
 	idconductor int not null,
+    
     fechaSalida date not null,
     fechaLlegada date not null,
+    horaSalida time not null,
+    horaLlegada time not null,
     fechaRegistro date not null,
-	horaLlegada time not null,
-	horaSalida time not null,
+    kilometrajeInicial bigint(20) not null,
+	
     kilometrajeSalida bigint(20) not null,
     kilometrajeFinal double as (kilometrajeSalida /horaSalida),
     tiempoEstimado time not null,

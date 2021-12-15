@@ -285,7 +285,7 @@ require_once('../config/security.php');
     <script>
         $(document).ready(function() {
             $('.btnAsign').on('click', function() {
-                $('#editRoute').modal('show');
+                //$('#editRoute').modal('show');
 
                 $tr = $(this).closest('tr');
                 var data = $tr.children('td').map(function() {
@@ -308,10 +308,18 @@ require_once('../config/security.php');
                 var n2 = 250;
                 if (str1 <= str2) {
                     console.log("pesos no validos");
-                    alert("los pesos no son validos");
+                    var r = confirm("Los pesos son validos.\n\n Desea continuar?");
+
+                    if (r==true) {
+                        $('#editRoute').modal('show');
+                    }else{
+                        $('#editRoute').modal('hide');
+                    }
+                    
                 }else{
-                    console.log("pesos correctos");
-                    alert("los pesos son validos");
+                    $('#editRoute').modal('hide');
+                    console.log("pesos no validos");
+                    alert("los pesos no son validos");
                 }
 
 
