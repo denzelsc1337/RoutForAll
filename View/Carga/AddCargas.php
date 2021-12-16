@@ -5,6 +5,8 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script  defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyAkJq1kNd5GFAzwLiiiy4eCaYH-KPsE77Y" type="text/javascript"></script>
     <meta charset="utf-8">
     <title>Agregar Cargas</title>
 
@@ -278,6 +280,7 @@
         </div>
     </div>
 
+</script>
 
 
     <script type="text/javascript">

@@ -123,8 +123,9 @@ require_once('../config/security.php');
                             <a></a>-->
                         <!--agregar google maps here-->
                         <td id="container">
+                            <?php echo '<a href = "https://www.google.com/maps/dir/?api=1&'.$listaPedidos["direccionEntrega"].'">'.urlencode($listaPedidos["direccionEntrega"]).'</a>';?>
                             <!--<a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">-->
-                            <a href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=<?php echo urlencode($listaPedidos["direccionEntrega"]) ?>';return false;"><?php echo $listaPedidos["direccionEntrega"] ?></a>
+                            <a id="direccionLink" href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=<?php echo urlencode($listaPedidos["direccionEntrega"]) ?>';return false;"><?php echo $listaPedidos["direccionEntrega"] ?></a>
                             <!--https://developers.google.com/maps/documentation/javascript/localization-->
                             <!--
                             <a href="https://www.google.com/maps/search/?api=1&query=<?php // echo urlencode($listaPedidos["direccionEnvio"]) 
@@ -261,7 +262,7 @@ require_once('../config/security.php');
                         <section style="display: flex;">
                             <dl>
                                 <dt><label title="text">Hora Salida </label></dt>
-                                <dd><input tabindex="2" accesskey="p" name="horaSalida" type="time" maxlength="20" id="horaSalida" /></dd>
+                                <dd><input tabindex="2" accesskey="p" name="horaSalida" type="time" maxlength="20" id="horaSalida" onchange="calcularTime()" /></dd>
                             </dl>
                             <dl>
                                 <dt><label title="text">Hora llegada </label></dt>
@@ -293,10 +294,10 @@ require_once('../config/security.php');
                 }).get();
                 console.log(data);
                 $('#codigoEnvio').val(data[0]);
-                $('#peso').val(data[3]);
+                var str1 = $('#peso').val(data[3]);
 
 
-                var str1 = $("#peso");
+                //var str1 = $("#peso");
                 console.log(str1.val());
 
                 $('#medida').val(data[5]);
@@ -306,25 +307,31 @@ require_once('../config/security.php');
 
                 var n1 = 500;
                 var n2 = 250;
-                if (str1 <= str2) {
-                    console.log("pesos no validos");
-                    var r = confirm("Los pesos son validos.\n\n Desea continuar?");
+                var ubi = $("#direccionLink");
 
+                if ( 2000 <= 1600 ) {
+                    console.log("pesos validos");
+                    var r = confirm("Los pesos son validos.\n\n Desea continuar?");
+                    console.log(ubi.val());
                     if (r==true) {
                         $('#editRoute').modal('show');
                     }else{
                         $('#editRoute').modal('hide');
                     }
-                    
                 }else{
                     $('#editRoute').modal('hide');
                     console.log("pesos no validos");
                     alert("los pesos no son validos");
                 }
-
-
             });
         });
+
+        function calcularTime() {
+            var _time = document.getElementById('horaSalida').value;
+            console.log(_time)
+            //edad.value = age;
+        }
+
     </script>
 
 

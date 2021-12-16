@@ -79,6 +79,7 @@ include_once((dirname(__FILE__) . '../../config/connection.php'));
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbFjupaAAf9ne0JlXq-B48RHwppD7LDDA&callback=theMap"></script>
 
+
 <!--  -->
 <script src="../View/js/test.js"></script>
 <!--  -->
