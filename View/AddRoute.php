@@ -4,7 +4,6 @@ require_once('../config/security.php');
 // $cnx = new Conexion();
 // $cadena = $cnx->getConexion();
 // echo "cheking for bd: " . $cnx->db;
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -155,7 +154,7 @@ require_once('../config/security.php');
                                         //document.getElementById("latid").innerHTML = crdL.latitude;
 
                                         console.log('Longitude: ' + _crdL.longitude);
-                                        document.getElementById("long").innerHTML = _crdL.longitude;
+                                        //document.getElementById("long").innerHTML = _crdL.longitude;    
                                         console.log('More or less ' + _kcrdL.accuracy + ' meters.');
                                     };
 
@@ -186,7 +185,14 @@ require_once('../config/security.php');
         <?php } ?>
         </table>
     </section>
+<?php
+//$pesoCg = $_REQUEST['codigoEnvio'];
 
+/*$num_result = mysqli_query($cadena, "select pesoCarga from cargas where IDcargas = 2");
+
+$tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
+?>
+<strong><?php //echo $tourresult ?></strong>
     <!-- </fieldset> -->
 
     <!-- Modal -->
@@ -204,7 +210,10 @@ require_once('../config/security.php');
                     <h4>Seleccion de conductor:</h4>
                     <form method="post" action="../Controller/AddRoutes.php">
                         <input type="text" name="codigoEnvio" id="codigoEnvio">
-                        <input name="peso" id="peso">
+                        <?php 
+                        ?>
+
+                        <input name="pesoC" id="pesoC" value="45">
 
                         <section class="cards_">
                             <?php
@@ -250,6 +259,9 @@ require_once('../config/security.php');
                                         <input class="cards_check" type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
                                         <!--<a href="#" class="btn btn-primary">Button</a>-->
                                     </div>
+                                    <script type="text/javascript">
+                                        
+                                    </script>
                                 </div>
                                 <?php
                                 $value = $listCars["capacidadCarga"];
@@ -285,45 +297,47 @@ require_once('../config/security.php');
     <hr>
     <script>
         $(document).ready(function() {
-            $('.btnAsign').on('click', function() {
-                //$('#editRoute').modal('show');
+             var pesoCarga = document.getElementById("pesoC");
+             var pesoNetoC = document.getElementById("pesoNeto");
 
+            $('.btnAsign').click(function() {
+                //$('#editRoute').modal("show");  
                 $tr = $(this).closest('tr');
                 var data = $tr.children('td').map(function() {
                     return $(this).text();
                 }).get();
                 console.log(data);
                 $('#codigoEnvio').val(data[0]);
-                var str1 = $('#peso').val(data[3]);
-
-
-                //var str1 = $("#peso");
-                console.log(str1.val());
-
+                $('#pesoC').val(data[3]);
                 $('#medida').val(data[5]);
 
-                var str2 = $('#pesoNeto');
-                console.log(str2.val());
+                var str2 = $('#pesoNeto').val();
+                var pesoI= parseInt(data[3]);
+                var peso_= parseInt(str2);
 
-                var n1 = 500;
-                var n2 = 250;
-                var ubi = $("#direccionLink");
+                
+                console.log(pesoI)
+                console.log(peso_);
 
-                if ( 2000 <= 1600 ) {
+                if (pesoI <= peso_) {
                     console.log("pesos validos");
                     var r = confirm("Los pesos son validos.\n\n Desea continuar?");
-                    console.log(ubi.val());
                     if (r==true) {
                         $('#editRoute').modal('show');
                     }else{
                         $('#editRoute').modal('hide');
                     }
                 }else{
-                    $('#editRoute').modal('hide');
                     console.log("pesos no validos");
+                    //$('#editRoute').modal('hide');
                     alert("los pesos no son validos");
                 }
+
+
             });
+              /*$("#editRoute").on('show.bs.modal', function(){
+                alert('The modal is about to be shown.');
+              });*/
         });
 
         function calcularTime() {

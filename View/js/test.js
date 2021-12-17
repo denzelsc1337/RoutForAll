@@ -30,7 +30,7 @@
                 c.classList.remove("active")
             })
             const t = document.querySelector(target.dataset.target)
-            t.classList.add("active");
+            //t.classList.add("active");
         })
     })
 
