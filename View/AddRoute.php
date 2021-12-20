@@ -121,7 +121,8 @@ require_once('../config/security.php');
                             <td><?php echo $listaPedidos["celularCliente"]; */ ?></td>
                             <a></a>-->
                         <!--agregar google maps here-->
-                        <td id="container">
+                        <td><?php echo $listaPedidos["direccionEntrega"]; ?></td>
+                        <td id="container" hidden>
                             <?php echo '<a href = "https://www.google.com/maps/dir/?api=1&'.$listaPedidos["direccionEntrega"].'">'.urlencode($listaPedidos["direccionEntrega"]).'</a>';?>
                             <!--<a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">-->
                             <a id="direccionLink" href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=<?php echo urlencode($listaPedidos["direccionEntrega"]) ?>';return false;"><?php echo $listaPedidos["direccionEntrega"] ?></a>
@@ -227,8 +228,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
 
                                         <h5 class="cards_title"><?php echo $listDrivers["nombres"] . "  " . $listDrivers["apellidoP"] ?></h5>
                                         <p class="cards_text"><span><?php echo $listDrivers["tipoDoc"] ?>: </span> <?php echo $listDrivers["numDoc"] ?></p>
-
-
+                                        <p class="cards_text"><span>Celular: </span> <?php echo "+51 ".$listDrivers["celular"] ?></p>
                                         <input class="cards_check" type="checkbox" name="idconductor" id="idconductor" value="<?php echo $listDrivers["IDconduct"] ?>">
 
                                         <!-- <div class="cards_check_box"></div> -->
@@ -249,7 +249,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                             <?php
                             foreach ($listCar as $listCars) {
                             ?>
-                                <div class="cards_container">
+                                <div class="cards_container" id="infoCar" name="infoCar">
                                     <div class="cards_body">
                                         <h5 class="cards_title"><?php echo $listCars["tipoVehiculo"] ?></h5>
                                         <p class="cards_text"><?php echo $listCars["marcaVehiculo"] . " - " . $listCars["placaVehicular"] ?></p>
@@ -273,6 +273,16 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                         </section>
                         <section style="display: flex;">
                             <dl>
+                                <dt><label title="text">Fecha Salida </label></dt>
+                                <dd><input tabindex="2" accesskey="p" name="fechaSalida" type="date" value="<?php echo date('Y-m-d'); ?>" maxlength="20" id="fechaSalida" onchange="calcularTime()" /></dd>
+                            </dl>
+                            <dl>
+                                <dt><label title="text">Fecha llegada </label></dt>
+                                <dd><input tabindex="2" accesskey="p" name="fechaLlegada" type="date" maxlength="20" id="fechaLlegada" /></dd>
+                            </dl>
+                        </section>
+                        <section style="display: flex;">
+                            <dl>
                                 <dt><label title="text">Hora Salida </label></dt>
                                 <dd><input tabindex="2" accesskey="p" name="horaSalida" type="time" maxlength="20" id="horaSalida" onchange="calcularTime()" /></dd>
                             </dl>
@@ -281,6 +291,27 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                                 <dd><input tabindex="2" accesskey="p" name="horaLlegada" type="time" maxlength="20" id="horaLlegada" /></dd>
                             </dl>
                         </section>
+                        <section style="display: flex;">
+                            <dl>
+                                <dt><label title="text">Kilometraje De Salida</label></dt>
+                                <dd><input tabindex="2" accesskey="p" name="kmInicio" type="number" id="kmInicio"/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label title="text">Kilometraje Final</label></dt>
+                                <dd><input tabindex="2" accesskey="p" name="kmSalida" type="number" id="kmSalida"/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label title="text">Tiempo Estimado</label></dt>
+                                <dd><input tabindex="2" accesskey="p" name="estimado" type="text" id="estimado"/></dd>
+                            </dl>
+                        </section>
+                        <section>
+                            <dl>
+                                <dt><label title="text">Direccion Entrega</label></dt>
+                                <dd><input tabindex="2" accesskey="p" name="direccionEntr" type="text" id="direccionEntr"/></dd>
+                            </dl>
+                        </section>
+
 
                         <p>
                             <button type="submit" class="btn btn-raised btn-info btn-sm right"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
@@ -300,8 +331,9 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
              var pesoCarga = document.getElementById("pesoC");
              var pesoNetoC = document.getElementById("pesoNeto");
 
+
             $('.btnAsign').click(function() {
-                //$('#editRoute').modal("show");  
+                $('#editRoute').modal("show");
                 $tr = $(this).closest('tr');
                 var data = $tr.children('td').map(function() {
                     return $(this).text();
@@ -309,7 +341,15 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                 console.log(data);
                 $('#codigoEnvio').val(data[0]);
                 $('#pesoC').val(data[3]);
-                $('#medida').val(data[5]);
+
+
+                var txt = encodeURIComponent(String(data[5]));
+
+
+                var href = 'https://www.google.com/maps/dir/?api=1&'+txt;
+
+                $('#direccionEntr').val(data[5]);
+                console.log(href);
 
                 var str2 = $('#pesoNeto').val();
                 var pesoI= parseInt(data[3]);
@@ -321,16 +361,19 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
 
                 if (pesoI <= peso_) {
                     console.log("pesos validos");
-                    var r = confirm("Los pesos son validos.\n\n Desea continuar?");
+                    document.getElementById("infoCar").style.display='block';
+                    /*var r = confirm("Los pesos son validos.\n\n Desea continuar?");
                     if (r==true) {
                         $('#editRoute').modal('show');
                     }else{
                         $('#editRoute').modal('hide');
-                    }
+                    }*/
                 }else{
                     console.log("pesos no validos");
+                    //document.getElementById("infoCar").disabled = true;
+                    document.getElementById("infoCar").style.display='none';
                     //$('#editRoute').modal('hide');
-                    alert("los pesos no son validos");
+                    //alert("los pesos no son validos");
                 }
 
 

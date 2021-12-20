@@ -68,24 +68,41 @@ class User
 
 	}
 
-	function agregarRutas($idenvio,$idvehiculo,$idconductor,$horaSalida,$horaLlegada){
+	function agregarRutas($idenvio,$idvehiculo,$idconductor,$fSalida,$fLlegada,$H_Salida,$H_Llegada,$kmInicial,$kmSalida,
+						  $tiempoEsti,$dirEntrega){
 /*		include_once '../config/connection.php';
 		$cnx = new Conexion();
 		$cn = $cnx->abrirConexion();*/
 		try {
-			$sql = "INSERT INTO rutas (IDruta,idenvio, idvehiculo, idconductor, horaSalida,horaLlegada) VALUES (null,:idenvio,:idvehiculo, :idconductor, :horaSalida,:horaLlegada);";
+			$sql = "INSERT INTO rutas (IDruta,idenvio, idvehiculo, idconductor, fechaSalida,fechaLlegada, horaSalida,horaLlegada, fechaRegistro, kilometrajeInicial,kilometrajeSalida,tiempoEstimado,direccionEntrega)
+			VALUES (null,:idenvio,:idvehiculo, :idconductor,:fSalida,:fLlegada,:H_Salida,:H_Llegada,now(),
+					:kmInicial,:kmSalida,:tiempoEsti,:dirEntrega);";
+
 			$stmt = $this->db->prepare($sql);
+
 			$stmt->bindParam(':idenvio', $idenvio);
 			$stmt->bindParam(':idvehiculo', $idvehiculo);
 			$stmt->bindParam(':idconductor', $idconductor);
-			$stmt->bindParam(':horaSalida', $horaSalida);
-			$stmt->bindParam(':horaLlegada', $horaLlegada);
+			$stmt->bindParam(':fSalida', $fSalida);
+			$stmt->bindParam(':fLlegada', $fLlegada);
+			$stmt->bindParam(':H_Salida', $H_Salida);
+			$stmt->bindParam(':H_Llegada', $H_Llegada);
+			$stmt->bindParam(':kmInicial', $kmInicial);
+			$stmt->bindParam(':kmSalida', $kmSalida);
+			$stmt->bindParam(':tiempoEsti', $tiempoEsti);
+			$stmt->bindParam(':dirEntrega', $dirEntrega);
 
 			$stmt->execute(array(':idenvio' => $idenvio, 
 							':idvehiculo' => $idvehiculo,
 							':idconductor' => $idconductor,
-							':horaSalida' => $horaSalida,
-							':horaLlegada' => $horaLlegada));
+							':fSalida' => $fSalida,
+							':fLlegada' => $fLlegada,
+							':H_Salida' => $H_Salida,
+							':H_Llegada' => $H_Llegada,
+							':kmInicial' => $kmInicial,
+							':kmSalida' => $kmSalida,
+							':tiempoEsti' => $tiempoEsti,
+							':dirEntrega' => $dirEntrega));
 ?>
 		<META http-equiv="Refresh" content = "0.3 ; URL =../View/AddRoute.php">
 <?php 
