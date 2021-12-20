@@ -247,7 +247,8 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                             require_once('../Controller/controllerList.php');
                             ?>
                             <?php
-                            foreach ($listCar as $listCars) {
+                            if (!empty($listCar)) {
+                                foreach ($listCar as $listCars) {
                             ?>
                                 <div class="cards_container" id="infoCar" name="infoCar">
                                     <div class="cards_body">
@@ -269,6 +270,9 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                                 ?>
                             <?php
                             }
+                        }else{
+                            echo '<script>alert("test")</script>';
+                        }
                             ?>
                         </section>
                         <section style="display: flex;">
