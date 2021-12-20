@@ -77,3 +77,7 @@ body {
 fieldset {
     border: 2px solid white !important;
 }
+
+.modal-content {
+    background-color: #2e2f32 !important;
+}

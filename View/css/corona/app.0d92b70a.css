@@ -18192,7 +18192,7 @@ select.form-control {
 dl,
 ol,
 ul {
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
     font-size: .875rem
 }
 
