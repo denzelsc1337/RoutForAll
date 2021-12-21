@@ -313,19 +313,31 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                             <dl>
                                 <dt><label title="text">Direccion Entrega</label></dt>
                                 <dd><input tabindex="2" accesskey="p" name="direccionEntr" type="text" id="direccionEntr"/></dd>
+                                <!-- test
+                                <dt><label title="text">Direccion Entrega</label></dt>
+                                <dd><a href="" id="urlDir" name="urlDir">4</a></dd>
+                                test -->
+                            </dl>
+                        </section>
+                        <section>
+                            <dl>
+                                <dt><label title="text">Direccion Entrega</label></dt>
+                                <dd><input tabindex="2" accesskey="p" name="urlDir" type="text" id="urlDir"/></dd>
                             </dl>
                         </section>
 
-
+                        <!--
                         <p>
                             <button type="submit" class="btn btn-raised btn-info btn-sm right"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
                         </p>
-                    </form>
+                        </form>-->
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Confirmar</button>
+                    <button type="submit" class="btn btn-primary">Confirmar</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -345,15 +357,21 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                 console.log(data);
                 $('#codigoEnvio').val(data[0]);
                 $('#pesoC').val(data[3]);
-
-
-                var txt = encodeURIComponent(String(data[5]));
-
-
-                var href = 'https://www.google.com/maps/dir/?api=1&'+txt;
-
                 $('#direccionEntr').val(data[5]);
-                console.log(href);
+
+
+
+                var dir = encodeURIComponent(String(data[5]));
+
+
+
+                var _dir = 'https://www.google.com/maps/dir/?api=1&'+dir;
+                //document.getElementById("urlDir").href=href;
+
+                //$('#urlDir').val(data[5]);
+
+                $('#urlDir').val(_dir);
+                console.log(_dir);
 
                 var str2 = $('#pesoNeto').val();
                 var pesoI= parseInt(data[3]);
