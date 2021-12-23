@@ -89,7 +89,7 @@ class Vehiculo
 			function updateVehiculo($data,$secuence){
 				try {
 					$query = "UPDATE `vehiculos` 
-							SET `tipoVehiculo`=:tipoVehiculo, `marcaVehiculo`=:marcaVehiculo,`placaVehicular`=:placaVehicular,`capacidadCarga`=:capacidadCarga,`estado`=:estado
+							SET `tipoVehiculo`=:tipoVehiculo, `marcaVehiculo`=:marcaVehiculo,`placaVehicular`=:placaVehicular,`cargaUtil`=:capacidadCarga,`estado`=:estado
 							WHERE `IDvehiculo`= :IDvehiculo";
 					$stmt = $this->db->prepare($query);
 		
