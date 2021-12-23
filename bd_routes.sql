@@ -24,16 +24,21 @@ create table vehiculos(
 IDvehiculo int auto_increment primary key not null,
 tipoVehiculo varchar(150) not null,
 marcaVehiculo varchar(150) not null,
-anio char(4) not null,
+anio year(4) not null,
 placaVehicular char(7) not null,
-capacidadCarga bigint (150) not null,	
-largo bigint(11) not null,
-ancho bigint(11) not null,
-alto bigint(11) not null,
+kilometraje DECIMAL(8,3) not null,
+pesoNeto DECIMAL(8,3) not null,
+cargaUtil DECIMAL(8,3) not null,	
+pesoBruto DECIMAL(8,3) not null,
+largo DECIMAL(8,3) not null,
+ancho DECIMAL(8,3) not null,
+alto DECIMAL(8,3) not null,
 estado varchar(50) not null
 );
 
-INSERT INTO `vehiculos` VALUES (NULL, 'camion', 'foton', '2020', 'A45A32', '1500', '150', '2400', '230', 'activo');
+
+
+INSERT INTO `vehiculos` VALUES (NULL, 'camion', 'foton', '2020', 'A45A32',3.555, 1.500,1.499,3.499,2.410,1.506,1.996, 'activo');
 
 select * from vehiculos;
 
@@ -68,7 +73,7 @@ id_client int,
 rucClient bigint (11),
 descripcionCarga varchar(250) not null,
 unidadMedidaCarga varchar(50) not null,
-pesoCarga bigint(11) not null,
+pesoCarga DECIMAL(8,3) not null,
 largoCarga bigint(11) not null,
 anchoCarga bigInt(11) not null,
 altoCarga bigint(11) not null,
@@ -177,12 +182,11 @@ sexo_usuario CHAR(2),
 FOREIGN KEY (IDtipoUsu) REFERENCES tipo_usuario (id_tipo_usuario)
 );
 
-select * from usuarios;
 
 insert into usuarios values(null, 75481104,"denzel stefano" , "sotomayor correa", 1, "dsotomayor", "54811004","denzelsotomayor@gmail.com",981374706,1,"M");
 insert into usuarios values(null, 10678950,"ivan hilario" , "leon gomez ", 2, "igomez", "hilario123","ileon@gmail.com",963852741,1,"M");
 
-
+select * from usuarios;
 
 
 

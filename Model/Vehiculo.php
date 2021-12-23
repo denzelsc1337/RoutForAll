@@ -35,13 +35,15 @@ class Vehiculo
 		}
 	}
 
-	function agregarCamion($tipoVehiculo,$marcaVehiculo,$anio,$placaVehicular,$capacidadCarga, $largo, $ancho, $alto, $estado){
+	function agregarCamion($tipoVehiculo,$marcaVehiculo,$anio,$placaVehicular,$km,$p_neto,$c_util,$p_bruto, $largo, $ancho, $alto, $estado){
 		/*		include_once '../config/connection.php';
 				$cnx = new Conexion();
 				$cn = $cnx->abrirConexion();*/
 				try {
-					$sql = "INSERT INTO vehiculos (`IDvehiculo`, `tipoVehiculo`, `marcaVehiculo`, `anio`, `placaVehicular`, `capacidadCarga`, `largo`, `ancho`, `alto`, `estado`) 
-											    VALUES (null,:tipoVehiculo,:marcaVehiculo, :anio, :placaVehicular,:capacidadCarga,:largo,:ancho,:alto,:estado);";
+					$sql = "INSERT INTO vehiculos (`IDvehiculo`, `tipoVehiculo`, `marcaVehiculo`, `anio`, `placaVehicular`, `kilometraje`,
+						`pesoNeto`, `cargaUtil`, `pesoBruto`, `largo`, `ancho`, `alto`, `estado`)
+											    VALUES (null,:tipoVehiculo,:marcaVehiculo, :anio, :placaVehicular,:km,:p_neto,:c_util,
+											    		:p_bruto,:largo,:ancho,:alto,:estado);";
 
 					$stmt = $this->db->prepare($sql);
 
@@ -49,7 +51,10 @@ class Vehiculo
 					$stmt->bindParam(':marcaVehiculo', $marcaVehiculo);
 					$stmt->bindParam(':anio', $anio);
 					$stmt->bindParam(':placaVehicular', $placaVehicular);
-					$stmt->bindParam(':capacidadCarga',$capacidadCarga);
+					$stmt->bindParam(':km', $km);
+					$stmt->bindParam(':p_neto', $p_neto);
+					$stmt->bindParam(':c_util',$c_util);
+					$stmt->bindParam(':p_bruto',$p_bruto);
 					$stmt->bindParam(':largo',$largo);
 					$stmt->bindParam(':ancho',$ancho);
 					$stmt->bindParam(':alto',$alto);
@@ -59,7 +64,10 @@ class Vehiculo
 									':marcaVehiculo' => $marcaVehiculo,
 									':anio' => $anio,
 									':placaVehicular' => $placaVehicular,
-									':capacidadCarga'=>$capacidadCarga,
+									':km' => $km,
+									':p_neto' => $p_neto,
+									':c_util'=>$c_util,
+									':p_bruto'=>$p_bruto,
 									':largo'=> $largo,
 									':ancho'=>$ancho,
 									':alto'=>$alto,

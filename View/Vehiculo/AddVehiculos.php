@@ -51,7 +51,7 @@
                         <th>Tipo de Vehiculo</th>
                         <th>Marca de Vehiculo</th>
                         <th>Placa vehicular</th>
-                        <th>Capacidad Carga</th>
+                        <th>Carga Util</th>
                         <th>Estado</th>
                         <th>Edit</th>
                     </tr>
@@ -65,7 +65,7 @@
                             <td><?php echo $listCars["tipoVehiculo"]; ?></td>
                             <td><?php echo $listCars["marcaVehiculo"]; ?></td>
                             <td><?php echo $listCars["placaVehicular"]; ?></td>
-                            <td><?php echo $listCars["capacidadCarga"]; ?></td>
+                            <td><?php echo $listCars["cargaUtil"]; ?></td>
                             <td><?php echo $listCars["estado"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-success btnAsign" data-bs-toggle="modal" data-bs-target="#asdasdasd">Edit</button>
@@ -120,13 +120,22 @@
                                 <input style="width: 200px;" class="form-control" name="placaVehicular" id="placaVehicular" type="text" maxlength="7" style="text-transform:uppercase;" onkeyup="addGuion(this)" />
                             </div>
                         </div>
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="text">Kilometraje</label>
+                            </div>
+
+                            <div class="input">
+                                <input style="width: 200px;" class="form-control" type="number" step="0.001" name="KM" id="KM">
+                            </div>
+                        </div>
 
                         <div class="sec_1">
                             <div class="label">
                                 <label title="text">Marca Vehiculo</label>
                             </div>
                             <div class="input">
-                                <input style="width: 200px;" class="form-control" name="marcaVehiculo" type="text" maxlength="20" id="marcaVehiculo" />
+                                <input style="width: 200px;" class="form-control" name="marcaVehiculo" type="text" id="marcaVehiculo" />
                             </div>
                         </div>
 
@@ -137,20 +146,28 @@
                         <div class="sec_1">
 
                             <div class="label">
-                                <label title="text">Capacidad Carga</label>
+                                <label title="text">Peso Neto</label>
                             </div>
                             <div class="input">
-                                <input style="width: 200px;" class="form-control" name="capacidadCarga" type="text" maxlength="20" id="capacidadCarga" />
+                                <input style="width: 200px;" class="form-control" name="p_neto" type="number" step="0.001" id="p_neto" />
                             </div>
                         </div>
-
                         <div class="sec_1">
-                            <div class="label">
-                                <label title="text">Kilometraje</label>
-                            </div>
 
+                            <div class="label">
+                                <label title="text">Carga Util</label>
+                            </div>
                             <div class="input">
-                                <input style="width: 200px;" class="form-control" type="text" name="KM" id="KM">
+                                <input style="width: 200px;" class="form-control" name="c_util" type="number" step="0.001" id="c_util" />
+                            </div>
+                        </div>
+                        <div class="sec_1">
+
+                            <div class="label">
+                                <label title="text">Peso Bruto</label>
+                            </div>
+                            <div class="input">
+                                <input style="width: 200px;" class="form-control" name="p_bruto" type="number" step="0.001" id="p_bruto" />
                             </div>
                         </div>
 
@@ -158,8 +175,14 @@
                             <div class="label">
                                 <label title="text">Año</label>
                             </div>
+                            <?php $years = range(1900, strftime("%Y", time())); ?>
                             <div class="input">
-                                <input style="width: 200px;" class="form-control" name="anio" type="text" id="anio" />
+                                <select name="anio" id="anio">
+                                  <option>Selecciona Año</option>
+                                  <?php foreach($years as $year) : ?>
+                                    <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                                  <?php endforeach; ?>
+                                </select>
                             </div>
                         </div>
 
@@ -169,10 +192,10 @@
 
                         <div class="sec_1">
                             <div class="label">
-                                <label title="text">Largo</label>
+                                <label title="text">Longitud</label>
                             </div>
                             <div class="input">
-                                <input style="width: 250px;" class="form-control" type="text" name="largo" id="largo">
+                                <input style="width: 250px;" class="form-control" type="number" step="0.001" name="largo" id="largo">
                             </div>
                         </div>
 
@@ -181,22 +204,22 @@
                                 <label title="text">Ancho</label>
                             </div>
                             <div class="input">
-                                <input style="width: 250px;" class="form-control" type="text" name="ancho" id="ancho">
+                                <input style="width: 250px;" class="form-control" type="number" step="0.001" name="ancho" id="ancho">
                             </div>
                         </div>
 
                         <div class="sec_1">
                             <div class="label">
-                                <label title="text">Alto</label>
+                                <label title="text">Altura</label>
                             </div>
                             <div class="input">
-                                <input style="width: 250px;" class="form-control" type="text" name="alto" id="alto">
+                                <input style="width: 250px;" class="form-control" type="number" step="0.001" name="alto" id="alto">
                             </div>
                         </div>
                     </section>
 
 
-                    <section class="sec_">
+                    <section class="sec_" hidden>
                         <div class="sec_1">
                             <div class="label">
                                 <label title="razon">Estado</label>
@@ -233,7 +256,6 @@
                     <button style="float: right;" type="submit" class="btn btn-success"><i class="far fa-save"></i>GUARDAR</button>
 
                 </fieldset>
-
 
             </form>
 

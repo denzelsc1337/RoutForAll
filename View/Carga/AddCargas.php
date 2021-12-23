@@ -171,7 +171,7 @@
                                         <label title="text">Peso</label>
                                     </div>
                                     <div class="input">
-                                        <input class="form-control" tabindex="2" accesskey="p" name="peso" id="peso" type="text" maxlength="20" />
+                                        <input class="form-control" tabindex="2" accesskey="p" name="peso" id="peso" type="number" step="0.001" maxlength="20" />
                                     </div>
                                     <!-- </div> -->
 

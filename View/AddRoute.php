@@ -254,7 +254,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                                     <div class="cards_body">
                                         <h5 class="cards_title"><?php echo $listCars["tipoVehiculo"] ?></h5>
                                         <p class="cards_text"><?php echo $listCars["marcaVehiculo"] . " - " . $listCars["placaVehicular"] ?></p>
-                                        <input type="text" id="pesoNeto" name="pesoNeto" value="<?php echo $listCars["capacidadCarga"]; ?>"></input>
+                                        <input type="text" id="pesoNeto" name="pesoNeto" value="<?php echo $listCars["cargaUtil"]; ?>"></input>
 
                                         <!-- <p class="" id="uMCarga" name="uMCarga"><?php echo $listCars["unidadMedidaCarga"] ?></p> -->
                                         <input class="cards_check" type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
@@ -265,7 +265,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                                     </script>
                                 </div>
                                 <?php
-                                $value = $listCars["capacidadCarga"];
+                                $value = $listCars["cargaUtil"];
 
                                 ?>
                             <?php
@@ -374,8 +374,8 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                 console.log(_dir);
 
                 var str2 = $('#pesoNeto').val();
-                var pesoI= parseInt(data[3]);
-                var peso_= parseInt(str2);
+                var pesoI= parseFloat(data[3]);
+                var peso_= parseFloat(str2);
 
                 
                 console.log(pesoI)
