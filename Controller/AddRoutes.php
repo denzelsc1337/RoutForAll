@@ -12,9 +12,17 @@ $kmSalida = $_POST['kmSalida'];
 $estimado = $_POST['estimado'];
 $direccionEntr = $_POST['direccionEntr'];
 
+//parametros envio de wsp
+$numDriver = $_POST['nroDriver'];
+$message = $_POST['urlDir'];
+
 require_once('../Model/User.php');
+include('../Model/WhatsappAPI.php');
 
 $oRuta= new User();
 $r = $oRuta->agregarRutas($codenvio,$idvehiculo,$idconductor,$fechaSalida,$fechaLlegada,$horaSalida,$horaLlegada,$kmInicio,$kmSalida,$estimado,$direccionEntr);
+
+$obj = new WhatsappAPI; // create an object of the WhatsappAPI class
+$status = $obj->send($numDriver, $message);
 
  ?>

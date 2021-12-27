@@ -228,8 +228,45 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
 
                                         <h5 class="cards_title"><?php echo $listDrivers["nombres"] . "  " . $listDrivers["apellidoP"] ?></h5>
                                         <p class="cards_text"><span><?php echo $listDrivers["tipoDoc"] ?>: </span> <?php echo $listDrivers["numDoc"] ?></p>
-                                        <p class="cards_text"><span>Celular: </span> <?php echo "+51 ".$listDrivers["celular"] ?></p>
-                                        <input class="cards_check" type="checkbox" name="idconductor" id="idconductor" value="<?php echo $listDrivers["IDconduct"] ?>">
+
+                                        <p class="cards_text"><span>Celular: </span> <?php echo "+51 ".$listDrivers["celular"] ?> - <input type="radio" class="cards_check" id="numDriver" name="numDriver" value="<?php echo "+51 ".$listDrivers["celular"] ?>"></input></p>
+                                         <p class="cards_text"><span>Seleccionar: </span>
+                                        <input class="cards_check_1" type="radio" name="idconductor" id="idconductor" value="<?php echo $listDrivers["IDconduct"] ?>">
+
+
+                                        <script type="text/javascript">
+                                            function setText(){
+                                                var chk = document.getElementById("idconductor");
+                                                var num = document.getElementById("numDriver");
+
+                                                if (chk.checked == true) {
+                                                    console.log(num.value);
+
+                                                }else{
+                                                    console.log("not check");
+                                                }
+                                            }
+                                            $('.cards_check').click(function(){
+                                                $("#nroDriver").val('');
+                                                $(".cards_check").each(function(){
+                                                    if($(this).prop('checked')){
+                                                        //$( ".cards_check_1" ).prop( "checked", true );
+                                                        $("#nroDriver").val($("#nroDriver").val()+$(this).val());
+                                                    }
+                                                });
+                                            });
+
+
+
+                                            //alert(selectedlist);
+                                            /*var checkboxes = document.getElementsByName('employee');
+                                            var selected = [];
+                                                for (var i=0; i<checkboxes.length; i++) {
+                                                    if (checkboxes[i].checked) {
+                                                        selected.push(checkboxes[i].value);
+                                                    }
+                                                }*/
+                                        </script>
 
                                         <!-- <div class="cards_check_box"></div> -->
 
@@ -309,7 +346,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                                 <dd><input tabindex="2" accesskey="p" name="estimado" type="text" id="estimado"/></dd>
                             </dl>
                         </section>
-                        <section>
+                        <section style="display: flex;">
                             <dl>
                                 <dt><label title="text">Direccion Entrega</label></dt>
                                 <dd><input tabindex="2" accesskey="p" name="direccionEntr" type="text" id="direccionEntr"/></dd>
@@ -318,11 +355,13 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                                 <dd><a href="" id="urlDir" name="urlDir">4</a></dd>
                                 test -->
                             </dl>
-                        </section>
-                        <section>
-                            <dl>
+                             <dl>
                                 <dt><label title="text">Direccion Entrega</label></dt>
                                 <dd><input tabindex="2" accesskey="p" name="urlDir" type="text" id="urlDir"/></dd>
+                            </dl>
+                            <dl>
+                                <dt><label title="text">Numero Conductor</label></dt>
+                                <dd><input type="text" id="nroDriver" name="nroDriver"></input></dd>
                             </dl>
                         </section>
 
@@ -347,7 +386,6 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
              var pesoCarga = document.getElementById("pesoC");
              var pesoNetoC = document.getElementById("pesoNeto");
 
-
             $('.btnAsign').click(function() {
                 $('#editRoute').modal("show");
                 $tr = $(this).closest('tr');
@@ -370,7 +408,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
 
                 //$('#urlDir').val(data[5]);
 
-                $('#urlDir').val(_dir);
+                $('#urlDir').val('https://www.google.com/maps/dir/?api=1&'+dir);
                 console.log(_dir);
 
                 var str2 = $('#pesoNeto').val();
