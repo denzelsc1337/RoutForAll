@@ -114,13 +114,14 @@ create table rutas(
     tiempoEstimado time not null,
     
     direccionEntrega varchar(250) not null,
+    urldir varchar(255) not null,
+    
     FOREIGN KEY (idenvio) REFERENCES cargas(IDcargas),
     FOREIGN KEY (idvehiculo) REFERENCES vehiculos(IDvehiculo),
     FOREIGN KEY (idconductor) REFERENCES conductor(IDconduct)
 );
 
-
-
+-- ALTER TABLE `rutas` ADD `urldir` VARCHAR(255) NOT NULL AFTER `direccionEntrega`;
 
 select * from rutas;
 

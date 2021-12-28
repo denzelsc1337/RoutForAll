@@ -69,14 +69,14 @@ class User
 	}
 
 	function agregarRutas($idenvio,$idvehiculo,$idconductor,$fSalida,$fLlegada,$H_Salida,$H_Llegada,$kmInicial,$kmSalida,
-						  $tiempoEsti,$dirEntrega){
+						  $tiempoEsti,$dirEntrega,$urldir){
 /*		include_once '../config/connection.php';
 		$cnx = new Conexion();
 		$cn = $cnx->abrirConexion();*/
 		try {
-			$sql = "INSERT INTO rutas (IDruta,idenvio, idvehiculo, idconductor, fechaSalida,fechaLlegada, horaSalida,horaLlegada, fechaRegistro, kilometrajeInicial,kilometrajeSalida,tiempoEstimado,direccionEntrega)
+			$sql = "INSERT INTO rutas (IDruta,idenvio, idvehiculo, idconductor, fechaSalida,fechaLlegada, horaSalida,horaLlegada, fechaRegistro, kilometrajeInicial,kilometrajeSalida,tiempoEstimado,direccionEntrega,urldir)
 			VALUES (null,:idenvio,:idvehiculo, :idconductor,:fSalida,:fLlegada,:H_Salida,:H_Llegada,now(),
-					:kmInicial,:kmSalida,:tiempoEsti,:dirEntrega);";
+					:kmInicial,:kmSalida,:tiempoEsti,:dirEntrega,:urldir);";
 
 			$stmt = $this->db->prepare($sql);
 
@@ -91,6 +91,7 @@ class User
 			$stmt->bindParam(':kmSalida', $kmSalida);
 			$stmt->bindParam(':tiempoEsti', $tiempoEsti);
 			$stmt->bindParam(':dirEntrega', $dirEntrega);
+			$stmt->bindParam(':urldir', $urldir);
 
 			$stmt->execute(array(':idenvio' => $idenvio, 
 							':idvehiculo' => $idvehiculo,
@@ -102,7 +103,8 @@ class User
 							':kmInicial' => $kmInicial,
 							':kmSalida' => $kmSalida,
 							':tiempoEsti' => $tiempoEsti,
-							':dirEntrega' => $dirEntrega));
+							':dirEntrega' => $dirEntrega,
+							':urldir' => $urldir,));
 ?>
 		<META http-equiv="Refresh" content = "0.3 ; URL =../View/AddRoute.php">
 <?php 
