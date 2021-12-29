@@ -126,7 +126,6 @@ create table rutas(
 select * from rutas;
 
 
-
 -- MOSTRAR EN POPOUP CONDUCTOR--
 -- select env.nombreCliente, apellidoCliente, direccionEnvio, celularCliente 
 -- from envios env
