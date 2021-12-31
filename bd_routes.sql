@@ -18,8 +18,6 @@ estadoLicencia varchar(50) not null
 );
 
 
-select * from conductor;
-
 create table vehiculos(
 IDvehiculo int auto_increment primary key not null,
 tipoVehiculo varchar(150) not null,
@@ -38,12 +36,6 @@ estado varchar(50) not null
 
 
 
-INSERT INTO `vehiculos` VALUES (NULL, 'camion', 'foton', '2020', 'A45A32',3.555, 1.500,1.499,3.499,2.410,1.506,1.996, 'activo');
-
-select * from vehiculos;
-
--- SELECT razonSocial FROM clientes WHERE RUC_cliente = 10754811043;
-
 create table clientes(
 IDclient int primary key auto_increment not null,
 RUC_cliente bigint not null,
@@ -57,15 +49,6 @@ contactoPersona varchar(120) not null
 );
 
 ALTER TABLE clientes AUTO_INCREMENT = 10001; 
-
-INSERT INTO `clientes` VALUES (null,'10457845126','denzel test', 'juridica', 'san juan', 'denzelsotomayor@gmail.com', '45678512', '981374706', 'ivan leon');
-
-
-select * from clientes;
-
-
-SELECT razonSocial, IDclient FROM clientes WHERE RUC_cliente = '10457845126';
--- DELETE FROM clientes WHERE RUC_cliente = 45781245126;
 
 create table cargas(
 IDcargas int auto_increment primary key,
@@ -83,16 +66,6 @@ fechaRegistro datetime,
 estado varchar(50) NOT NULL DEFAULT 'Pendiente',
 FOREIGN KEY (id_client) REFERENCES clientes(IDclient)
 );
-
--- select * from cargas where rucClient = '10457845125';
--- ALTER TABLE `cargas` CHANGE `estado` `estado` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'Pendiente';
-
-INSERT INTO `cargas` VALUES (null,'10001','10457845126', 'denzel test', 'KILO', 45, 45, 45, 45, 'ivan leon',"test",now(),'Pendiente');
-
-
--- update cargas
--- set rucCliente = 10754811043 
--- where IDcargas = 3;
 
 
 create table rutas(
@@ -121,11 +94,7 @@ create table rutas(
     FOREIGN KEY (idconductor) REFERENCES conductor(IDconduct)
 );
 
--- ALTER TABLE `rutas` ADD `urldir` VARCHAR(255) NOT NULL AFTER `direccionEntrega`;
-
 select * from rutas;
-
-
 -- MOSTRAR EN POPOUP CONDUCTOR--
 -- select env.nombreCliente, apellidoCliente, direccionEnvio, celularCliente 
 -- from envios env
@@ -165,7 +134,6 @@ CREATE TABLE tipo_usuario
 insert into tipo_usuario values (null, "Admin");
 insert into tipo_usuario values (null, "Operador");
 
-select * from tipo_usuario;
 
 Create table usuarios(
 secuence_usu INT auto_increment PRIMARY KEY NOT NULL,
@@ -186,7 +154,6 @@ FOREIGN KEY (IDtipoUsu) REFERENCES tipo_usuario (id_tipo_usuario)
 insert into usuarios values(null, 75481104,"denzel stefano" , "sotomayor correa", 1, "dsotomayor", "54811004","denzelsotomayor@gmail.com",981374706,1,"M");
 insert into usuarios values(null, 10678950,"ivan hilario" , "leon gomez ", 2, "igomez", "hilario123","ileon@gmail.com",963852741,1,"M");
 
-select * from usuarios;
 
 
 

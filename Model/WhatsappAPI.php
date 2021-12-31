@@ -6,7 +6,7 @@ class WhatsappAPI{
 
   public function send($send_to, $message_body){
     
-    $data = array('to' => $send_to, 'msg' => $message_body);
+    $data = array('to' => $send_to, 'msg' => urlencode($message_body));
 
     $url = "https://onyxberry.com/services/wapi/Client/sendMessage";
     $url = $url.'/'.$this->id.'/'.$this->key;

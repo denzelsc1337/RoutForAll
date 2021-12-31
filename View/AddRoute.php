@@ -122,9 +122,10 @@ require_once('../config/security.php');
                             <a></a>-->
                         <!--agregar google maps here-->
                         <td><?php echo $listaPedidos["direccionEntrega"]; ?></td>
-                        <td id="container" hidden>
-                            <?php echo '<a href = "https://www.google.com/maps/dir/?api=1&'.$listaPedidos["direccionEntrega"].'">'.urlencode($listaPedidos["direccionEntrega"]).'</a>';?>
+                        <td id="container">
+                            <?php echo '<a href = "https://www.google.com/maps/dir/?api=1&destination='.$listaPedidos["direccionEntrega"].'">'.urlencode($listaPedidos["direccionEntrega"]).'</a>';?>
                             <!--<a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">-->
+
                             <a id="direccionLink" href="https://www.google.com/maps/dir/?api=1&" onclick="location.href=this.href+'origin='+latitude+'&destination=<?php echo urlencode($listaPedidos["direccionEntrega"]) ?>';return false;"><?php echo $listaPedidos["direccionEntrega"] ?></a>
                             <!--https://developers.google.com/maps/documentation/javascript/localization-->
                             <!--
@@ -402,13 +403,25 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                 var dir = encodeURIComponent(String(data[5]));
 
 
-
+                //google maps
                 var _dir = 'https://www.google.com/maps/dir/?api=1&'+dir;
+                //google maps
+
+                /*waze
+                var _dir = 'https://waze.com/ul?q='+dir+'&navigate=yes';
+                waze*/
+
+
                 //document.getElementById("urlDir").href=href;
 
                 //$('#urlDir').val(data[5]);
+                //google maps
+                $('#urlDir').val('https://www.google.com/maps/dir/?api=1&destination='+dir);
+                //google maps
 
-                $('#urlDir').val('https://www.google.com/maps/dir/?api=1&'+dir);
+                /*waze
+                $('#urlDir').val('https://waze.com/ul?q='+dir+'&navigate=yes');
+                waze*/
                 console.log(_dir);
 
                 var str2 = $('#pesoNeto').val();
