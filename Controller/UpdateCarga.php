@@ -4,7 +4,7 @@ $data[2]  = $_POST["desc"];
 $data[3]  = $_POST["pesoC"];
 $data[4]  = $_POST["direcenv"];
 $data[5] = $_POST["fecharegistro"];
-$data[6] = $_POST["estado"];
+$data[6] = $_POST["status"];
 $idcarga  = $_POST['idcargas'];
 
 

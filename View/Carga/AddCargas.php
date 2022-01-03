@@ -258,14 +258,21 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Fecha Registro</label>
-                                <input type="text" class="form-control" name="fecharegistro" id="fecharegistro">
+                                <input type="datetime-local" class="form-control" name="fecharegistro" id="fecharegistro">
                             </div>
                         </div>
-                        <div class="form-row">
-
-                            <div class="form-group col-md-4">
-                                <label>Estado</label>
-                                <input type="text" class="form-control" name="estado" id="estado">
+                        <div class="form-group">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="estado" name="status" value="Pendiente" class="custom-control-input">
+                                <label class="custom-control-label" for="estado">Pendiente</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="estado_2" name="status" value="En Ruta" class="custom-control-input">
+                                <label class="custom-control-label" for="estado_2">En Ruta</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="estado_3" name="status" value="Entregado" class="custom-control-input">
+                                <label class="custom-control-label" for="estado_3">Entregado</label>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
@@ -368,7 +375,21 @@
                 $('#pesoC').val(data[3]);
                 $('#direcenv').val(data[4]);
                 $('#fecharegistro').val(data[5]);
-                $('#estado').val(data[6]);
+                //$('#fecharegistro').datepicker(data[5]);
+                //$('#estado').val(data[6]);
+
+                var status = data[6];
+
+                if (status == "Pendiente") {
+                    //console.log("testing");
+                    $('#estado').prop('checked', true);
+                } else if (status == "En Ruta") {
+                    //console.log("testing_2");
+                    $('#estado_2').prop('checked', true);
+                } else if (status == "Entregado") {
+                    //console.log("testing_2");
+                    $('#estado_3').prop('checked', true);
+                }
 
 
             });

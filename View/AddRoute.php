@@ -89,7 +89,7 @@ require_once('../config/security.php');
             ?>
             <thead>
                 <tr>
-                    <th>id envio</th>
+                    <th hidden>id envio</th>
                     <th>RUC cliente</th>
                     <th>Descripcion</th>
                     <th>Peso Carga</th>
@@ -109,7 +109,7 @@ require_once('../config/security.php');
                 foreach ($listPedido as $listaPedidos) {
                 ?>
                     <tr>
-                        <td><?php echo $listaPedidos["IDcargas"]; ?></td>
+                        <td hidden><?php echo $listaPedidos["IDcargas"]; ?></td>
                         <td><?php echo $listaPedidos["rucClient"]; ?></td>
                         <td><?php echo $listaPedidos["descripcionCarga"]; ?></td>
                         <td><?php echo $listaPedidos["pesoCarga"]; ?></td>
@@ -122,7 +122,7 @@ require_once('../config/security.php');
                             <a></a>-->
                         <!--agregar google maps here-->
                         <td><?php echo $listaPedidos["direccionEntrega"]; ?></td>
-                        <td id="container">
+                        <td id="container" hidden>
                             <?php echo '<a href = "https://www.google.com/maps/dir/?api=1&destination='.$listaPedidos["direccionEntrega"].'">'.urlencode($listaPedidos["direccionEntrega"]).'</a>';?>
                             <!--<a href="https://www.google.com/" onclick="location.href=this.href+'?xyz='+val;return false;">-->
 
