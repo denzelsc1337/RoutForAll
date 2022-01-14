@@ -84,8 +84,6 @@
         </div>
 
 
-
-
         <div data-content id="dos" class="sub-content-item">
 
             <form name="login-form" id="login-form" method="post" action="../../Controller/AddClients.php">

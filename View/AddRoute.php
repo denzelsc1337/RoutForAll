@@ -211,11 +211,11 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                 <div class="modal-body">
                     <h4>Seleccion de conductor:</h4>
                     <form method="post" action="../Controller/AddRoutes.php">
-                        <input type="text" name="codigoEnvio" id="codigoEnvio">
+                        <input type="text" name="codigoEnvio" id="codigoEnvio" hidden>
                         <?php 
                         ?>
 
-                        <input name="pesoC" id="pesoC" value="45">
+                        <input name="pesoC" id="pesoC" hidden>
 
                         <section class="cards_">
                             <?php
@@ -230,7 +230,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                                         <h5 class="cards_title"><?php echo $listDrivers["nombres"] . "  " . $listDrivers["apellidoP"] ?></h5>
                                         <p class="cards_text"><span><?php echo $listDrivers["tipoDoc"] ?>: </span> <?php echo $listDrivers["numDoc"] ?></p>
 
-                                        <p class="cards_text"><span>Celular: </span> <?php echo "+51 ".$listDrivers["celular"] ?> - <input type="radio" class="cards_check" id="numDriver" name="numDriver" value="<?php echo "+51 ".$listDrivers["celular"] ?>"></input></p>
+                                        <p class="cards_text"><span>Celular: </span> <?php echo "+51 ".$listDrivers["celular"] ?><!--<input type="radio" class="cards_check" id="numDriver" name="numDriver" value="<?php //echo "+51 ".$listDrivers["celular"] ?>"></input>--></p>
                                          <p class="cards_text"><span>Seleccionar: </span>
                                         <input class="cards_check_1" type="radio" name="idconductor" id="idconductor" value="<?php echo $listDrivers["IDconduct"] ?>">
 
@@ -278,6 +278,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                             }
                             ?>
                         </section>
+                        <br>
                         <h4>Seleccion de Vehiculo:</h4>
                         <section class="cards_">
 
@@ -290,12 +291,14 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                             ?>
                                 <div class="cards_container" id="infoCar" name="infoCar">
                                     <div class="cards_body">
-                                        <h5 class="cards_title"><?php echo $listCars["tipoVehiculo"] ?></h5>
-                                        <p class="cards_text"><?php echo $listCars["marcaVehiculo"] . " - " . $listCars["placaVehicular"] ?></p>
-                                        <input type="text" id="pesoNeto" name="pesoNeto" value="<?php echo $listCars["cargaUtil"]; ?>"></input>
+                                        <br>
+                                         <p class="cards_text"><span>Tipo De Vehiculo: </span> <?php echo $listCars["tipoVehiculo"] ?>
+                                        <p class="cards_text"><span>Marca: </span><?php echo $listCars["marcaVehiculo"] . " - " . $listCars["placaVehicular"] ?></p>
+                                        <input hidden type="text" id="pesoNeto" name="pesoNeto" value="<?php echo $listCars["cargaUtil"]; ?>"></input>
 
                                         <!-- <p class="" id="uMCarga" name="uMCarga"><?php echo $listCars["unidadMedidaCarga"] ?></p> -->
-                                        <input class="cards_check" type="checkbox" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
+                                        <p class="cards_text"><span>Seleccionar: </span>
+                                        <input class="cards_check" type="radio" name="idvehiculo" id="idvehiculo" value="<?php echo $listCars["IDvehiculo"]; ?>">
                                         <!--<a href="#" class="btn btn-primary">Button</a>-->
                                     </div>
                                     <script type="text/javascript">
@@ -343,20 +346,20 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                                 <dd><input tabindex="2" accesskey="p" name="kmSalida" type="number" id="kmSalida"/></dd>
                             </dl>
                             <dl>
-                                <dt><label title="text">Tiempo Estimado</label></dt>
-                                <dd><input tabindex="2" accesskey="p" name="estimado" type="text" id="estimado"/></dd>
+                                <dt><label title="text">Hora Estimada de LLegada</label></dt>
+                                <dd><input tabindex="2" accesskey="p" name="estimado" type="time" id="estimado"/></dd>
                             </dl>
                         </section>
                         <section style="display: flex;">
                             <dl>
                                 <dt><label title="text">Direccion Entrega</label></dt>
-                                <dd><input tabindex="2" accesskey="p" name="direccionEntr" type="text" id="direccionEntr"/></dd>
+                                <dd><input tabindex="2" accesskey="p" name="direccionEntr" type="text" id="direccionEntr" readonly /></dd>
                                 <!-- test
                                 <dt><label title="text">Direccion Entrega</label></dt>
                                 <dd><a href="" id="urlDir" name="urlDir">4</a></dd>
                                 test -->
                             </dl>
-                             <dl>
+                             <dl hidden>
                                 <dt><label title="text">Direccion Entrega</label></dt>
                                 <dd><input tabindex="2" accesskey="p" name="urlDir" type="text" id="urlDir"/></dd>
                             </dl>
