@@ -354,6 +354,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                             <dl>
                                 <dt><label title="text">Direccion Entrega</label></dt>
                                 <dd><input tabindex="2" accesskey="p" name="direccionEntr" type="text" id="direccionEntr" readonly /></dd>
+                                amerino@mak
                                 <!-- test
                                 <dt><label title="text">Direccion Entrega</label></dt>
                                 <dd><a href="" id="urlDir" name="urlDir">4</a></dd>
