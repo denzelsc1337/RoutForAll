@@ -65,7 +65,7 @@
                             <td><?php echo $listCars["tipoVehiculo"]; ?></td>
                             <td><?php echo $listCars["marcaVehiculo"]; ?></td>
                             <td><?php echo $listCars["placaVehicular"]; ?></td>
-                            <td><?php echo $listCars["cargaUtil"]; ?></td>
+                            <td><?php echo $listCars["cargaUtil"]; ?> KG</td>
                             <td><?php echo $listCars["estado"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-success btnAsign" data-bs-toggle="modal" data-bs-target="#asdasdasd">Edit</button>

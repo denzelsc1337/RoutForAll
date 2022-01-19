@@ -67,7 +67,7 @@
                             <td hidden><?php echo $listCargas["IDcargas"]; ?></td>
                             <td><?php echo $listCargas["rucClient"]; ?></td>
                             <td><?php echo $listCargas["descripcionCarga"]; ?></td>
-                            <td><?php echo $listCargas["pesoCarga"]; ?></td>
+                            <td><?php echo $listCargas["pesoCarga"]; ?> KG</td>
                             <td><?php echo $listCargas["direccionEnvio"]; ?></td>
                             <td><?php echo $listCargas["fechaRegistro"]; ?></td>
                             <td><?php echo $listCargas["estado"]; ?></td>
