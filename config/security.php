@@ -4,7 +4,7 @@ if (isset($_SESSION["user"]) == false) {
     ?>
 	<!--echo "no has iniciado sesion, se te redireccionara al login";-->
 	<h1>Usuario ni contraseña encontrados. Regresando al login...</h1>
-		<META http-equiv="Refresh" content = "2 ; URL =../index.php">
+		<META http-equiv="Refresh" content = "2 ; URL =../../">
 	<?php
 	exit();
 }
