@@ -43,7 +43,7 @@
 
     <div class="tab-sub-content">
         <div data-content id="uno" class="sub-content-item active">
-            <!-- <table class="table table_ b-table">
+            <table class="table table_ b-table">
                 <?php
                 //require_once('../Controller/controllerList.php');
                 require_once((dirname(__FILE__) . '../../../Controller/controllerList.php'));
@@ -51,37 +51,38 @@
                 <thead>
                     <tr>
                         <th hidden>IDCLIENT</th>
-                        <th>RUC</th>
-                        <th>Razon Social</th>
-                        <th>Tipo de Persona</th>
+                        <th>DNI</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
                         <th>Correo</th>
-                        <th>Telefono</th>
-                        <th>Celular</th>
+                        <th>Usuario</th>
+                        <th>Tipo de Usuario</th>
                         <th>Edit</th>
 
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    foreach ($listClient as $listClients) {
+                    foreach ($listUser as $listUsers) {
                     ?>
                         <tr>
-                            <td hidden><?php echo $listClients["IDclient"]; ?></td>
-                            <td><?php echo $listClients["RUC_cliente"]; ?></td>
-                            <td><?php echo $listClients["razonSocial"]; ?></td>
-                            <td><?php echo $listClients["tipoPersona"]; ?></td>
-                            <td style="text-transform: none;"><?php echo $listClients["correo"]; ?></td>
-                            <td><?php echo $listClients["telefono"]; ?></td>
-                            <td><?php echo $listClients["celular"]; ?></td>
+                            <td hidden><?php echo $listUsers["secuence_usu"]; ?></td>
+                            <td><?php echo $listUsers["id_usuario"]; ?></td>
+                            <td><?php echo $listUsers["nom_usuario"]; ?></td>
+                            <td><?php echo $listUsers["ape_usuario"]; ?></td>
+                            <td style="text-transform: none;"><?php echo $listUsers["mail_usuario"]; ?></td>
+                            <td><?php echo $listUsers["usuario"]; ?></td>
+                            <td><?php echo $listUsers["tipo_user"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-success btnAsign" data-bs-toggle="modal" data-bs-target="#asdasdasd">Edit</button>
+                                <!-- <button type="button" class="btn btn-success btnAsign" data-toggle="modal" data-target="asdasdasd">Edit</button> -->
                             </td>
                         </tr>
                 </tbody>
             <?php } ?>
 
-            </table> -->
-in progress..
+            </table>
+
         </div>
 
 

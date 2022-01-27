@@ -10,6 +10,7 @@ class User
 	
 	public function __construct()
 	{
+		$this->listUser = array();
 		$this->listPedidos = array();
 		$this->selectorUsuario= array();
 		$conn = new Conexion();
@@ -128,6 +129,28 @@ class User
 			$this->listPedidos[] = $row;
 		}
 			return $this->listPedidos;	
+		} catch (PDOException $e) {
+			die($e->getMessage());
+		}
+	}
+
+	function listarUsuarios(){
+		try {
+		$sql = "SELECT secuence_usu, id_usuario, nom_usuario, ape_usuario,mail_usuario, usuario, UPPER(tusu.detalle_tipo_usuario) AS tipo_user
+				from usuarios usu
+				INNER JOIN tipo_usuario tusu
+				ON usu.IDtipoUSU = tusu.id_tipo_usuario";
+
+		$stmt = $this->db->prepare($sql);
+		$stmt->setFetchMode(PDO::FETCH_ASSOC);
+		$stmt->execute();
+
+		while ($row = $stmt->fetch()) {
+			/*echo "Producto: " .$row->producto ."<br>";
+			echo "Cantidad: " .$row->cantidad ."<br>";*/
+			$this->listUser[] = $row;
+		}
+			return $this->listUser;	
 		} catch (PDOException $e) {
 			die($e->getMessage());
 		}

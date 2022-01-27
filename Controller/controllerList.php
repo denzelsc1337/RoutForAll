@@ -5,6 +5,7 @@ require_once ((dirname(__FILE__) .'../../Model/User.php'));
 $user = new User();
 $listPedido = $user->listarPedidos();
 $selectorUser= $user->selectorUsuario();
+$listUser= $user->listarUsuarios();
 
 
 
