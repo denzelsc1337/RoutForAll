@@ -34,7 +34,7 @@
     <div class="tabs">
         <p data-target="#uno" class="tabs-item active">Mostrar</p>
         <p data-target="#dos" class="tabs-item">Agregar</p>
-        <p data-target="#tres" class="tabs-item">Tab 3</p>
+        <p data-target="#tres" class="tabs-item" hidden>Tab 3</p>
 
     </div>
 
@@ -156,7 +156,7 @@ in progress..
                                 <label title="text" for="telefono">Usuario</label>
                             </div>
                             <div class="input">
-                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="user" type="text" maxlength="7" id="user" />
+                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="user" type="text" maxlength="20" id="user" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -164,7 +164,7 @@ in progress..
                                 <label title="text" for="celular">Contraseña</label>
                             </div>
                             <div class="input">
-                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="pass" type="password" maxlength="120" id="pass" />
+                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="pass" type="password" maxlength="20" id="pass" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -175,18 +175,16 @@ in progress..
                                 <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="telefono" type="text" maxlength="30" id="telefono" />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="user_setso" value="m" checked>
-                                    <i class="far fa-check-circle fa-fw"></i> &nbsp; Masculino
-                                </label>
+                        <div class="sec_1">
+                            <div class="label">
+                                <label title="codenvio" for="numruc">Género</label>
                             </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="user_setso" value="f">
-                                    <i class="far fa-times-circle fa-fw"></i> &nbsp; Femenino
-                                </label>
+                            <div class="input">
+                                <select class="form-control" name="user_setso" id="user_setso">
+                                    <option value="" selected="" disabled>Seleccione una opción</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                </select>
                             </div>
                         </div>
                     </section>

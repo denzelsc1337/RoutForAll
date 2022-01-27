@@ -366,7 +366,7 @@ $tourresult = $num_result->fetch_array()['pesoCarga'] ?? '';*/
                             </dl>
                             <dl>
                                 <dt><label title="text">Numero Conductor</label></dt>
-                                <dd><input type="text" id="nroDriver" name="nroDriver"></input></dd>
+                                <dd><input type="text" id="nroDriver" name="nroDriver" placeholder="+51 987654321"></input></dd>
                             </dl>
                         </section>
 

@@ -35,7 +35,7 @@
     <div class="tabs">
         <p data-target="#uno" class="tabs-item active">Mostrar</p>
         <p data-target="#dos" class="tabs-item">Agregar</p>
-        <p data-target="#tres" class="tabs-item">Tab 3</p>
+        <p data-target="#tres" class="tabs-item" hidden>Tab 3</p>
     </div>
 
 

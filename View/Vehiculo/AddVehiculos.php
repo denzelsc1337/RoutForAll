@@ -36,7 +36,7 @@
     <div class="tabs">
         <p data-target="#uno" class="tabs-item active">Mostrar</p>
         <p data-target="#dos" class="tabs-item">Agregar</p>
-        <p data-target="#tres" class="tabs-item">Tab 3</p>
+        <p data-target="#tres" class="tabs-item" hidden>Tab 3</p>
     </div>
 
     <div class="tab-sub-content">
@@ -241,7 +241,7 @@
 
                                     <div class="custom-control custom-control-inline custom-radio">
 
-                                        <input type="radio" autocomplete="off" class="custom-control-input" name="estado" value="no_activo" id="__BVID__121" onclick="displayRadioValue(this.value)" required>
+                                        <input type="radio" autocomplete="off" class="custom-control-input" name="estado" value="no activo" id="__BVID__121" onclick="displayRadioValue(this.value)" required>
                                         <!-- <i class=" far fa-times-circle fa-fw"></i> &nbsp; No activo -->
                                         <label class="custom-control-label" for="__BVID__121">No Activo</label>
 
@@ -298,11 +298,14 @@
                                 <input type="text" class="form-control" name="cargaV" id="cargaV">
                             </div>
                         </div>
-                        <div class="form-row">
-
-                            <div class="form-group col-md-4">
-                                <label>Estado</label>
-                                <input type="text" class="form-control" name="estado" id="estado">
+                        <div class="form-group">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="estado" name="estado" value="activo" class="custom-control-input">
+                                <label class="custom-control-label" for="estado">Activo</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="estado_2" name="estado" value="no Activo" class="custom-control-input">
+                                <label class="custom-control-label" for="estado_2">No Activo</label>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
@@ -341,7 +344,18 @@
                 $('#marcaV').val(data[2]);
                 $('#placaV').val(data[3]);
                 $('#cargaV').val(data[4]);
-                $('#estado').val(data[5]);
+                //$('#estado').val(data[5]);
+
+                var status = data[5];
+
+                console.log(status);
+                if (status == "activo") {
+                    //console.log("testing");
+                    $('#estado').prop('checked', true);
+                } else if (status == "no Activo") {
+                    //console.log("testing_2");
+                    $('#estado_2').prop('checked', true);
+                }
             });
         });
     </script>
