@@ -55,9 +55,7 @@ include_once((dirname(__FILE__) . '../../config/connection.php'));
 
                 <p class="Blogger">
                     &nbsp;Bienvenido
-                    <br>
-                    &nbsp;<?php echo $_SESSION['user'] ?>&nbsp;<br>
-                    <!--<i class="bi bi-person-fill"></i>-->
+                    <?php echo $_SESSION['user'] ?>!
                 </p>
                 <a href="../config/logout.php" class="Blogger">Cerrar Sesión <i class="fa fa-power-off"></i></a>
             </div>

@@ -24,9 +24,9 @@
             <div>
                 <a class="a_cont" href="../principal.php">Home</a>
                 <a class="a_cont" href="../AddRoute.php">Rutas</a>
-            
 
-            <?php include("../../View/Header/mainHeader.php"); ?>
+
+                <?php include("../../View/Header/mainHeader.php"); ?>
 
         </nav>
     </div>
@@ -209,43 +209,38 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="../../Controller/UpdateCliente.php" method="POST">
+                    <form action="../../Controller/UpdateUser.php" method="POST">
                         <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>RUC</label>
-                                <input type="text" class="form-control" name="rucUpdt" id="rucUpdt">
+                            <div class="form-group col-md-6" hidden>
+                                <label>cod</label>
+                                <input type="text" class="form-control" name="codac" id="codac">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Razon Social</label>
-                                <input type="text" class="form-control" name="razonS" id="razonS">
+                                <label>DNI</label>
+                                <input type="text" class="form-control" name="dniac" id="dniac">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Nombres</label>
+                                <input type="text" class="form-control" name="nombresac" id="nombresac">
                             </div>
                             <div class="form-group col-md-6" hidden>
-                                <label>id client</label>
-                                <input type="text" class="form-control" name="idclient" id="idclient">
+                                <label>Apellidos</label>
+                                <input type="text" class="form-control" name="apellidosac" id="apellidosac">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1" value="natural" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline1">Natural</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" value="juridica" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline2">Juridica</label>
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             <label for="inputAddress">Correo</label>
-                            <input style="text-transform: none;" type="text" class="form-control" name="correoUpdt" id="correoUpdt" placeholder="Email">
+                            <input style="text-transform: none;" type="text" class="form-control" name="correoac" id="correoac" placeholder="Email">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Telefono</label>
-                                <input type="text" class="form-control" name="tlfnUpdt" id="tlfnUpdt">
+                                <label>Usuario</label>
+                                <input type="text" class="form-control" name="userac" id="userac">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Celular</label>
-                                <input type="text" class="form-control" name="celUpdt" id="celUpdt">
+                                <label>Tipo Usuario</label>
+                                <input type="text" class="form-control" name="tuserac" id="tuserac">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
@@ -263,6 +258,27 @@
     <script src="../js/test.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <!--  -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.btnAsign').on('click', function() {
+                $('#asdasdasd').modal('show');
+
+                $tr = $(this).closest('tr');
+                var data = $tr.children('td').map(function() {
+                    return $(this).text();
+                }).get();
+                console.log(data);
+
+                $('#codac').val(data[0]);
+                $('#dniac').val(data[1]);
+                $('#nombresac').val(data[2]);
+                $('#apellidosac').val(data[3]);
+                $('#correoac').val(data[4]);
+                $('#userac').val(data[5]);
+                $('#tuserac').val(data[6]);
+            });
+        });
+    </script>
 </body>
 
 </html>

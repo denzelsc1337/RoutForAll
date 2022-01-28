@@ -155,6 +155,41 @@ class User
 			die($e->getMessage());
 		}
 	}
+
+	function actualizarUsuarios($data,$secuence){
+		try {
+			$query = "UPDATE `usuarios` 
+				    SET `id_usuario`= :iduser,`nom_usuario`= :nomuser,`ape_usuario`=:apeuser,
+				    `IDtipoUsu`=:tipouser,`usuario`=:user,`mail_usuario`=:correouser
+				    WHERE `secuence_usu`= :sec_usu";
+			$stmt = $this->db->prepare($query);
+
+			$stmt->bindParam(':iduser', $data[1]);
+			$stmt->bindParam(':nomuser', $data[2]);
+			$stmt->bindParam(':apeuser', $data[3]);
+			$stmt->bindParam(':tipouser', $data[4]);
+			$stmt->bindParam(':user', $data[5]);
+			$stmt->bindParam(':correouser', $data[6]);
+			$stmt->bindParam(':sec_usu', $secuence);
+
+			$stmt->execute(array(':iduser' => $data[1], 
+							':nomuser' => $data[2],
+							':apeuser' => $data[3],
+							':tipouser' => $data[4],
+							':user' => $data[5],
+							':correouser' => $data[6],
+							':sec_usu' => $secuence)
+							);
+		echo '<script> alert("Usuario Actualizado");</script>';
+?>
+	<META http-equiv="Refresh" content = "0.3 ; URL =../View/Usuario/AddUsuario.php">
+<?php
+			
+		} catch (PDOException $e) {
+			die($e->getMessage());
+			return "error al insertar data";
+		}
+	}
 }
 
 
