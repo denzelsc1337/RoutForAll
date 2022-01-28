@@ -189,7 +189,7 @@
                                         <label>largo</label>
                                     </div>
                                     <div class="input">
-                                        <input class="form-control" tabindex="2" accesskey="p" name="largoC" id="largoC" type="text" maxlength="20" />
+                                        <input class="form-control" tabindex="2" accesskey="p" name="largoC" id="largoC" type="text" maxlength="20"/> <span>aeaaa</span>
                                     </div>
 
 

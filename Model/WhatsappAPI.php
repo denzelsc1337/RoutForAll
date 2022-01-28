@@ -1,8 +1,8 @@
 <?php
 class WhatsappAPI{
 
-  private $id = 2016; //Please change it with your ID
-  private $key = "d92dd7cf53066537a71e14c82b7dcf5d4f54ca51";
+  private $id = 2161; //Please change it with your ID
+  private $key = "45c372b34f5842e226be963b002652495858e329";
 
   public function send($send_to, $message_body){
     

@@ -114,6 +114,7 @@
                                 <label title="razon" for="razon">Apellidos</label>
                             </div>
                             <div class="input">
+                               
                                 <input class="form-control" tabindex="2" accesskey="p" name="apellidos" type="text" maxlength="30" id="apellidos" />
                             </div>
                         </div>
@@ -144,7 +145,7 @@
                                 <label title="text" for="correo">Correo</label>
                             </div>
                             <div class="input">
-                                <input style="width: 500px;" class="form-control" tabindex="2" accesskey="p" name="correo" type="text" id="correo" />
+                                <input style="width: 500px;" class="form-control" tabindex="2" accesskey="p" name="correo" type="text" id="correo" placeholder="example@email.com" />
                             </div>
                         </div>
 
@@ -173,7 +174,7 @@
                                 <label title="text" for="celular">Telefono</label>
                             </div>
                             <div class="input">
-                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="telefono" type="text" maxlength="30" id="telefono" />
+                                <input style="width: 250px;" class="form-control" tabindex="2" accesskey="p" name="telefono" type="text" maxlength="30" id="telefono"  placeholder="+51987654321" />
                             </div>
                         </div>
                         <div class="sec_1">
@@ -238,19 +239,26 @@
                                 <label>Usuario</label>
                                 <input type="text" class="form-control" name="userac" id="userac">
                             </div>
-                            <div class="form-group col-md-6">
-                                <label>Tipo Usuario</label>
-                                <input type="text" class="form-control" name="tuserac" id="tuserac">
+                        <div class="form-group">
+                            <label>Tipo De Usuario</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tipouser_1" name="userac" value="activo" class="custom-control-input">
+                                <label class="custom-control-label" for="tipouser_1">Admin</label>
                             </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="tipouser_2" name="userac" value="no Activo" class="custom-control-input">
+                                <label class="custom-control-label" for="tipouser_2">Operador</label>
+                            </div>
+                        </div>
                         </div>
                         <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>GUARDAR</button>
                     </form>
                 </div>
-                <div class="modal-footer">
+                <!-- <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-                </div>
+                   <button type="button" class="btn btn-primary">Save changes</button>
+                </div>-->
             </div>
         </div>
     </div>
@@ -276,6 +284,18 @@
                 $('#correoac').val(data[4]);
                 $('#userac').val(data[5]);
                 $('#tuserac').val(data[6]);
+
+
+                var tipoUser = data[6];
+
+                console.log(tipoUser);
+                if (tipoUser == "ADMIN") {
+                    //console.log("testing");
+                    $('#tipouser_1').prop('checked', true);
+                } else if (tipoUser == "OPERADOR") {
+                    //console.log("testing_2");
+                    $('#tipouser_2').prop('checked', true);
+                }
             });
         });
     </script>
