@@ -152,6 +152,5 @@ FOREIGN KEY (IDtipoUsu) REFERENCES tipo_usuario (id_tipo_usuario)
 );
 
 select * from usuarios;
-insert into usuarios values(null, 75481104,"denzel stefano" , "sotomayor correa", 1, "dsotomayor", "54811004","denzelsotomayor@gmail.com",981374706,1,"M");
 insert into usuarios values(null, 10678950,"ivan hilario" , "leon gomez ", 2, "igomez", "hilario123","ileon@gmail.com",963852741,1,"M");
 
